@@ -37,10 +37,10 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 RUBY_SETUP=	setup.rb --esd
-PLIST_SUB+=	ESOUND="" PCM="@comment "
+PLIST_SUB+=	ESD="" PCM="@comment "
 .else
 RUBY_SETUP=	setup.rb
-PLIST_SUB+=	ESOUND="@comment " PCM=""
+PLIST_SUB+=	ESD="@comment " PCM=""
 .endif
 
 post-patch:
