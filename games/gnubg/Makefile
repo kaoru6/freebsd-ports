@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gnubg
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz	\
-		gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz
+		gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz	\
+		gnubg_os0.bd.gz	gnubg_ts0.bd.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
@@ -40,12 +41,21 @@ CONFIGURE_ARGS += --enable-nas
 CONFIGURE_ARGS += --with-guile
 .endif
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	2.0+
+CONFIGURE_ARGS += --with-python
+.else
+CONFIGURE_ARGS += --without-python
+.endif
+
 INFO=	gnubg
 
-GNUBG_WEIGHTS_VERSION=0.13b
+GNUBG_WEIGHTS_VERSION=0.14
 
 post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz > ${WRKSRC}/gnubg.weights
+	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
+	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
 
 post-build:
 	@(cd ${WRKSRC} && ./makebearoff -t 6x6 -f gnubg_ts0.bd)
