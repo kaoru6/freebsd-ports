@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kaoru@kaisei.org
 
+FORBIDDEN=	Use ${PORTSDIR}/print/txfonts instead.
+
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-oq
 NO_BUILD=	yes
