@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	changelog2graph
-PORTVERSION=	1.0
+PORTVERSION=	0.0.20000429
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/attic/
 DISTNAME=	${PORTNAME}
@@ -14,9 +14,10 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	kaoru@kaisei.org
+COMMENT=	ChangeLog visualiser
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Chart/PNGgraph.pm:${PORTSDIR}/graphics/p5-Chart-PNGgraph \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+RUN_DEPENDS=	${SITE_PERL}/Chart/PNGgraph.pm:${PORTSDIR}/graphics/p5-Chart-PNGgraph \
+		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 
 NO_BUILD=	yes
 USE_PERL5=	yes
