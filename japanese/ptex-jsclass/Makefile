@@ -33,7 +33,7 @@ do-extract:
 	cd ${WRKSRC} && lha x ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.lzh
 
 do-patch:
-	cd ${WRKSRC} && qkc -eu *
+	cd ${WRKSRC} && qkc -ju *
 
 do-install:
 	${MKDIR} ${JSDIR}
