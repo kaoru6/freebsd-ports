@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	platex-jsclasses
-PORTVERSION=	2000.11.22
+PORTNAME=	ptex-jsclasses
+PORTVERSION=	2000.11.28
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/jsclasses/
 DISTNAME=	jsclasses
