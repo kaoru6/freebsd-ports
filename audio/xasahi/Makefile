@@ -14,12 +14,14 @@ DISTNAME=	asahi-rb.current
 MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio \
-		gtk12-config:${PORTSDIR}/x11-toolkits/ruby-gtk
-LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
+		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio \
+		gtk12:${PORTSDIR}/x11-toolkits/gtk12
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
+		mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
 
-NO_INSTALL=	yes
+#NO_INSTALL=	yes
 USE_GTK=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
