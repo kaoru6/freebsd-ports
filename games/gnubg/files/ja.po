@@ -3092,7 +3092,7 @@ msgstr "MatchID: %s\n"
 
 #: gnubg.c:2694 gnubg.c:2706
 msgid "No game"
-msgstr "無効試合"
+msgstr "ゲーム無し"
 
 #: gnubg.c:2716
 msgid "Game over"
@@ -4101,7 +4101,7 @@ msgstr "次のマーク済アクションに進む"
 
 #: gtkgame.c:1045
 msgid "(no game)"
-msgstr "（無効試合）"
+msgstr "（ゲーム無し）"
 
 #: gtkgame.c:1179
 #, c-format
