@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnubg 0.12\n"
 "POT-Creation-Date: 2003-01-09 15:40+0100\n"
-"PO-Revision-Date: 2003-01-09 15:44+0900\n"
+"PO-Revision-Date: 2003-01-10 03:21+0900\n"
 "Last-Translator: TAKAHASHI Kaoru <kaoru@kaisei.org>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -394,7 +394,7 @@ msgstr "キューブレスエクイティ"
 
 #: bearoff.c:764
 msgid "Owned cube"
-msgstr "自分がキューブ所有"
+msgstr "手元にキューブ"
 
 #: bearoff.c:765 gtktheory.c:900
 msgid "Centered cube"
@@ -402,7 +402,7 @@ msgstr "センターキューブ"
 
 #: bearoff.c:766
 msgid "Opponent owns cube"
-msgstr "相手がキューブ所有"
+msgstr "相手にキューブ"
 
 #: bearoff.c:811
 msgid "Bearing off\t\t\t\tBearing at least one chequer off\n"
@@ -2926,7 +2926,7 @@ msgstr "ポジションデータベースをサポート。"
 
 #: gnubg.c:1604
 msgid "Window system supported."
-msgstr "Window システムをサポート。"
+msgstr "ウィンドウシステムをサポート。"
 
 #: gnubg.c:1607
 msgid "External players supported."
@@ -3006,7 +3006,7 @@ msgstr ""
 
 #: gnubg.c:2110
 msgid "(Interrupted)"
-msgstr "（中断されました）"
+msgstr "(中断されました)"
 
 #: gnubg.c:2230
 msgid "This system does not support shell escapes."
@@ -3014,7 +3014,7 @@ msgstr "このシステムはシェルエスケープをサポートしていません"
 
 #: gnubg.c:2290
 msgid "This installation of GNU Backgammon was compiled without Guile support."
-msgstr "インストールされている GNU Backgammon は Guile サポート無しです"
+msgstr "インストールされている GNU Backgammon は Guile をサポートしていません。"
 
 #: gnubg.c:2300
 msgid "Incomplete command -- try `help'."
@@ -3365,22 +3365,19 @@ msgstr "ゲーム進行中に Jellyfish ポジションをインポートしなければなりません"
 
 #: gnubg.c:3905
 msgid "You must specify a position file to import (see `help import pos')."
-msgstr ""
-"インポートするポジションファイルを指定しなければありません(see `help import "
-"pos')."
+msgstr "インポートするポジションファイルを指定しなければありません"
+"(see `help import pos')."
 
 #: gnubg.c:3927
 msgid "You must specify a match file to import (see `help import mat')."
-msgstr ""
-"インポートするマッチファイルを指定しなければなりません(see `help import "
-"mat')."
+msgstr "インポートするマッチファイルを指定しなければなりません"
+"(see `help import mat')."
 
 #: gnubg.c:3947
 msgid ""
 "You must specify an oldmoves file to import (see `help import oldmoves')."
-msgstr ""
-"インポートする oldmoves ファイルを指定しなければなりません (see `help import "
-"oldmoves')."
+msgstr "インポートする oldmoves ファイルを指定しなければなりません"
+"(see `help import oldmoves')."
 
 #: gnubg.c:3968
 msgid "You must specify an SGG file to import (see `help import sgg')."
@@ -3414,11 +3411,12 @@ msgstr ""
 msgid ""
 "You must specify a valid number of hidden nodes (try `help new weights').\n"
 msgstr ""
+"有効なノード数を指定してください (try `help new weights').\n"
 
 #: gnubg.c:4248
 #, c-format
 msgid "A new neural net with %d hidden nodes has been created.\n"
-msgstr "A new neural net with %d hidden nodes has been created.\n"
+msgstr "%d ノードの隠れ層で新しいニューラルネットを作りました。\n"
 
 #: gnubg.c:4462
 #, c-format
@@ -3439,8 +3437,8 @@ msgstr ""
 "#\n"
 "# 警告: このファイル、`.gnubgautorc' は `save settings' コマンドにより自動的"
 "に\n"
-"# 作成されます。 そして、次のセッティングがセーブされる時に上書きされます。\n"
-"# もし、手動で立ち上げる場合は、代わりに`.gnubgrc' を使って下さい。\n"
+"# 作成されます。 そして、次に設定がセーブされる時に上書きされます。\n"
+"# もし手動で設定したい場合には、代わりに`.gnubgrc' を使って下さい。\n"
 "\n"
 
 #: gnubg.c:4786
@@ -4844,7 +4842,7 @@ msgstr ""
 
 #: gtkgame.c:3187
 msgid "Number of hidden nodes:"
-msgstr ""
+msgstr "隠れ層のノード数:"
 
 #: gtkgame.c:3202
 msgid "GNU Backgammon - Seed"
@@ -5502,9 +5500,11 @@ msgstr ""
 "under certain conditions.  There is absolutely no warranty for GNU "
 "Backgammon.\n"
 "訳注: 非常に重要な文章のため、原文を残しています。  -- 参考訳\n"
-"GNU Backgammon はフリーソフトウェアで、GNU General Public License version 2 "
-"の適用を受けています。そして、改造は歓迎しますし、または／そしてこのコピーを"
-"一定の条件の下で自由に配布できます。 GNU Backgammon は完全に無保証です。"
+"GNU Backgammon はフリーソフトウェアで、"
+"GNU General Public License version 2 の適用を受けています。"
+"そして、改造は歓迎しますし、"
+"または／そしてこのコピーを一定の条件の下で自由に配布できます。"
+"GNU Backgammon は完全に無保証です。"
 
 #: gtkgame.c:6621
 msgid "Copying conditions"
@@ -5538,7 +5538,7 @@ msgstr ""
 "は\n"
 "\n"
 "    http://mole.dnsalias.org/~acepoint/GnuBG/gnubg-faq/\n"
-"    http://www.kinchan.com/gnubg-faq/ （日本語未完成版）\n"
+"    http://www.kinchan.com/gnubg-faq/ (日本語未完成版)\n"
 "で見ることが出来ます。"
 
 #: gtkgame.c:6691
