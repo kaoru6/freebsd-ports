@@ -29,6 +29,7 @@ USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 #USE_RUBY_SETUP=	yes
 
+XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb
 EXAMPLE_FILES=	cddb config
 PLAYLIST_FILES=	all default favorite rippers test test2 \
 		4E232E0C0325C73000E6200D5C022C2331327513 \
@@ -44,10 +45,23 @@ pre-build:
 post-build:
 	cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} dot-xasahi.tar.gz ${EXTRACT_AFTER_ARGS}
 
+do-install:
+	${MKDIR} ${RUBY_SITEARCHLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
+	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
+	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
+	for file in ${XASAHI_FILES}; do \
+		${INSTALL_SCRIPT} ${WRKSRC}/"$$file" \
+			${RUBY_SITELIBDIR}/xasahi ; \
+	done
+	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/disc_id	${PREFIX}/bin
+
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
-	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
-	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
+#	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
+#	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
+#	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${PREFIX}/share/examples/ja/xasahi
 	for file in ${EXAMPLE_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/dot-xasahi/"$$file" \
