@@ -1,5 +1,7 @@
 bin/xasahi
 bin/disc_id
+bin/catalog.rb
+bin/voice.rb
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so

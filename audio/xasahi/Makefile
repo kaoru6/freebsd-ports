@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.11.14
+PORTVERSION=	2000.11.18
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -32,8 +32,8 @@ RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 
 XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb
 EXAMPLE_FILES=	cddb config
-PLAYLIST_FILES=	all default favorite rippers test test2 \
-		4E232E0C0325C73000E6200D5C022C2331327513 \
+PLAYLIST_FILES=	all default favorite rippers test test2
+CDDB_FILES=	4E232E0C0325C73000E6200D5C022C2331327513 \
 		57312ED80027A4013266211B1E21254003071D11 \
 		5D111069120A533133FB310B140218100010AF32 \
 		8A231577330AE80300C220291F31281E2320D330 \
@@ -60,6 +60,8 @@ do-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tool/catalog.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tool/voice.rb ${PREFIX}/bin
 #	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 #	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${PREFIX}/share/examples/ja/xasahi
@@ -68,7 +70,7 @@ post-install:
 			${PREFIX}/share/examples/ja/xasahi ; \
 	done
 	${MKDIR} ${PREFIX}/share/examples/ja/xasahi/play_list
-	for file in ${PLAYLIST_FILES}; do \
+	for file in ${PLAYLIST_FILES} ${CDDB_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/dot-xasahi/play_list/"$$file" \
 			${PREFIX}/share/examples/ja/xasahi/play_list ; \
 	done
