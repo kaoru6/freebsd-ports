@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnubg 0.12\n"
-"POT-Creation-Date: 2003-01-09 21:12+0900\n"
+"POT-Creation-Date: 2003-01-09 15:40+0100\n"
 "PO-Revision-Date: 2003-01-09 15:44+0900\n"
 "Last-Translator: TAKAHASHI Kaoru <kaoru@kaisei.org>\n"
 "Language-Team: Japanese\n"
@@ -294,9 +294,9 @@ msgid "Statistics for current game"
 msgstr "今のゲームの統計"
 
 #: analysis.c:1681 export.c:284 export.c:526 gnubg.c:4159 gnubg.c:4199
-#: html.c:3771 html.c:3954 html.c:4026 latex.c:527 play.c:1727 play.c:2044
-#: play.c:2169 play.c:2496 play.c:2576 play.c:3122 play.c:3200 play.c:3318
-#: play.c:3618 postscript.c:1292 postscript.c:1414 sgf.c:1913 sgf.c:1950
+#: html.c:3771 html.c:3954 html.c:4026 latex.c:527 play.c:1728 play.c:2045
+#: play.c:2170 play.c:2499 play.c:2579 play.c:3125 play.c:3203 play.c:3321
+#: play.c:3621 postscript.c:1292 postscript.c:1414 sgf.c:1913 sgf.c:1950
 #: sgf.c:1995 show.c:956 show.c:1240 text.c:1600 text.c:1698
 msgid "No game in progress (type `new game' to start one)."
 msgstr "進行中のゲームはありません (type `new game' to start one)."
@@ -3175,8 +3175,8 @@ msgstr ""
 msgid "You must set up a board first."
 msgstr "最初にボードのセットアップをしなければなりません。"
 
-#: gnubg.c:3169 gnubg.c:3276 gtkcube.c:680 play.c:830 play.c:1039 play.c:2113
-#: play.c:2292 play.c:3569
+#: gnubg.c:3169 gnubg.c:3276 gtkcube.c:680 play.c:830 play.c:1039 play.c:2114
+#: play.c:2293 play.c:3572
 msgid "Considering cube action..."
 msgstr "キューブアクション考慮中..."
 
@@ -3466,7 +3466,7 @@ msgstr ""
 msgid "Training..."
 msgstr "訓練中..."
 
-#: gnubg.c:5554 gnubg.c:7141
+#: gnubg.c:5554 gnubg.c:7144
 msgid "Please answer `y' or `n'."
 msgstr "`y' か `n'で答えて下さい。"
 
@@ -3545,7 +3545,6 @@ msgstr ""
 "details.\n"
 "訳注: 非常に重要な文章のため、原文を残しています。\n"
 
-
 #: gnubg.c:6358 gnubg.c:6385 gnubg.c:6392 gnubg.c:6414 gnubg.c:6421
 msgid "Initialising"
 msgstr ""
@@ -3620,24 +3619,24 @@ msgstr ""
 msgid "Equity for MWC = %6.2f%%: %+6.3f\n"
 msgstr ""
 
-#: gnubg.c:6879
+#: gnubg.c:6882
 #, c-format
 msgid "File \"%s\" exists. Overwrite? "
 msgstr "ファイル \"%s\" はすでに存在します。上書きしますか？"
 
-#: gnubg.c:7014
+#: gnubg.c:7017
 msgid "%Y-%m-%d-%H%M"
 msgstr ""
 
-#: gnubg.c:7156
+#: gnubg.c:7159
 msgid "You may be about to make a very bad play. Are you sure? "
 msgstr "非常に悪いプレイをしようとしています。本当にやりますか？"
 
-#: gnubg.c:7160
+#: gnubg.c:7163
 msgid "You may be about to make a bad play. Are you sure? "
 msgstr "悪いプレイをしようとしています。本当にやりますか？"
 
-#: gnubg.c:7164
+#: gnubg.c:7167
 msgid "You may be about to make a doubtful play. Are you sure? "
 msgstr "疑わしいプレイをしようとしています。本当にやりますか？"
 
@@ -5501,12 +5500,10 @@ msgstr ""
 "version 2, and you are welcome to change it and/or distribute copies of it "
 "under certain conditions.  There is absolutely no warranty for GNU "
 "Backgammon.\n"
-"訳注: 非常に重要な文章のため、原文を残しています。"
-"  -- 参考訳\n"
+"訳注: 非常に重要な文章のため、原文を残しています。  -- 参考訳\n"
 "GNU Backgammon はフリーソフトウェアで、GNU General Public License version 2 "
 "の適用を受けています。そして、改造は歓迎しますし、または／そしてこのコピーを"
 "一定の条件の下で自由に配布できます。 GNU Backgammon は完全に無保証です。"
-
 
 #: gtkgame.c:6621
 msgid "Copying conditions"
@@ -5536,8 +5533,8 @@ msgid ""
 "\n"
 "    http://mole.dnsalias.org/~acepoint/GnuBG/gnubg-faq/"
 msgstr ""
-"インストールされている GNU BackGammon では FAQ はまだ使用できません。"
-"それらは\n"
+"インストールされている GNU BackGammon では FAQ はまだ使用できません。それら"
+"は\n"
 "\n"
 "    http://mole.dnsalias.org/~acepoint/GnuBG/gnubg-faq/\n"
 "    http://www.kinchan.com/gnubg-faq/ （日本語未完成版）\n"
@@ -7293,7 +7290,7 @@ msgstr "幸運"
 msgid "very lucky"
 msgstr "非常に幸運"
 
-#: play.c:614 play.c:2784
+#: play.c:614 play.c:2787
 msgid ""
 "Are you sure you want to start a new game, and discard the one in progress? "
 msgstr "現在のゲームを破棄して新しいゲームを始めますか？"
@@ -7322,12 +7319,12 @@ msgstr ""
 msgid "Computer player"
 msgstr ""
 
-#: play.c:1121 play.c:3673
+#: play.c:1121 play.c:3676
 #, c-format
 msgid "%s rolls %1i and %1i.\n"
 msgstr "%s のロールは %1i と %1i.\n"
 
-#: play.c:1149 play.c:2546
+#: play.c:1149 play.c:2549
 msgid "Considering move..."
 msgstr "ムーブ考慮中..."
 
@@ -7350,302 +7347,312 @@ msgstr "(%s のダブルはキャンセルされました)\n"
 
 #: play.c:1587
 #, c-format
-msgid "%s wins a %s and %d point%s.\n"
-msgstr "%s の %s 勝ちで %d ポイント %s."
+msgid "%s wins a %s and %d point.\n"
+msgstr "%s の %s 勝ちで %d ポイント.\n"
 
-#: play.c:1619
+#: play.c:1588
+#, c-format
+msgid "%s wins a %s and %d points.\n"
+msgstr "%s の %s 勝ちで %d ポイント.\n"
+
+#: play.c:1620
 #, c-format
 msgid "%s has won the match.\n"
 msgstr ""
 
-#: play.c:1718
+#: play.c:1719
 msgid "You can only accept if the cube or a resignation has been offered."
 msgstr ""
 
-#: play.c:1733 play.c:2050 play.c:2175 play.c:2378 play.c:2582 play.c:3417
-#: play.c:3480 play.c:3624 play.c:3753
+#: play.c:1734 play.c:2051 play.c:2176 play.c:2379 play.c:2585 play.c:3420
+#: play.c:3483 play.c:3627 play.c:3756
 msgid ""
 "It is the computer's turn -- type `play' to force it to move immediately."
 msgstr ""
 
-#: play.c:1739 play.c:2056
+#: play.c:1740 play.c:2057
 msgid "No resignation was offered."
 msgstr ""
 
-#: play.c:1745
+#: play.c:1746
 #, c-format
 msgid "%s accepts and wins a %s.\n"
 msgstr ""
 
-#: play.c:1767 play.c:1871
+#: play.c:1768 play.c:1872
 msgid "You must select a move to annotate first."
 msgstr ""
 
-#: play.c:1783
+#: play.c:1784
 msgid "Invalid annotation."
 msgstr ""
 
-#: play.c:1797 play.c:1811 play.c:1826 play.c:1843
+#: play.c:1798 play.c:1812 play.c:1827 play.c:1844
 msgid "Invalid annotation"
 msgstr ""
 
-#: play.c:1850 play.c:1885
+#: play.c:1851 play.c:1886
 msgid "You cannot annotate this move."
 msgstr ""
 
-#: play.c:1855
+#: play.c:1856
 msgid "Skill annotation cleared."
 msgstr ""
 
-#: play.c:1857
+#: play.c:1858
 #, c-format
 msgid "Move marked as %s.\n"
 msgstr ""
 
-#: play.c:1890
+#: play.c:1891
 msgid "Luck annotation cleared."
 msgstr ""
 
-#: play.c:1892
+#: play.c:1893
 #, c-format
 msgid "Roll marked as %s.\n"
 msgstr ""
 
-#: play.c:1968
+#: play.c:1969
 msgid "You must select a move to clear the comment from."
 msgstr ""
 
-#: play.c:1977
+#: play.c:1978
 msgid "Commentary for this move cleared."
 msgstr ""
 
-#: play.c:2062
+#: play.c:2063
 #, c-format
 msgid "%s declines the %s.\n"
 msgstr ""
 
-#: play.c:2181
+#: play.c:2182
 msgid "Doubling is forbidden by the Crawford rule (see `help set crawford')."
 msgstr ""
 "クロフォードルールにより、ダブルは禁じられています(see `help set crawford')."
 
-#: play.c:2188
+#: play.c:2189
 msgid "The doubling cube has been disabled (see `help set cube use')."
 msgstr ""
 
-#: play.c:2195
+#: play.c:2196
 msgid ""
 "The `double' command is for offering the cube, not accepting it.  Use\n"
 "`redouble' to immediately offer the cube back at a higher value."
 msgstr ""
 
-#: play.c:2203
+#: play.c:2204
 msgid "You are only allowed to double if you are on roll."
 msgstr "あなたの手番でのみダブルできます。"
 
-#: play.c:2209
+#: play.c:2210
 msgid "You can't double after rolling the dice -- wait until your next turn."
 msgstr "ロールの後ではダブルできません -- 次の手番まで待ってください。"
 
-#: play.c:2216
+#: play.c:2217
 msgid "You do not own the cube."
 msgstr "キューブを所有していません。"
 
-#: play.c:2222 play.c:3423
+#: play.c:2223 play.c:3426
 #, c-format
 msgid "The cube is already at %d; you can't double any more.\n"
 msgstr "キューブはすでに %d です。これ以上ダブルできません。\n"
 
-#: play.c:2240
+#: play.c:2241
 #, c-format
 msgid "%s doubles.\n"
 msgstr ""
 
-#: play.c:2372
+#: play.c:2373
 msgid "The cube must have been offered before you can drop it."
 msgstr ""
 
-#: play.c:2399
+#: play.c:2401
 #, c-format
-msgid "%s refuses the cube and gives up %d point%s.\n"
+msgid "%s refuses the cube and gives up %d point.\n"
 msgstr ""
 
-#: play.c:2437
+#: play.c:2402
+#, c-format
+msgid "%s refuses the cube and gives up %d points.\n"
+msgstr ""
+
+#: play.c:2440
 #, c-format
 msgid "      Doubles to %d"
 msgstr ""
 
-#: play.c:2440
+#: play.c:2443
 msgid "      Takes"
 msgstr ""
 
-#: play.c:2443
+#: play.c:2446
 msgid "      Drop"
 msgstr ""
 
-#: play.c:2448
+#: play.c:2451
 msgid "      Resigns"
 msgstr ""
 
-#: play.c:2588
+#: play.c:2591
 msgid "You must roll the dice before you can move."
 msgstr ""
 
-#: play.c:2594
+#: play.c:2597
 #, c-format
 msgid "Please wait for %s to consider the resignation before moving.\n"
 msgstr ""
 
-#: play.c:2601 play.c:3630
+#: play.c:2604 play.c:3633
 #, c-format
 msgid "Please wait for %s to consider the cube before moving.\n"
 msgstr ""
 
-#: play.c:2668
+#: play.c:2671
 msgid "You must specify a move (type `help move' for instructions)."
 msgstr ""
 
-#: play.c:2767
+#: play.c:2770
 msgid "Illegal move."
 msgstr ""
 
-#: play.c:2774
+#: play.c:2777
 msgid "The match is already over."
 msgstr ""
 
-#: play.c:2854
+#: play.c:2857
 msgid "You must specify a valid match length (1 or longer)."
 msgstr ""
 
-#: play.c:2862
+#: play.c:2865
 #, c-format
 msgid ""
 "GNU Backgammon is compiled with support only for matches of length %i\n"
 "and below\n"
 msgstr ""
 
-#: play.c:2873
+#: play.c:2876
 msgid ""
 "Are you sure you want to start a new match, and discard the game in "
 "progress? "
 msgstr ""
 
-#: play.c:2892
+#: play.c:2895
 #, c-format
 msgid "A new %d point match has been started.\n"
 msgstr "新しい %d ポイントマッチを開始しました。\n"
 
-#: play.c:2909
+#: play.c:2912
 msgid ""
 "Are you sure you want to start a new session, and discard the game in "
 "progress? "
 msgstr ""
 
-#: play.c:2926
+#: play.c:2929
 msgid "A new session has been started."
 msgstr "新しいセッションを開始しました。"
 
-#: play.c:3011
+#: play.c:3014
 msgid ""
 "If you specify a parameter to the `next game' command, it must be a positive "
 "number (the count of games to step ahead)."
 msgstr ""
 
-#: play.c:3148
+#: play.c:3151
 msgid ""
 "If you specify a parameter to the `next' command, it must be a positive "
 "number (the count of moves to step ahead)."
 msgstr ""
 
-#: play.c:3206
+#: play.c:3209
 msgid "It's not the computer's turn to play."
 msgstr ""
 
-#: play.c:3231
+#: play.c:3234
 msgid ""
 "If you specify a parameter to the `previous game' command, it must be a "
 "positive number (the count of games to step back)."
 msgstr ""
 
-#: play.c:3344
+#: play.c:3347
 msgid ""
 "If you specify a parameter to the `previous' command, it must be a positive "
 "number (the count of moves to step back)."
 msgstr ""
 
-#: play.c:3387
+#: play.c:3390
 msgid "Redoubles are not permitted during match play."
 msgstr ""
 
-#: play.c:3393
+#: play.c:3396
 msgid "Beavers are disabled (see `help set beavers')."
 msgstr ""
 
-#: play.c:3400
+#: play.c:3403
 msgid "Only one beaver is permitted (see `help set beavers')."
 msgstr ""
 
-#: play.c:3403
+#: play.c:3406
 #, c-format
 msgid "Only %d beavers are permitted (see `help set beavers').\n"
 msgstr ""
 
-#: play.c:3410
+#: play.c:3413
 msgid "The cube must have been offered before you can redouble it."
 msgstr ""
 
-#: play.c:3441
+#: play.c:3444
 #, c-format
 msgid "%s accepts and immediately redoubles to %d.\n"
 msgstr ""
 
-#: play.c:3464
+#: play.c:3467
 msgid "You can only reject if the cube or a resignation has been offered."
 msgstr ""
 
-#: play.c:3474
+#: play.c:3477
 msgid "You must be playing a game if you want to resign it."
 msgstr ""
 
-#: play.c:3506
+#: play.c:3509
 #, c-format
 msgid "Unknown keyword `%s' -- try `help resign'.\n"
 msgstr ""
 
-#: play.c:3514
+#: play.c:3517
 #, c-format
 msgid "%s has already declined your offer of a %s.\n"
 msgstr ""
 
-#: play.c:3522
+#: play.c:3525
 #, c-format
 msgid "%s offers to resign a %s.\n"
 msgstr ""
 
-#: play.c:3637 set.c:2089
+#: play.c:3640 set.c:2089
 msgid "Please resolve the resignation first."
 msgstr ""
 
-#: play.c:3643
+#: play.c:3646
 msgid "You already did roll the dice."
 msgstr ""
 
-#: play.c:3747
+#: play.c:3750
 msgid "The cube must have been offered before you can take it."
 msgstr ""
 
-#: play.c:3773
+#: play.c:3776
 #, c-format
 msgid "%s accepts the cube at %d.\n"
 msgstr ""
 
-#: play.c:3803
+#: play.c:3806
 msgid ""
 "Are you sure you want to setup a new match id, and discard the game in "
 "progress? "
 msgstr ""
 
-#: play.c:3819
+#: play.c:3822
 #, c-format
 msgid "Illegal match ID '%s'\n"
 msgstr ""
