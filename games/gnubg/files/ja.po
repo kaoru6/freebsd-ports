@@ -73,7 +73,7 @@ msgstr "良い目だったね。"
 
 #: analysis.c:60 html.c:2847
 msgid "Go to Las Vegas immediately"
-msgstr "すぐ、ラスベガスに行きなさい"
+msgstr "すぐにラスベガスに行きなさい"
 
 #: analysis.c:61 html.c:2848
 msgid "Cheater :-)"
@@ -7500,7 +7500,7 @@ msgstr "      投了"
 
 #: play.c:2591
 msgid "You must roll the dice before you can move."
-msgstr "ムーブの前にロールしてください。"
+msgstr "ムーブの前にダイスをロールしてください。"
 
 #: play.c:2597
 #, c-format
@@ -8870,21 +8870,21 @@ msgstr ""
 
 #: set.c:2052
 msgid "You must specify a valid annealing rate."
-msgstr ""
+msgstr "有効なアニーリング率を設定してください。"
 
 #: set.c:2057
 #, c-format
 msgid "Annealing rate set to %f.\n"
-msgstr ""
+msgstr "アニーリング率を %f に設定。\n"
 
 #: set.c:2065
 msgid "You must specify a valid error threshold."
-msgstr ""
+msgstr "有効な閾値を指定してください。"
 
 #: set.c:2072
 #, c-format
 msgid "Error threshold set to %f.\n"
-msgstr ""
+msgstr "エラーの閾値を %f に設定しました。\n"
 
 #: set.c:2074 show.c:1187
 msgid "Error threshold disabled."
@@ -8914,11 +8914,11 @@ msgstr ""
 
 #: set.c:2133
 msgid "Will use the Egyptian rule."
-msgstr ""
+msgstr "Egyptian ルールを採用します。"
 
 #: set.c:2134
 msgid "Will not use the Egyptian rule."
-msgstr ""
+msgstr "Egyptian ルールを採用しません。"
 
 #: set.c:2135
 msgid ""
