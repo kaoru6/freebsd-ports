@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.11.19
+PORTVERSION=	2000.11.21
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -30,7 +30,7 @@ USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 #USE_RUBY_SETUP=	yes
 
-XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb
+XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb
 EXAMPLE_FILES=	cddb config
 PLAYLIST_FILES=	all default favorite rippers test test2
 CDDB_FILES=	4E232E0C0325C73000E6200D5C022C2331327513 \

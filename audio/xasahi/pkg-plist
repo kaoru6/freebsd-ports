@@ -10,6 +10,7 @@ bin/voice.rb
 %%RUBY_SITELIBDIR%%/xasahi/pcaudio.rb
 %%RUBY_SITELIBDIR%%/xasahi/playlist.rb
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
+%%RUBY_SITELIBDIR%%/xasahi/led.rb
 @dirrm %%RUBY_SITELIBDIR%%/xasahi
 share/examples/ja/xasahi/play_list/all
 share/examples/ja/xasahi/play_list/default
