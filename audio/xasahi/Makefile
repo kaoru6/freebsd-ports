@@ -14,14 +14,16 @@ DISTNAME=	asahi-rb.alpha3
 MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	ibcdaudio-config:${PORTSDIR}/audio/libcdaudio
-LIB_DEPENDS=	lcdaudio.1:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF=	lib/extconf.rb
+RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 USE_GTK=	yes
+
+NO_BUILD=	yes
 
 do-install:
 .if !defined(NOPORTDOCS)
