@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubg
-PORTVERSION=	0.12.030108
+PORTVERSION=	0.12.030109
 CATEGORIES=	games
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/snapshots/ \
 		ftp://alpha.gnu.org/gnu/gnubg/
@@ -24,8 +24,23 @@ MAN6=	gnubg.6
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WANT_GTK=	yes
+USE_GTK=	yes
 WANT_ESOUND=	yes
+
+.if defined(HAVE_ESOUND)
+CONFIGURE_ARGS += --with-esound
+.else
+CONFIGURE_ARGS += --without-esound
+.endif
+
+.if defined(WITH_NAS)
+CONFIGURE_ARGS += --enable-nas
+.endif
+
+.if defined(WITH_GUILE)
+CONFIGURE_ARGS += --with-guile
+.endif
+
 
 do-patch:
 	${CP} ${FILESDIR}/ja.po  ${WRKSRC}/po/
