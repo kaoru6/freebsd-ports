@@ -18,7 +18,7 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 
-FORBIDDEN=      "Use japanese/makejvf instead.  makejvf included jistfm."
+FORBIDDEN=      "Use japanese/makejvf instead"
 
 TEXMF=		${PREFIX}/share/texmf
 FILES=		jis-v.tfm jis.tfm jisg-v.tfm jisg.tfm \

@@ -13,6 +13,8 @@ DISTFILES=	${PORTNAME}-1.0-1.i386.tgz \
 
 MAINTAINER=	kaoru@kaisei.org
 
+BROKEN=		" "
+
 IGNOREFILES=	${DISTFILES}
 RESTRICTED=     "You should buy from Justsystem Co., Ltd."
 NO_CDROM=       "You should buy from Justsystem Co., Ltd."

@@ -17,6 +17,8 @@ MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	${TETEXSRC}:${PORTSDIR}/print/teTeX:fetch
 
+FORBIDDEN=	"Use official instead"
+
 USE_GMAKE=	yes
 DIST_SUBDIR=	teTeX/ptex
 
