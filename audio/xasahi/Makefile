@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	0.a3
+PORTVERSION=	20001105
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
-DISTNAME=	asahi-rb.alpha3
+DISTNAME=	asahi-rb.current
+# DISTNAME=	asahi-rb.alpha3
 
 MAINTAINER=	kaoru@kaisei.org
 
@@ -18,12 +19,15 @@ LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
 
+USE_GTK=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF_SUBDIRS=	lib cdaudio
-USE_GTK=	yes
+RUBY_EXTCONF_SUBDIRS=	cdaudio
 
-NO_BUILD=	yes
+do-build:
+	cd ${WRKSRC}/lib && ./extconf.rb && make
+#	cd ${WRKSRC}/lib && make
+	cd ${WRKSRC}/cdaudio && make
 
 do-install:
 .if !defined(NOPORTDOCS)
