@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptex-jsclasses
-PORTVERSION=	2000.11.28
+PORTVERSION=	2000.12.26
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/jsclasses/
 DISTNAME=	jsclasses
@@ -14,10 +14,12 @@ EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	kaoru@kaisei.org
 
-NO_BUILD=	yes
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha/ \
 		qkc:${PORTSDIR}/japanese/qkc
 #		platex:${PORTSDIR}/japanese/platex-euc
+
+NO_BUILD=	yes
+DIST_SUBDIR=	ptex
 
 JSFILES=	jsarticle.cls jsbook.cls jsclasses.dtx jsclasses.ins jspf.cls \
 		morisawa.dtx morisawa.ins morisawa.sty \
