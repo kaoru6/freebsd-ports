@@ -56,7 +56,7 @@ msgstr "ハァハァ（ためいき）"
 
 #: analysis.c:56 html.c:2843
 msgid "Go to bed"
-msgstr "もう、寝なさい"
+msgstr "もう寝なさい"
 
 #: analysis.c:57 html.c:2844
 msgid "Better luck next time"
@@ -83,8 +83,7 @@ msgid ""
 "You must specify at least one type of analysis to perform (see `help set\n"
 "analysis')."
 msgstr ""
-"少なくともひとつの解析の実行を指定して下さい (see `help set\n"
-"analysis')."
+"少なくともひとつの解析の実行を指定して下さい (see `help set analysis')."
 
 #: analysis.c:1001 analysis.c:1654 analysis.c:1909 record.c:389 show.c:837
 msgid "No game is being played."
@@ -146,11 +145,11 @@ msgstr "非常に悪いムーブ"
 #: gtkgame.c:7252 html.c:2931 html.c:2956 html.c:3196 html.c:3221 html.c:3264
 #: html.c:3289
 msgid "Error rate (total)"
-msgstr "エラーレート（総計）"
+msgstr "エラーレート(総計)"
 
 #: analysis.c:1316
 msgid "Error rate (per move)"
-msgstr "エラーレート（ムーブ毎の平均）"
+msgstr "エラーレート(ムーブ毎の平均)"
 
 #: analysis.c:1330 html.c:2979
 msgid "Chequer play rating"
@@ -196,11 +195,11 @@ msgstr "非常に不運なロール"
 
 #: analysis.c:1366 gtkgame.c:7237 html.c:3014 html.c:3034
 msgid "Luck rate (total)"
-msgstr "運の比率（総計）"
+msgstr "運の比率(総計)"
 
 #: analysis.c:1374
 msgid "Luck rate (per move)"
-msgstr "運の比率（ムーブ毎の平均）"
+msgstr "運の比率(ムーブ毎の平均)"
 
 #: analysis.c:1402 gtkgame.c:7239 html.c:3060
 msgid "Luck rating"
@@ -256,7 +255,7 @@ msgstr "間違ったパス"
 
 #: analysis.c:1510 gtkgame.c:7253 html.c:3206 html.c:3229
 msgid "Error rate (per cube decision)"
-msgstr "エラー率（キューブ毎の平均）"
+msgstr "エラー率(キューブ毎の平均)"
 
 #: analysis.c:1537 analysis.c:1591 gtkgame.c:7254 html.c:3244
 msgid "Cube decision rating"
@@ -272,7 +271,7 @@ msgstr ""
 
 #: analysis.c:1565 html.c:3274 html.c:3297
 msgid "Error rate (per decision)"
-msgstr "エラー率（決断毎の平均）"
+msgstr "エラー率(決断毎の平均)"
 
 #: analysis.c:1606
 msgid "Match winning chance"
@@ -919,11 +918,11 @@ msgstr "ノーリダブル、ビーバー"
 
 #: eval.c:3804
 msgid "Never double, take (dead cube)"
-msgstr "ネバーダブル、テイク（デッドキューブ）"
+msgstr "ネバーダブル、テイク(デッドキューブ)"
 
 #: eval.c:3806
 msgid "Never redouble, take (dead cube)"
-msgstr "ネバーリダブル、テイク（デッドキューブ）"
+msgstr "ネバーリダブル、テイク(デッドキューブ)"
 
 #: eval.c:3808
 msgid "Optional double, beaver"
@@ -1248,7 +1247,7 @@ msgstr ""
 
 #: gnubg.c:474
 msgid "Clear previous analysis"
-msgstr "直前の解析をクリア"
+msgstr "直前の解析をクリアします。"
 
 #: gnubg.c:476
 msgid "Compute analysis and annotate current game"
@@ -1364,7 +1363,7 @@ msgstr "投了をマークする"
 
 #: gnubg.c:541
 msgid "Mark a take decision"
-msgstr "テイク決断をマークする"
+msgstr "テイクの決断をマークする"
 
 #: gnubg.c:545
 msgid "List the positions in the database"
@@ -1380,7 +1379,7 @@ msgstr "自分自身でプレイしてデータベースポジションを作成する"
 
 #: gnubg.c:553 gnubg.c:656
 msgid "Merge positions into the database"
-msgstr "データベースをマージ（統合）する"
+msgstr "ポジションをデータベースにマージ(統合)する"
 
 #: gnubg.c:555
 msgid "Evaluate positions in database for future training"
@@ -1396,8 +1395,7 @@ msgstr ""
 
 #: gnubg.c:564
 msgid "Exports the equity evolution of the game (for import into a spreadsheet"
-msgstr ""
-"ゲームのエクイティ展開をエクスポートします（スプレッドシートインポート用）"
+msgstr "ゲームのエクイティ展開をエクスポートします(表計算ソフト用)"
 
 #: gnubg.c:566
 msgid "Records a log of the game in .gam format"
@@ -1426,8 +1424,7 @@ msgstr "ゲームの棋譜を、text 形式で記録します。"
 #: gnubg.c:584
 msgid ""
 "Exports the equity evolution of the match (for import into a spreadsheet"
-msgstr ""
-"マッチのエクイティ展開をエクスポートします（スプレッドシートインポート用）"
+msgstr "マッチのエクイティ展開をエクスポートします(表計算ソフト用)"
 
 #: gnubg.c:586
 msgid "Records a log of the match in .mat format"
@@ -1853,7 +1850,7 @@ msgstr "BSD の ramdom() 関数を使用する(非線形加法フィードバック)"
 
 #: gnubg.c:884
 msgid "Use the I.S.A.A.C. generator"
-msgstr "I.S.A.A.C. 乱数生成器を使用する"
+msgstr "ISAAC. 乱数生成器を使用する"
 
 #: gnubg.c:887
 msgid "Enter all dice rolls manually"
@@ -2716,7 +2713,7 @@ msgstr "マッチまたはセッションのスコアを表示"
 
 #: gnubg.c:1486
 msgid "Show the dice generator seed"
-msgstr "dice generator seed 表示"
+msgstr "ダイス(乱数生成器)のシードを表示"
 
 #: gnubg.c:1489
 msgid "Show information abount sounds"
@@ -3712,7 +3709,7 @@ msgstr "スコア:"
 
 #: gtkboard.c:2861 gtkboard.c:2931
 msgid "Pips:"
-msgstr "ピップカウント:"
+msgstr "ピップ:"
 
 #: gtkboard.c:2965
 msgid "Match:"
@@ -4147,7 +4144,7 @@ msgstr "投了後のエクイティ: "
 
 #: gtkgame.c:1378
 msgid "Difference: "
-msgstr "偏差"
+msgstr "差: "
 
 #: gtkgame.c:1604
 msgid "Didn't double"
@@ -4168,7 +4165,7 @@ msgstr "キューブアクション"
 
 #: gtkgame.c:1692 gtkgame.c:1737
 msgid "GNU Backgammon cannot analyse neither beavers nor raccoons yet"
-msgstr ""
+msgstr "GNU Backgammon はビーバーもラクーンも解析できません"
 
 #: gtkgame.c:1818
 msgid "No analysis available."
@@ -5322,19 +5319,19 @@ msgstr "投了を拒否すべきです。"
 
 #: gtkgame.c:5608
 msgid "Win (g)"
-msgstr "勝ち (ギャモン以上)"
+msgstr "勝ち (g)"
 
 #: gtkgame.c:5609
 msgid "Win (bg)"
-msgstr "勝ち (バックギャモン)"
+msgstr "勝ち (bg)"
 
 #: gtkgame.c:5610
 msgid "Lose (g)"
-msgstr "負け (ギャモン以上)"
+msgstr "負け (g)"
 
 #: gtkgame.c:5611
 msgid "Lose (bg)"
-msgstr "負け (バックギャモン)"
+msgstr "負け (bg)"
 
 #: gtkgame.c:5620
 msgid "GNU Backgammon - Rollout"
@@ -5503,9 +5500,9 @@ msgstr ""
 "GNU Backgammon is free software, covered by the GNU General Public License "
 "version 2, and you are welcome to change it and/or distribute copies of it "
 "under certain conditions.  There is absolutely no warranty for GNU "
-"Backgammon."
+"Backgammon.\n"
 "訳注: 非常に重要な文章のため、原文を残しています。"
-"  -- 参考訳"
+"  -- 参考訳\n"
 "GNU Backgammon はフリーソフトウェアで、GNU General Public License version 2 "
 "の適用を受けています。そして、改造は歓迎しますし、または／そしてこのコピーを"
 "一定の条件の下で自由に配布できます。 GNU Backgammon は完全に無保証です。"
@@ -5580,7 +5577,7 @@ msgstr "チェッカープレイ統計:"
 
 #: gtkgame.c:7230 html.c:2941 html.c:2964
 msgid "Error rate (pr. move)"
-msgstr "エラーレート（ムーブ毎の平均）"
+msgstr "エラーレート(ムーブ毎の平均)"
 
 #: gtkgame.c:7231
 msgid "Checker play rating"
@@ -5588,7 +5585,7 @@ msgstr "チェッカープレイ評価"
 
 #: gtkgame.c:7238 html.c:3021 html.c:3041
 msgid "Luck rate (pr. move)"
-msgstr "運の比率（ムーブ毎の平均）"
+msgstr "運の比率(ムーブ毎の平均)"
 
 #: gtkgame.c:7240
 msgid "Cube decision statistics:"
@@ -5608,7 +5605,7 @@ msgstr "エラー率の総合計"
 
 #: gtkgame.c:7257
 msgid "Overall error rate (per decision)"
-msgstr "エラー率の総合（キューブ毎の平均）"
+msgstr "エラー率の総合(キューブ毎の平均)"
 
 #: gtkgame.c:7258 html.c:3259 html.c:3312
 msgid "Overall rating"
@@ -5796,7 +5793,7 @@ msgstr "チェッカープレイ"
 
 #: gtkgame.c:7971
 msgid "Tutor Decisions"
-msgstr "指導"
+msgstr "指導の判断"
 
 #: gtkgame.c:7978
 msgid "Same as Evaluation"
@@ -5956,7 +5953,7 @@ msgstr ""
 
 #: gtkgame.c:8473
 msgid "(entries)"
-msgstr "（参加者）"
+msgstr "(参加者)"
 
 #: gtkgame.c:8478
 msgid "Record all games"
@@ -6319,11 +6316,11 @@ msgstr ""
 
 #: gtkprefs.c:981
 msgid "(user defined board design)"
-msgstr "（ユーザ定義のボードデザイン）"
+msgstr "(ユーザー定義のボードデザイン)"
 
 #: gtkprefs.c:982
 msgid "(predefined board design)"
-msgstr "（定義済みのボードデザイン）"
+msgstr "(定義済みのボードデザイン)"
 
 #: gtkprefs.c:1022
 msgid "unknown title"
@@ -6971,19 +6968,19 @@ msgstr ""
 
 #: html.c:3547
 msgid "Chequer (total)"
-msgstr "チェッカー（総計）"
+msgstr "チェッカー(総計)"
 
 #: html.c:3552
 msgid "Cube (total)"
-msgstr "キューブ（総計）"
+msgstr "キューブ(総計)"
 
 #: html.c:3557
 msgid "Luck (total)"
-msgstr "運の比率（総計）"
+msgstr "運の比率(総計)"
 
 #: html.c:3562
 msgid "Games (total)"
-msgstr "ゲーム（総計）"
+msgstr "ゲーム(総計)"
 
 #: html.c:3686
 #, c-format
@@ -7246,15 +7243,15 @@ msgstr ""
 
 #: play.c:53
 msgid "single game"
-msgstr "シングル勝ち"
+msgstr "シングル"
 
 #: play.c:54
 msgid "gammon"
-msgstr "ギャモン勝ち"
+msgstr "ギャモン"
 
 #: play.c:55
 msgid "backgammon"
-msgstr "バックギャモン勝ち"
+msgstr "バックギャモン"
 
 #: play.c:58 set.c:3157 show.c:1787
 msgid "very bad"
@@ -7349,12 +7346,12 @@ msgstr ""
 #: play.c:1401
 #, c-format
 msgid "(%s's double has been cancelled.)\n"
-msgstr "（%s のダブルはキャンセルされました）\n"
+msgstr "(%s のダブルはキャンセルされました)\n"
 
 #: play.c:1587
 #, c-format
 msgid "%s wins a %s and %d point%s.\n"
-msgstr ""
+msgstr "%s の %s 勝ちで %d ポイント %s."
 
 #: play.c:1619
 #, c-format
@@ -10862,21 +10859,3 @@ msgstr ""
 #: text.c:1703
 msgid "You must specify a file to export to (see `help export position text')."
 msgstr ""
-
-#~ msgid "red"
-#~ msgstr "赤"
-
-#~ msgid "blue"
-#~ msgstr "青"
-
-#~ msgid "Pip counts: Blue %d, White %d<br />\n"
-#~ msgstr "ピップカウント: 青 %d, 白 %d<br />\n"
-
-#~ msgid "Pip counts: Black %d, Red %d<br />\n"
-#~ msgstr "ピップカウント: 黒 %d, 赤 %d<br />\n"
-
-#~ msgid "White"
-#~ msgstr "白"
-
-#~ msgid "Black"
-#~ msgstr "黒"
