@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2001.12.19
+PORTVERSION=	2002.12.30
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.kokone.to/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -15,8 +15,8 @@ MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
-		mpg123:${PORTSDIR}/audio/mpg123
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk 
+#		mpg123:${PORTSDIR}/audio/mpg123
 #		timidity:${PORTSDIR}/audio/timidity++
 
 DIST_SUBDIR=	ruby
@@ -54,7 +54,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
 	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 	strip ${RUBY_SITEARCHLIBDIR}/esd.so
-	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
+	strip ${RUBY_SITEARCHLIBDIR}/lfplib.so
 	${MKDIR} ${EXAMPLE_DIR}
 	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
 .if !defined(NOPORTDOCS)

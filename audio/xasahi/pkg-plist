@@ -1,8 +1,7 @@
 bin/xasahi
 @comment bin/disc_id
 @comment bin/catalog.rb
-%%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
-@dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
+%%RUBY_SITEARCHLIBDIR%%/lfplib.so
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
 %%ESD%%%%RUBY_SITEARCHLIBDIR%%/esd.so
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
@@ -53,6 +52,14 @@ share/examples/ja/xasahi/dot-xasahi/play_list/sora_story
 share/examples/ja/xasahi/dot-xasahi/play_list/sylphic
 share/examples/ja/xasahi/dot-xasahi/play_list/test
 share/examples/ja/xasahi/dot-xasahi/play_list/test2
+share/examples/ja/xasahi/dot-xasahi/play_list/EasyBusy
+share/examples/ja/xasahi/dot-xasahi/play_list/KukeihaClub
+share/examples/ja/xasahi/dot-xasahi/play_list/Pocket
+share/examples/ja/xasahi/dot-xasahi/play_list/SantongFolkMusic
+share/examples/ja/xasahi/dot-xasahi/play_list/SoraKobo
+share/examples/ja/xasahi/dot-xasahi/play_list/YokoHamaBest
+share/examples/ja/xasahi/dot-xasahi/play_list/YokohamaDramaCD
+share/examples/ja/xasahi/dot-xasahi/play_list/YokohamaDramaCD3
 share/examples/ja/xasahi/dot-xasahi/play_list/.last
 @dirrm share/examples/ja/xasahi/dot-xasahi/play_list
 share/examples/ja/xasahi/dot-xasahi/plugin/headline_asahi.rb
