@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/texfaq/
 
 MAINTAINER=	kaoru@kaisei.org
 
-DIST_SUBDIR=	ptex
+DIST_SUBDIR=	teTeX/ptex
 NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}

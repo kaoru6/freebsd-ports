@@ -19,7 +19,7 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha/ \
 #		platex:${PORTSDIR}/japanese/platex-euc
 
 NO_BUILD=	yes
-DIST_SUBDIR=	ptex
+DIST_SUBDIR=	teTeX/ptex
 
 JSFILES=	jsarticle.cls jsbook.cls jsclasses.dtx jsclasses.ins jspf.cls \
 		morisawa.dtx morisawa.ins morisawa.sty \
