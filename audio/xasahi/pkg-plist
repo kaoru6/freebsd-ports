@@ -5,7 +5,7 @@ bin/xasahi
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
 %%ESOUND%%%%RUBY_SITEARCHLIBDIR%%/esdaudio.so
-%%ESOUND%%%%RUBY_SITELIBDIR%%/xasahi/esdaudio.rb
+%%RUBY_SITELIBDIR%%/xasahi/esdaudio.rb
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
 %%RUBY_SITELIBDIR%%/xasahi/led.rb
 %%RUBY_SITELIBDIR%%/xasahi/mpg123.rb
@@ -13,28 +13,20 @@ bin/xasahi
 %%RUBY_SITELIBDIR%%/xasahi/playlist.rb
 %%RUBY_SITELIBDIR%%/xasahi/timidity.rb
 @dirrm %%RUBY_SITELIBDIR%%/xasahi
-share/examples/ja/xasahi/dot-xasahi/play_list/1E200AA40230E8032112230035110ECB311C8E23
-share/examples/ja/xasahi/dot-xasahi/play_list/4E232E0C0325C73000E6200D5C022C2331327513
-share/examples/ja/xasahi/dot-xasahi/play_list/57312ED80027A4013266211B1E21254003071D11
-share/examples/ja/xasahi/dot-xasahi/play_list/5D111069120A533133FB310B140218100010AF32
-share/examples/ja/xasahi/dot-xasahi/play_list/8A231577330AE80300C220291F31281E2320D330
-share/examples/ja/xasahi/dot-xasahi/play_list/A4013951112ACB323AFF3323A6233107322B2731
-share/examples/ja/xasahi/dot-xasahi/play_list/B7302EC8032F10010B691015562339EC021DB402
-share/examples/ja/xasahi/dot-xasahi/play_list/B801356623278F313BD8002541120A8A23209D10
-share/examples/ja/xasahi/dot-xasahi/play_list/EB332C9E21038D11347E200700003304000A8113
-share/examples/ja/xasahi/dot-xasahi/play_list/FB331176221FBC021F0B33164D111688000FAD13
-share/examples/ja/xasahi/dot-xasahi/play_list/all
-share/examples/ja/xasahi/dot-xasahi/play_list/default
-share/examples/ja/xasahi/dot-xasahi/play_list/favorite
-share/examples/ja/xasahi/dot-xasahi/play_list/rippers
-share/examples/ja/xasahi/dot-xasahi/play_list/test
-share/examples/ja/xasahi/dot-xasahi/play_list/test2
-@dirrm share/examples/ja/xasahi/dot-xasahi/play_list
+@unexec rm -rf %D/share/examples/ja/xasahi/dot-xasahi/play_list 2>/dev/null || true
+@comment @dirrm share/examples/ja/xasahi/dot-xasahi/play_list
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_asahi.rb
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_kyoto.rb
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_mainichi.rb
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_yendot.rb
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_yomiuri.rb
+@dirrm share/examples/ja/xasahi/dot-xasahi/plugin
 share/examples/ja/xasahi/dot-xasahi/cddb
 share/examples/ja/xasahi/dot-xasahi/config
 share/examples/ja/xasahi/dot-cdserverrc
 @dirrm share/examples/ja/xasahi/dot-xasahi
 @dirrm share/examples/ja/xasahi
-share/doc/ja/xasahi/README
-@dirrm share/doc/ja/xasahi
+%%PORTDOCS%%share/doc/ja/xasahi/README
+@unexec rmdir %D/share/doc/ja/xasahi 2>/dev/null || true
+@unexec rmdir %D/share/doc/ja 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/xasahi 2>/dev/null || true

@@ -25,20 +25,21 @@ WANT_ESOUND=	yes
 WANT_IMLIB=	yes
 
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 #USE_RUBY_SETUP=	yes
 
 CONFIG_CMD?=	${GTK_CONFIG}
 
-XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb
+XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb esdaudio.rb
 EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 
+.include <bsd.port.pre.mk>
+
 .if defined(HAVE_ESOUND)
-RUBY_EXTCONF_SUBDIRS+=	esd
-XASAHI_FILES+=	esdaudio.rb
+USE_ESOUND=	yes
+RUBY_SETUP=	setup.rb --esd
 PLIST_SUB+=	ESOUND=""
 .else
+RUBY_SETUP=	setup.rb
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
@@ -46,32 +47,13 @@ post-patch:
 	 ${PERL} -i -pe  's|gtk-config |${CONFIG_CMD} |g' ${WRKSRC}/lib/extconf.rb
 	 ${PERL} -i -pe  's|BINDIRS[ \t]+=.*$$|BINDIRS = [\"${PREFIX}/bin\"] |g' ${WRKSRC}/setup.rb
 
-pre-build:
-.if defined(HAVE_ESOUND)
-	cd ${WRKSRC} && ./setup.rb --esd
-.else
-	cd ${WRKSRC} && ./setup.rb
-.endif
-
-do-install:
-	${MKDIR} ${RUBY_SITEARCHLIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
-	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
-.if defined(HAVE_ESOUND)
-	${INSTALL_PROGRAM} ${WRKSRC}/esd/esd.so	${RUBY_SITEARCHLIBDIR}
-.endif
-	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
-	cd ${WRKSRC} && \
-		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
-	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
+do-configure:
+	cd ${WRKSRC} && ./${RUBY_SETUP}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
-#	${INSTALL_SCRIPT} ${WRKSRC}/tool/catalog.rb ${PREFIX}/bin
-#	${INSTALL_SCRIPT} ${WRKSRC}/tool/voice.rb ${PREFIX}/bin
-#	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
-#	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
+	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
+	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${EXAMPLE_DIR}
 	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
 .if !defined(NOPORTDOCS)
@@ -82,4 +64,4 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
