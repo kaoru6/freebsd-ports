@@ -32,8 +32,6 @@ share/examples/ja/xasahi/dot-xasahi/cddb
 share/examples/ja/xasahi/dot-xasahi/config
 share/examples/ja/xasahi/dot-cdserverrc
 @dirrm share/examples/ja/xasahi/dot-xasahi
-share/examples/ja/xasahi/config
-share/examples/ja/xasahi/cddb
 @dirrm share/examples/ja/xasahi
 share/doc/ja/xasahi/README
 @dirrm share/doc/ja/xasahi
