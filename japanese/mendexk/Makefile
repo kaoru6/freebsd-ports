@@ -18,7 +18,7 @@ MAINTAINER=	kaoru@kaisei.org
 BUILD_DEPENDS=	${TETEXSRC}:${PORTSDIR}/print/teTeX:fetch
 
 USE_GMAKE=	yes
-DIST_SUBDIR=	ptex
+DIST_SUBDIR=	teTeX/ptex
 
 MANLANG=	ja
 MAN1=		mendex.1
