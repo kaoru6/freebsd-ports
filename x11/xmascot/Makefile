@@ -1,16 +1,17 @@
-# New ports collection makefile for:	xmascot + leaffi
+# New ports collection makefile for:	xmascot + leaffight 97 patch
 # Date created:		20 Nov 200
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xmascot+lf97
+PORTNAME=	xmascot
 PORTVERSION= 	2.6a
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/ \
 		http://cclub-flying.dsl.gr.jp/products/xmascot/
-DISTNAME=	xmascot${PORTVERSION}
+PKGNAMESUFFIX=	+lf97
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	http://hoshina.denpa.org/
 PATCHFILES=	xmascot26a-lf-patch.gz
@@ -26,7 +27,7 @@ MAN1=		xmascot.1
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xmascot
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xmascot
 .endif
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}

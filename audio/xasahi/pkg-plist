@@ -4,12 +4,13 @@ bin/xasahi
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
+%%RUBY_SITELIBDIR%%/xasahi/asahi.rb
+%%RUBY_SITELIBDIR%%/xasahi/esdaudio.rb
+%%RUBY_SITELIBDIR%%/xasahi/led.rb
 %%RUBY_SITELIBDIR%%/xasahi/mpg123.rb
-%%RUBY_SITELIBDIR%%/xasahi/timidity.rb
 %%RUBY_SITELIBDIR%%/xasahi/pcaudio.rb
 %%RUBY_SITELIBDIR%%/xasahi/playlist.rb
-%%RUBY_SITELIBDIR%%/xasahi/asahi.rb
-%%RUBY_SITELIBDIR%%/xasahi/led.rb
+%%RUBY_SITELIBDIR%%/xasahi/timidity.rb
 @dirrm %%RUBY_SITELIBDIR%%/xasahi
 share/examples/ja/xasahi/dot-xasahi/play_list/1E200AA40230E8032112230035110ECB311C8E23
 share/examples/ja/xasahi/dot-xasahi/play_list/4E232E0C0325C73000E6200D5C022C2331327513
