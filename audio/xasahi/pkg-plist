@@ -1,5 +1,6 @@
 share/doc/ja/xasahi/README
 @dirrm share/doc/ja/xasahi
+@unexec rmdir %D/share/xasahi 2>/dev/null || true
 share/examples/xasahi/dot-xasahi/play_list/4E232E0C0325C73000E6200D5C022C2331327513
 share/examples/xasahi/dot-xasahi/play_list/57312ED80027A4013266211B1E21254003071D11
 share/examples/xasahi/dot-xasahi/play_list/5D111069120A533133FB310B140218100010AF32
@@ -16,4 +17,3 @@ share/examples/xasahi/dot-xasahi/play_list/test2
 share/examples/xasahi/dot-xasahi/config
 share/examples/xasahi/dot-xasahi/cddb
 @dirrm share/examples/xasahi/dot-xasahi
-
