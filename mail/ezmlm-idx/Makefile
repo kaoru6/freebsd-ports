@@ -2,30 +2,25 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $FreeBSD: ports/mail/ezmlm-idx/Makefile,v 1.15 2001/08/30 19:09:07 tom Exp $
+# $FreeBSD: ports/mail/ezmlm-idx/Makefile,v 1.20 2003/04/21 16:14:26 tom Exp $
 #
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
-		ftp://ftp.rivertown.net/pub/ezmlm/ \
-		ftp://ftp.crc.ca/ftp/packages/mail/ezmlm-patches-fred/ \
-		http://ftp.crc.ca/ftp/ftp/packages/mail/ezmlm-patches-fred/ \
-		ftp://ftp.win.or.jp/pub/network/mail/qmail/ezmlm-idx/ \
-		ftp://jp.ezmlm.org/ezmlm/ \
-		ftp://de.ezmlm.org/pub/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
 		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		ftp://pl.ezmlm.org/ \
-		ftp://uk.ezmlm.org/pub/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/mail/qmail/ezmlm-idx/
-PKGNAMESUFFIX=	-tnt
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
+PATCHFILES=	ezmlm-cgi.patch
+PATCH_SITES=	${MASTER_SITES}
+
 MAINTAINER=	tom@FreeBSD.org
+COMMENT=	Improved version of the ezmlm-0.53 mailing list management software
 
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail
@@ -43,7 +38,8 @@ EXTRACT_INCLUDE+=	-I${PREFIX}/include/mysql
 EXTRACT_LIB+=	-L${PREFIX}/lib/mysql -lmysqlclient -lm
 .elif defined(WITH_POSTGRESQL)
 ALL_TARGET=	pgsql it ${LANGUAGE}
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 EXTRACT_INCLUDE+=	-I${PREFIX}/include/pgsql
 EXTRACT_LIB+=	-L${PREFIX}/lib -lpq -lcrypt
 .else
@@ -76,40 +72,34 @@ MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
 
 EZMLM_VERSION=	0.53
 
-PLIST=		${WRKDIR}/pkg-plist
-
 pre-patch:
 	@${MV} -f ${WRKDIR}/ezmlm-idx-${PORTVERSION}/* ${WRKSRC}
-	@cd ${WRKSRC} && ${PATCH} < idx.patch
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < idx.patch
 
 post-patch:
-	@${ECHO} ${PREFIX}/bin > ${WRKSRC}/conf-bin
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 .if defined(WITH_MYSQL)
-	@${ECHO} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_mysql/conf-sqlcc
-	@${ECHO} ${EXTRACT_LIB} > ${WRKSRC}/sub_mysql/conf-sqlld
+	@${ECHO_CMD} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_mysql/conf-sqlcc
+	@${ECHO_CMD} ${EXTRACT_LIB} > ${WRKSRC}/sub_mysql/conf-sqlld
 .elif defined(WITH_POSTGRESQL)
-	@${ECHO} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_pgsql/conf-sqlcc
-	@${ECHO} ${EXTRACT_LIB} > ${WRKSRC}/sub_pgsql/conf-sqlld
+	@${ECHO_CMD} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_pgsql/conf-sqlcc
+	@${ECHO_CMD} ${EXTRACT_LIB} > ${WRKSRC}/sub_pgsql/conf-sqlld
 .endif
-	@${ECHO} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
-	@${ECHO} ${PREFIX} > ${WRKDIR}/.PPREFIX
-	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
-	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.PPREFIX
+	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
+	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.PPREFIX
+	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
+	@${ECHO_CMD} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.PPREFIX
 	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
 	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
 		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
-	@${CP} ${PKGDIR}/pkg-plist ${WRKDIR}
-.if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${WRKDIR}/pkg-plist
-.endif
 
 pre-install:
-	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
-	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
-	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.IPREFIX
+	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.IPREFIX
+	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
+	@${ECHO_CMD} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
 
 do-install:
