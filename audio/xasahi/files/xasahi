@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# CD-ROMデバイスのファイル名
+DEVCDROM=/dev/cdrom
+DEVAUDIO=/dev/dsp
+
+exec ruby -s asahi.rb -cd=$DEVCDROM -pcm=$DEVAUDIO
