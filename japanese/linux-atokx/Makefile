@@ -7,7 +7,7 @@
 
 PORTNAME=	atokx
 PORTVERSION=	1.0.1
-CATEGORIES=	japanese
+CATEGORIES=	japanese linux
 DISTFILES=	${PORTNAME}-1.0-1.i386.tgz \
 		iiimf.tgz
 
