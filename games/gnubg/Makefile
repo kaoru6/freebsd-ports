@@ -2,7 +2,7 @@
 # Date created:		8 Dec 2002
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD: ports/games/gnubg/Makefile,v 1.5 2003/12/19 09:28:06 tg Exp $
+# $FreeBSD: ports/games/gnubg/Makefile,v 1.6 2004/02/04 05:20:24 marcus Exp $
 #
 
 PORTNAME=	gnubg
