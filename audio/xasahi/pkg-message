@@ -3,4 +3,6 @@ You must install original data of the INAGAWA de IKOU!!
 
     - Copy dj.pak and LeafPlayer.exe to /usr/X11R6/share/xasahi
 
+	# mkdir -p /usr/X11R6/share/xasahi
 	# cp dj.pak LeafPlayer.exe /usr/X11R6/share/xasahi
+
