@@ -9,9 +9,10 @@ PORTNAME=	gnubg
 PORTVERSION=	0.12.030105
 CATEGORIES=	games
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/snapshots/ \
-		ftp://alpha.gnu.org/gnu/gnubg/
+		ftp://alpha.gnu.org/gnu/gnubg/ \
+		http://pages.quicksilver.net.nz/pepe/ngb/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.12.//}
-DISTFILES=	${DISTNAME}.tar.gz gnubg.weights-0.12b.gz \
+DISTFILES=	${DISTNAME}.tar.gz gnubg.weights.13.gz \
 		gnubg_ts0.bd.gz gnubg_os0.bd.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -31,6 +32,6 @@ do-patch:
 	${CP} ${FILESDIR}/ja.po  ${WRKSRC}/po/
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
-	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights-0.12b.gz > ${WRKSRC}/gnubg.weights
+	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights.13.gz > ${WRKSRC}/gnubg.weights
 
 .include <bsd.port.mk>
