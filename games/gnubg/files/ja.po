@@ -2655,7 +2655,7 @@ msgstr "ポジションの Kleinman count を計算"
 
 #: gnubg.c:1453
 msgid "show market window for doubles"
-msgstr "ダブルの market window を表示"
+msgstr "ダブルのマーケットウィンドウを表示"
 
 #: gnubg.c:1455
 msgid "Show match equity table"
@@ -2667,7 +2667,7 @@ msgstr ""
 
 #: gnubg.c:1459
 msgid "Synonym for `show matchequitytable'"
-msgstr "`show matcheuitytable' 同義語"
+msgstr "`show matcheuitytable' の同義語"
 
 #: gnubg.c:1461
 msgid "Display which starting position will be used"
@@ -4629,7 +4629,7 @@ msgstr "/_解析/_ギャモン勝ちの価値"
 
 #: gtkgame.c:2341
 msgid "/_Analyse/_Market window"
-msgstr "/_解析/_Market window"
+msgstr "/_解析/_マーケットウィンドウ"
 
 #: gtkgame.c:2343
 msgid "/_Analyse/M_atch equity table"
