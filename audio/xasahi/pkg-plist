@@ -16,7 +16,7 @@ bin/xasahi
 @unexec rm -rf %D/share/examples/ja/xasahi/dot-xasahi/play_list 2>/dev/null || true
 @comment @dirrm share/examples/ja/xasahi/dot-xasahi/play_list
 share/examples/ja/xasahi/dot-xasahi/plugin/headline_asahi.rb
-share/examples/ja/xasahi/dot-xasahi/plugin/headline_kyoto.rb
+share/examples/ja/xasahi/dot-xasahi/plugin/headline_kyodo.rb
 share/examples/ja/xasahi/dot-xasahi/plugin/headline_mainichi.rb
 share/examples/ja/xasahi/dot-xasahi/plugin/headline_yendot.rb
 share/examples/ja/xasahi/dot-xasahi/plugin/headline_yomiuri.rb
