@@ -1,11 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/lfplib.so
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
 bin/asahi.rb
-bin/disk_id
-bin/pcaudio.rb
-bin/mpg123.rb
-bin/timidity.rb
-bin/playlist.rb
+%%RUBY_SITELIBDIR%%/disc_id
+%%RUBY_SITELIBDIR%%/pcaudio.rb
+%%RUBY_SITELIBDIR%%/mpg123.rb
+%%RUBY_SITELIBDIR%%/timidity.rb
+%%RUBY_SITELIBDIR%%/playlist.rb
 share/doc/ja/xasahi/README
 @dirrm share/doc/ja/xasahi
 @unexec rmdir %D/share/xasahi 2>/dev/null || true

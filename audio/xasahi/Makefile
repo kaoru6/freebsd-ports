@@ -21,7 +21,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
 
-NO_INSTALL=	yes
+#NO_INSTALL=	yes
 USE_GTK=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -38,11 +38,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so ${RUBY_SITEARCHLIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/asahi.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/pcaudio.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/mpg123.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/timidity.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/playlist.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/pcaudio.rb  ${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/mpg123.rb  ${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/timidity.rb ${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/playlist.rb ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xasahi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
