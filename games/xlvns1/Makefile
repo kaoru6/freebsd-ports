@@ -19,7 +19,7 @@ NO_INSTALL_MANPAGES= yes
 
 post-install:
 .if !defined(BATCH)
-	@${CAT} ${FILESDIR}/post-install-notes
+	@ ${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
