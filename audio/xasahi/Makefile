@@ -33,13 +33,16 @@ post-build:
 	cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} dot-xasahi.tar.gz ${EXTRACT_AFTER_ARGS}
 
 do-install:
-	${CP} -p ${WRKSRC}/lib/lfplib.so	${RUBY_SITEARCHLIBDIR}/xasahi
+	-${MKDIR} ${RUBY_SITEARCHLIBDIR}
 	${CP} -p ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/mpg123.rb	${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/timidity.rb	${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/pcaudio.rb	${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/playlist.rb	${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/asahi.rb	${RUBY_SITELIBDIR}
+	-${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
+	${CP} -p ${WRKSRC}/lib/lfplib.so	${RUBY_SITEARCHLIBDIR}/xasahi
+	-${MKDIR} ${RUBY_SITELIBDIR}/xasahi
+	${INSTALL_DATA} ${WRKSRC}/mpg123.rb	${RUBY_SITELIBDIR}/xasahi
+	${INSTALL_DATA} ${WRKSRC}/timidity.rb	${RUBY_SITELIBDIR}/xasahi
+	${INSTALL_DATA} ${WRKSRC}/pcaudio.rb	${RUBY_SITELIBDIR}/xasahi
+	${INSTALL_DATA} ${WRKSRC}/playlist.rb	${RUBY_SITELIBDIR}/xasahi
+	${INSTALL_DATA} ${WRKSRC}/asahi.rb	${RUBY_SITELIBDIR}/xasahi
 	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
 
 post-install:
