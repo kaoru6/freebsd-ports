@@ -1,6 +1,6 @@
-# New ports collection makefile for:	Nemacs
-# Date created:				14 Nov 2000
-# Whom:					TAKAHASHI Kaoru <kaoru@kaisei.org>
+# New ports collection makefile for:	pTeX JIS font metics
+# Date created:		14 Nov 2000
+# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
