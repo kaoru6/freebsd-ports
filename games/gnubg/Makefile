@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubg
-PORTVERSION=	0.12.030107
+PORTVERSION=	0.12.030108
 CATEGORIES=	games
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/snapshots/ \
 		ftp://alpha.gnu.org/gnu/gnubg/
