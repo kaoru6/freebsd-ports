@@ -92,7 +92,7 @@ msgstr "ひとつもゲームがプレイされていません。"
 
 #: analysis.c:1010
 msgid "Analysing game; move:"
-msgstr "ゲームのムーブを解析中:"
+msgstr "ゲーム解析中:"
 
 #: analysis.c:1030 analysis.c:1928 record.c:415 show.c:588 show.c:781
 msgid "No match is being played."
@@ -100,7 +100,7 @@ msgstr "ひとつもマッチがプレイされていません。"
 
 #: analysis.c:1039
 msgid "Analysing match; move:"
-msgstr "マッチのムーブを解析中:"
+msgstr "マッチ解析中:"
 
 #: analysis.c:1277
 msgid "Chequerplay statistics"
@@ -216,7 +216,7 @@ msgstr "キューブアクションの総計"
 
 #: analysis.c:1425 html.c:3077
 msgid "Close or actual cube decisions"
-msgstr "ぎりぎりまたは現実のキューブアクション"
+msgstr "きわどいまたは現実のキューブアクション"
 
 #: analysis.c:1428 gtkgame.c:7243 html.c:3080
 msgid "Doubles"
@@ -2887,7 +2887,7 @@ msgstr "現在のゲームを終わることを申し込む"
 
 #: gnubg.c:1574
 msgid "Roll the dice"
-msgstr "ダイスを振る"
+msgstr "ダイスをロールする"
 
 #: gnubg.c:1576
 msgid "Have gnubg perform rollouts of a position"
@@ -3265,7 +3265,7 @@ msgstr "パスのマッチ勝率: %6.2f%%\n"
 
 #: gnubg.c:3309
 msgid "Your proper cube action: Beaver!\n"
-msgstr "あなたの正しいキューブアクションは：ビーバー！\n"
+msgstr "あなたの正しいキューブアクションは：ビーバー。\n"
 
 #: gnubg.c:3311
 msgid "Your proper cube action: Take.\n"
@@ -3319,7 +3319,7 @@ msgid ""
 "Please 'set rollout initial off'."
 msgstr ""
 "初期配置ではムーブのロールアウトができません。\n"
-"'set rollout initial off'.に設定してください。"
+"'set rollout initial off' に設定してください。"
 
 #: gnubg.c:3578
 msgid ""
@@ -3353,8 +3353,7 @@ msgid ""
 "Warning: this game was edited during play, and cannot be recorded in this "
 "format."
 msgstr ""
-"警告：このゲームはプレイ中に編集されたのでこのフォーマットでは記録出来ませ"
-"ん。"
+"警告: このゲームはプレイ中に編集されたのでこのフォーマットでは記録出来ません。"
 
 #: gnubg.c:3879
 msgid "You must specify a file to load from (see `help load commands')."
@@ -3630,15 +3629,15 @@ msgstr ""
 
 #: gnubg.c:7159
 msgid "You may be about to make a very bad play. Are you sure? "
-msgstr "非常に悪いプレイをしようとしています。本当にやりますか？"
+msgstr "非常に悪いプレイをしようとしています。本当にやりますか? "
 
 #: gnubg.c:7163
 msgid "You may be about to make a bad play. Are you sure? "
-msgstr "悪いプレイをしようとしています。本当にやりますか？"
+msgstr "悪いプレイをしようとしています。本当にやりますか? "
 
 #: gnubg.c:7167
 msgid "You may be about to make a doubtful play. Are you sure? "
-msgstr "疑わしいプレイをしようとしています。本当にやりますか？"
+msgstr "疑わしいプレイをしようとしています。本当にやりますか? "
 
 #: gtkboard.c:460
 msgid "Illegal move"
@@ -3654,7 +3653,7 @@ msgstr "無制限"
 
 #: gtkboard.c:2589
 msgid "Roll dice"
-msgstr "ダイスを振る"
+msgstr "ダイスをロール"
 
 #: gtkboard.c:2590 gtkboard.c:2603 gtkboard.c:2627 gtkboard.c:2649
 #: gtkboard.c:2662 gtkboard.c:2682 gtkboard.c:2704 gtkboard.c:2719
@@ -3672,7 +3671,7 @@ msgstr "キューブをパス・投了を拒否する。"
 
 #: gtkboard.c:2661
 msgid "Redouble immediately (beaver)"
-msgstr "直ちにリダブル（ビーバー）"
+msgstr "直ちにリダブル(ビーバー)"
 
 #: gtkboard.c:2673
 msgid "Play"
@@ -4107,7 +4106,7 @@ msgstr "次のマーク済アクションに進む"
 
 #: gtkgame.c:1045
 msgid "(no game)"
-msgstr "（ゲーム無し）"
+msgstr "(no game)"
 
 #: gtkgame.c:1179
 #, c-format
