@@ -12,9 +12,10 @@ PKGNAMESUFFIX=	-euc
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${KPATHSEA_PARENT}${EXTRACT_SUFX}
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+
+DEPENDS=	${PORTSDIR}/print/teTeX:extract
 
 USE_GMAKE=	yes
 DIST_SUBDIR=	ptex
@@ -22,7 +23,7 @@ DIST_SUBDIR=	ptex
 MANLANG=	ja
 MAN1=		mendex.1
 
-KPATHSEA_PARENT=	web2c-7.2
+KPATHSEA_PARENT=	${PORTSDIR}/print/teTeX/work/teTeX-src-1.0.7/texk
 
 pre-configure:
 	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; \

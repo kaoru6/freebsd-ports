@@ -1,0 +1,15 @@
+share/texmf/ptex/platex/js/jsarticle.cls
+share/texmf/ptex/platex/js/jsbook.cls
+share/texmf/ptex/platex/js/jsclasses.dtx
+share/texmf/ptex/platex/js/jsclasses.ins
+share/texmf/ptex/platex/js/jspf.cls
+share/texmf/ptex/platex/js/morisawa.dtx
+share/texmf/ptex/platex/js/morisawa.ins
+share/texmf/ptex/platex/js/morisawa.sty
+share/texmf/ptex/platex/js/okumacro.dtx
+share/texmf/ptex/platex/js/okumacro.ins
+share/texmf/ptex/platex/js/okumacro.sty
+share/texmf/ptex/platex/js/okuverb.dtx
+share/texmf/ptex/platex/js/okuverb.ins
+share/texmf/ptex/platex/js/okuverb.sty
+@unexec rmdir %D/share/texmf/ptex/platex/js 2>/dev/null || true

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
 
-TFMDIR=		${PREFIX}/share/texmf/fonts/tfm/ptex
+TEXMF=		${PREFIX}/share/texmf
 FILES=		jis-v.tfm jis.tfm jisg-v.tfm jisg.tfm \
 		jisgn-v.tfm jisgn.tfm jisn-v.tfm jisn.tfm
 
@@ -27,9 +27,9 @@ do-extract:
 	cd ${WRKSRC} && unzip ${DISTDIR}/${DISTNAME}
 
 do-install:
-	${MKDIR} ${TFMDIR}
+	${MKDIR} ${TEXMF}/fonts/tfm/ptex
 	for file in ${FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/"$$file" ${TFMDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/"$$file" ${TEXMF}/fonts/tfm/ptex ; \
 	done
 .if exists(${PREFIX}/share/texmf/ls-R)
 	mktexlsr
