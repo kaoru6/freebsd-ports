@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2001.01.12
+PORTVERSION=	2001.01.23
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -38,7 +38,11 @@ post-patch:
 	 ${PERL} -i -pe  's|BINDIRS[ \t]+=.*$$|BINDIRS = [\"${PREFIX}/bin\"] |g' ${WRKSRC}/setup.rb
 
 pre-build:
+.if defined(HAVE_ESOUND)
+	cd ${WRKSRC} && ./setup.rb --esd
+.else
 	cd ${WRKSRC} && ./setup.rb
+.endif
 
 do-install:
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}
