@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.12.05
-CATEGORIES=	audio
+PORTVERSION=	2000.12.06
+CATEGORIES=	audio ruby
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
 
@@ -35,6 +35,7 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 
 post-patch:
 	 ${PERL} -i -pe  's|gtk-config |${CONFIG_CMD} |g' ${WRKSRC}/lib/extconf.rb
+	 ${PERL} -i -pe  's|BINDIRS[ \t]+=.*$$|BINDIRS = [\"${PREFIX}/bin\"] |g' ${WRKSRC}/setup.rb
 
 pre-build:
 	cd ${WRKSRC} && ./setup.rb
