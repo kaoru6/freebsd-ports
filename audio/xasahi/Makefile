@@ -30,8 +30,14 @@ RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 
 CONFIG_CMD?=	${GTK_CONFIG}
 
-XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb esdaudio.rb
+XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb
 EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
+
+.if defined(HAVE_ESOUND)
+RUBY_EXTCONF_SUBDIRS+=	esd
+XASAHI_FILES+=	esdaudio.rb
+PLIST=		${PKGDIR}/pkg-plist.esd
+.endif
 
 post-patch:
 	 ${PERL} -i -pe  's|gtk-config |${CONFIG_CMD} |g' ${WRKSRC}/lib/extconf.rb
@@ -40,7 +46,6 @@ post-patch:
 pre-build:
 .if defined(HAVE_ESOUND)
 	cd ${WRKSRC} && ./setup.rb --esd
-RUBY_EXTCONF_SUBDIRS+=	esd
 .else
 	cd ${WRKSRC} && ./setup.rb
 .endif
@@ -52,8 +57,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
 .if defined(HAVE_ESOUND)
 	${INSTALL_PROGRAM} ${WRKSRC}/esd/esd.so	${RUBY_SITEARCHLIBDIR}
-.else
-	cd ${WRKSRC} && ./setup.rb
 .endif
 	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
 	cd ${WRKSRC} && \
