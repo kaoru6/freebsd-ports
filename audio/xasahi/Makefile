@@ -29,7 +29,7 @@ USE_RUBY=	yes
 
 CONFIG_CMD?=	${GTK_CONFIG}
 
-XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb esdaudio.rb
+XASAHI_FILES=	mpg123.rb timidity.rb playlist.rb asahi.rb led.rb
 EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 
 .include <bsd.port.pre.mk>
@@ -37,9 +37,12 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 RUBY_SETUP=	setup.rb --esd
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/esd.so:${PORTSDIR}/audio/ruby-esound
+XASAHI_FILES+=	esdaudio.rb
 PLIST_SUB+=	ESD="" PCM="@comment "
 .else
 RUBY_SETUP=	setup.rb
+XASAHI_FILES+=	pcaudio.rb
 PLIST_SUB+=	ESD="@comment " PCM=""
 .endif
 
@@ -50,11 +53,14 @@ post-patch:
 do-configure:
 	cd ${WRKSRC} && ./${RUBY_SETUP}
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
-	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
-	strip ${RUBY_SITEARCHLIBDIR}/esd.so
-	strip ${RUBY_SITEARCHLIBDIR}/lfplib.so
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/xasahi ${WRKSRC}/disc_id ${PREFIX}/bin
+	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
+	cd ${WRKSRC} && \
+		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
+	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
+	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so ${RUBY_SITEARCHLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
 	${MKDIR} ${EXAMPLE_DIR}
 	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
 .if !defined(NOPORTDOCS)

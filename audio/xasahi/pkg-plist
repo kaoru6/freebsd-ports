@@ -1,9 +1,9 @@
 bin/xasahi
 @comment bin/disc_id
 @comment bin/catalog.rb
-%%RUBY_SITEARCHLIBDIR%%/lfplib.so
+%%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
-%%ESD%%%%RUBY_SITEARCHLIBDIR%%/esd.so
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
 %%RUBY_SITELIBDIR%%/xasahi/led.rb
 %%RUBY_SITELIBDIR%%/xasahi/mpg123.rb
