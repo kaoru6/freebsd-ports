@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.11.18
+PORTVERSION=	2000.11.19
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -60,8 +60,8 @@ do-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tool/catalog.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tool/voice.rb ${PREFIX}/bin
+#	${INSTALL_SCRIPT} ${WRKSRC}/tool/catalog.rb ${PREFIX}/bin
+#	${INSTALL_SCRIPT} ${WRKSRC}/tool/voice.rb ${PREFIX}/bin
 #	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 #	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${PREFIX}/share/examples/ja/xasahi

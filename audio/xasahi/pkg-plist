@@ -1,6 +1,6 @@
 bin/xasahi
-bin/disc_id
-bin/catalog.rb
+@comment bin/disc_id
+@comment bin/catalog.rb
 bin/voice.rb
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
