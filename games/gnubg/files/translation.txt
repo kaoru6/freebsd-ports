@@ -1,0 +1,438 @@
+☆プレイヤ評価
+
+Awful!		逝ってよし!
+Beginner	初級者
+Casual player	
+Intermediate	中級者
+Advanced	上級者	
+Expert		エキスパート
+World class	世界クラス
+Supernatural	神の領域
+
+☆ムーブ評価
+
+very good
+good
+interesting
+unmarked (moved unmarked)
+doubtful
+bad
+very bad
+
+
+☆ロール評価
+
+very lucky
+lucky
+Rolls unmarked
+unlucky
+very unlucky
+
+☆キューブ
+
+cubeless
+cubeful
+
+double	ダブル
+take	テイク
+pass	パス
+beaver	ビーバー
+raccoon	ラクーン
+automatic doubles	オートマチックダブル
+Crawford	クロフォード
+Jacoby		ジャコビー
+
+accept
+drop
+
+redouble	リダブル
+no double	ノーダブル
+Too good to double
+
+dead cube	デッドキューブ
+never double
+
+optional double
+
+cube decision
+cube action
+close
+
+
+☆乱数・ダイス
+
+dice		さいころ|ダイス (どっち?)
+roll		(さいころを)振る
+
+random number generator		乱数生成器
+
+Blum, Blum and Shub	Blum-Blum-Shub
+manual		手動
+Mersenne Twister	メルセンヌ・ツイスター
+seed
+modulus
+usually linear congruential	線形合同法
+
+
+☆ベアリング
+
+bearoff
+ExactBearoff
+2-sided
+1-sided
+
+
+☆その他
+
+unknown
+invalid
+illegal
+incomplete
+incorrect
+
+
+☆解析
+
+analysis
+unforced moves
+forced moves
+error rate
+luck rate
+annotate
+commentary
+
+
+
+
+default
+
+save
+import
+export
+record
+write
+confirmation	確認
+overwrite	上書き
+
+settings	設定
+
+weights
+log		棋譜 (ゲームの)
+roll out	ロールアウト
+evalutor
+parameter
+train (database)
+rating
+n/a
+move
+roll
+chequer play
+match
+database
+opponent
+game
+match
+session
+equity,equities
+
+single
+gammon
+backgammon
+
+hit
+saving gammons
+Match ID
+Position ID
+Neural net
+resign
+reject (resgin の)
+merge
+
+agree	了承
+
+turn	手番|ターン
+
+Egyptian
+Kleinman count
+market window
+pips	ピップカウント (単位なら 3ピップ)
+Throp Count	ソープメトリック(?)
+
+Manipulate
+
+Decline
+Offer
+
+
+☆getopt
+ambiguous
+unrecognized
+
+
+
+☆
+dull shiny	くすんだ色	
+Diffuse	Specular	拡散	光沢
+Market window
+
+
+#~ msgid "/_Settings/_Evaluation/Chequer play..."
+#~ msgstr "/_設定/_評価/チェッカープレイ..."
+
+#~ msgid "/_Settings/_Evaluation/Cube decisions..."
+#~ msgstr "/_設定/_評価/キューブ..."
+
+#~ msgid "GNU Backgammon - Chequer play"
+#~ msgstr "GNU Backgammon - チェッカープレイ"
+
+#~ msgid "GNU Backgammon - Cube decisions"
+#~ msgstr "GNU Backgammon - キューブ決定"
+
+#~ msgid "%d-away"
+#~ msgstr "%d-away"
+
+#~ msgid "GNU Backgammon - Match equity table"
+#~ msgstr "GNU Backgammon - マッチエクイティテーブル"
+
+#~ msgid "Load table..."
+#~ msgstr "テーブル読み込み中..."
+
+#~ msgid "Pre-Crawford"
+#~ msgstr "クロフォードゲーム前"
+
+#~ msgid "Post-Crawford for player %s"
+#~ msgstr "プレイヤー %s のポストクロフォード"
+
+#~ msgid "Value"
+#~ msgstr "値"
+
+#~ msgid "Owner"
+#~ msgstr "オーナー"
+
+#~ msgid "Centred"
+#~ msgstr "中心"
+
+#~ msgid "Colour of dice dot"
+#~ msgstr "さいころの目の色"
+
+#~ msgid "Points (0)"
+#~ msgstr "ポイント（０）"
+
+#~ msgid "Points (1)"
+#~ msgstr "ポイント（１）"
+
+#~ msgid "world class++"
+#~ msgstr "世界クラス以上"
+
+#~ msgid "super tiny"
+#~ msgstr "super tiny"
+
+#~ msgid "small"
+#~ msgstr "small"
+
+#~ msgid "medium"
+#~ msgstr "medium"
+
+#~ msgid "Search space"
+#~ msgstr "検索スペース"
+
+#~ msgid "Search candidates:"
+#~ msgstr "検索候補"
+
+#~ msgid "Search tolerance:"
+#~ msgstr "検索許容範囲"
+
+#~ msgid "No 1-ply pruning"
+#~ msgstr "1-ply をしない"
+
+#~ msgid "Translucent chequers"
+#~ msgstr "半透明なチェッカー"
+
+#~ msgid "Novice"
+#~ msgstr "初心者"
+
+#~ msgid "Extra-terrestrial"
+#~ msgstr "地球外生物(E.T)"
+
+#~ msgid ""
+#~ "Checkerplay statistics:\n"
+#~ "\n"
+#~ "Total moves:\t\t\t%3d\t\t\t%3d\n"
+#~ "Unforced moves:\t\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+#~ "Moves marked very good\t\t%3d\t\t\t%3d\n"
+#~ "Moves marked good\t\t%3d\t\t\t%3d\n"
+#~ "Moves marked interesting\t%3d\t\t\t%3d\n"
+#~ "Moves unmarked\t\t\t%3d\t\t\t%3d\n"
+#~ "Moves marked doubtful\t\t%3d\t\t\t%3d\n"
+#~ "Moves marked bad\t\t%3d\t\t\t%3d\n"
+#~ "Moves marked very bad\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+#~ msgstr ""
+#~ "チェッカープレイ統計:\n"
+#~ "\n"
+#~ "総ムーブ数:\t\t\t%3d\t\t\t%3d\n"
+#~ "強制されなかったムーブ数:\t\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+#~ "非常によいムーブ\t\t%3d\t\t\t%3d\n"
+#~ "よいムーブ\t\t%3d\t\t\t%3d\n"
+#~ "興味あるムーブ\t%3d\t\t\t%3d\n"
+#~ "普通のムーブ\t\t\t%3d\t\t\t%3d\n"
+#~ "疑わしいムーブ\t\t%3d\t\t\t%3d\n"
+#~ "悪いムーブ\t\t%3d\t\t\t%3d\n"
+#~ "非常に悪いムーブ\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Error rate (total)\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ "Error rate (pr. move)\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ "\n"
+#~ msgstr ""
+#~ "エラーレート（トータル）\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ "エラーレート（ムーブ毎）\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Checker play rating:\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+#~ msgstr ""
+#~ "チェッカープレイ評価:\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Rolls marked very lucky\t\t%3d\t\t\t%3d\n"
+#~ "Rolls marked lucky\t\t%3d\t\t\t%3d\n"
+#~ "Rolls unmarked\t\t\t%3d\t\t\t%3d\n"
+#~ "Rolls marked unlucky\t\t%3d\t\t\t%3d\n"
+#~ "Rolls marked very unlucky\t%3d\t\t\t%3d\n"
+#~ msgstr ""
+#~ "非常にラッキーな目\t\t%3d\t\t\t%3d\n"
+#~ "ラッキーな目\t\t%3d\t\t\t%3d\n"
+#~ "普通の目\t\t\t%3d\t\t\t%3d\n"
+#~ "アンラッキーな目\t\t%3d\t\t\t%3d\n"
+#~ "非常にアンラッキーな目\t%3d\t\t\t%3d\n"
+
+#~ msgid "Luck rate (total)\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ msgstr "運の評価（合計）\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+
+#~ msgid "Luck rate (pr. move)\t\t"
+#~ msgstr "運の評価（ムーブ毎）\t\t"
+
+#~ msgid ""
+#~ "%+6.3f (%+7.3f%%)\n"
+#~ "\n"
+#~ msgstr ""
+#~ "%+6.3f (%+7.3f%%)\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Luck rating:\t\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+#~ msgstr ""
+#~ "運の評価:\t\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Cube decisions statistics:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "キューブ判断の統計:\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Total cube decisions\t\t%3d\t\t\t%3d\n"
+#~ "Close or actual cube decisions\t%3d\t\t\t%3d\n"
+#~ "Doubles\t\t\t\t%3d\t\t\t%3d\n"
+#~ "Takes\t\t\t\t%3d\t\t\t%3d\n"
+#~ "Pass\t\t\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+#~ msgstr ""
+#~ "キューブ判断の総計\t\t%3d\t\t\t%3d\n"
+#~ "ぎりぎりか事実上のキューブ判断\t%3d\t\t\t%3d\n"
+#~ "ダブル\t\t\t\t%3d\t\t\t%3d\n"
+#~ "テイク\t\t\t\t%3d\t\t\t%3d\n"
+#~ "パス\t\t\t\t%3d\t\t\t%3d\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Missed doubles around DP\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ "Missed doubles around TG\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ "Wrong doubles around DP\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%"
+#~ "%)\n"
+#~ "Wrong doubles around TG\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%"
+#~ "%)\n"
+#~ "Wrong takes\t\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ "Wrong passes\t\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ msgstr ""
+#~ "ダブルすべきところでのダブルしなかった\t%3d (%+6.3f (%+7.3f%%)\t%3d (%"
+#~ "+6.3f (%+7.3f%%)\n"
+#~ "テイクすべきところでのテイクしなかった\t%3d (%+6.3f (%+7.3f%%)\t%3d (%"
+#~ "+6.3f (%+7.3f%%)\n"
+#~ "ダブルしてはならないところでダブル\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f "
+#~ "(%+7.3f%%)\n"
+#~ "Too good なのにダブル\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ "間違ったテイク\t\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+#~ "間違ったパス\t\t\t%3d (%+6.3f (%+7.3f%%)\t%3d (%+6.3f (%+7.3f%%)\n"
+
+#~ msgid "Error rate (total)\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+#~ msgstr "エラー率（合計）\t\t%+6.3f (%+7.3f%%)\t%+6.3f (%+7.3f%%)\n"
+
+#~ msgid "Error rate (per cube decision)\t"
+#~ msgstr "エラー率（キューブ判断毎）\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "Cube decision rating:\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "キューブ決断評価:\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+
+#~ msgid "Error rate (per decision)\t"
+#~ msgstr "エラー率（キューブ決断毎）\t"
+
+#~ msgid ""
+#~ "Overall rating:\t\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+#~ msgstr ""
+#~ "総合評価:\t\t\t%-23.23s\t%-23.23s\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Match winning chance\n"
+#~ "against opponent:\t\t%7.2f%%\t\t%7.2f%%\n"
+#~ msgstr ""
+#~ "マッチ勝率\n"
+#~ "相手に対して:\t\t%7.2f%%\t\t%7.2f%%\n"
+
+#~ msgid ""
+#~ "Guestimated abs. rating:\t%+7.2f\t\t%+7.2f\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Guestimated abs. rating:\t%+7.2f\t\t%+7.2f\n"
+#~ "\n"
+
+#~ msgid "novice"
+#~ msgstr "初心者"
+
+#~ msgid "Decline"
+#~ msgstr "辞退する"
+
+#~ msgid "Edit"
+#~ msgstr "編集"
+
+#~ msgid "Cubeless %d-ply equity: %s"
+#~ msgstr "キューブレス %d-ply エクイティ: %s"
+
+#~ msgid "Cubeless rollout equity: %s"
+#~ msgstr "キューブレス・ロールアウト・エクイティ: %s"
+
+#~ msgid "Evaluation"
+#~ msgstr "評価"
+
+#~ msgid "Click dice icon to roll"
+#~ msgstr "さいころをクリックするとロールする"
+

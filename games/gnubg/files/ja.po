@@ -6293,11 +6293,11 @@ msgstr "庐い"
 
 #: gtkprefs.c:762
 msgid "Light azimuth"
-msgstr "各富の数疤(逞刨)"
+msgstr "各富の数疤逞"
 
 #: gtkprefs.c:764
 msgid "Light elevation"
-msgstr "各富の光刨(逞刨)"
+msgstr "各富の赌逞"
 
 #: gtkprefs.c:807
 msgid "Chequer shape:"
