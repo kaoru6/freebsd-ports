@@ -10,7 +10,6 @@ PORTVERSION= 	2.6a
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/ \
 		http://cclub-flying.dsl.gr.jp/products/xmascot/
-PKGNAMESUFFIX=	+lf97
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	http://hoshina.denpa.org/
