@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gnubg
-PORTVERSION=	0.12.030116
+PORTVERSION=	0.13.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/snapshots/ \
-		ftp://alpha.gnu.org/gnu/gnubg/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.12.//}
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/
 DISTFILES=	${DISTNAME}.tar.gz \
-		gnubg.weights-0.13a.gz gnubg_ts0.bd.gz gnubg_os0.bd.gz
+		gnubg.weights-0.13b.gz gnubg_ts0.bd.gz gnubg_os0.bd.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	kaoru@kaisei.org
+COMMENT=	GNU Backgammon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -41,8 +40,7 @@ CONFIGURE_ARGS += --enable-nas
 CONFIGURE_ARGS += --with-guile
 .endif
 
-
-do-patch:
+dddo-patch:
 	${CP} ${FILESDIR}/ja.po  ${WRKSRC}/po/
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
