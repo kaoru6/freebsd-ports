@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptex-jsclasses
-PORTVERSION=	2000.12.26
+PORTVERSION=	2001.02.26
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/jsclasses/
 DISTNAME=	jsclasses
@@ -30,7 +30,7 @@ JSDIR=		${PREFIX}/share/texmf/ptex/platex/js
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && lha x ${DISTDIR}/${DISTNAME}
+	cd ${WRKSRC} && lha x ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.lzh
 
 do-patch:
 	cd ${WRKSRC} && qkc -ju *
