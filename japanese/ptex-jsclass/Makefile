@@ -38,6 +38,8 @@ do-patch:
 do-install:
 	${MKDIR} ${JSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${JSFILES} ${JSDIR}
-#	mktexlsr
+.if exists(${PREFIX}/share/texmf/ls-R)
+	mktexlsr
+.endif
 
 .include <bsd.port.mk>
