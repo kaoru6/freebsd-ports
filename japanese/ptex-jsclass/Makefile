@@ -38,6 +38,6 @@ do-patch:
 do-install:
 	${MKDIR} ${JSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${JSFILES} ${JSDIR}
-	mktexlsr
+#	mktexlsr
 
 .include <bsd.port.mk>
