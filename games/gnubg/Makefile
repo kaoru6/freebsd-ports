@@ -2,11 +2,12 @@
 # Date created:		8 Dec 2002
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD: ports/games/gnubg/Makefile,v 1.6 2004/02/04 05:20:24 marcus Exp $
+# $FreeBSD: ports/games/gnubg/Makefile,v 1.10 2004/11/07 22:36:25 marcus Exp $
 #
 
 PORTNAME=	gnubg
 PORTVERSION=	0.14.1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/
@@ -28,8 +29,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	libxml2 gtk20
 WANT_ESOUND=	yes
 
-CONFIGURE_ARGS += --with-x --with-gtk2 --enable-nls \
-	--with-timecontrol --without-board3d
+CONFIGURE_ARGS+=	--with-x --with-gtk2 --enable-nls --with-timecontrol --without-board3d
 
 .if defined(HAVE_ESOUND)
 CONFIGURE_ARGS += --with-esound
