@@ -2,7 +2,7 @@
 +++ changelog2graph	Wed Nov 15 15:06:40 2000
 @@ -1,4 +1,4 @@
 -#! /usr/local/bin/perl -w
-+#! /usr/bin/perl -w
++#! /usr/bin/env perl
  #
  # changelog2graph - a tool to graph ChangeLog file.
  #
