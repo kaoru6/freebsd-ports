@@ -77,7 +77,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
 .endif
 .if !defined(BATCH)
-	@${CAT} ${FILESDIR}/post-install-notes
+	@ ${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
