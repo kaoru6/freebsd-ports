@@ -28,7 +28,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	libxml2 gtk20
 WANT_ESOUND=	yes
 
-CONFIGURE_ARGS += --with-x --with-gtk2 --enable-nls --with-timecontrol
+CONFIGURE_ARGS += --with-x --with-gtk2 --enable-nls \
+	--with-timecontrol --without-board3d
 
 .if defined(HAVE_ESOUND)
 CONFIGURE_ARGS += --with-esound
