@@ -22,9 +22,10 @@ msgstr "最低ね!"
 msgid "Beginner"
 msgstr "初級者"
 
+# FIXME
 #: analysis.c:46
 msgid "Casual player"
-msgstr ""
+msgstr "初中級"
 
 #: analysis.c:47
 msgid "Intermediate"
@@ -52,7 +53,7 @@ msgstr "該当無し"
 
 #: analysis.c:55
 msgid "Haaa-haaa"
-msgstr "ハァハァ（ためいき）"
+msgstr "ハァハァ(ためいき)"
 
 #: analysis.c:56 html.c:2843
 msgid "Go to bed"
@@ -1717,7 +1718,7 @@ msgstr "マッチスコアによってクロフォードゲームを採用する"
 
 #: gnubg.c:799
 msgid "Control automatic doubles during (money) session play"
-msgstr "（マネー）セッションでオートマチックダブルを採用する"
+msgstr "(マネー)セッションでオートマチックダブルを採用する"
 
 #: gnubg.c:801
 msgid "Select whether to start new games after wins"
@@ -1758,7 +1759,7 @@ msgstr "ダブリングキューブの使用を制限する"
 # 掛け金を設定する？
 #: gnubg.c:824
 msgid "Fix what the cube stake has been set to"
-msgstr ""
+msgstr "キューブの倍率を指定する"
 
 #: gnubg.c:828
 msgid "set width of window"
@@ -1914,7 +1915,7 @@ msgstr ""
 
 #: gnubg.c:960
 msgid "Specify whether the rollout is cubeful or cubeless"
-msgstr "ロールアウトを cubeful か cubeless か指定する"
+msgstr "ロールアウトをキューブフルかキューブレスか指定する"
 
 #: gnubg.c:963
 msgid "Roll out as the initial position of a game"
@@ -1954,7 +1955,7 @@ msgstr ""
 
 #: gnubg.c:986
 msgid "Use lookahead during rollouts to reduce variance"
-msgstr "ロールアウト中の先読みで枝切りをする"
+msgstr ""
 
 #: gnubg.c:992
 msgid "Set chequerplay evaluation when truncating a rollout"
@@ -7308,7 +7309,7 @@ msgstr "キューブは %d.\n"
 #: play.c:714
 #, c-format
 msgid "%s cannot move.\n"
-msgstr ""
+msgstr "%s はムーブできません。\n"
 
 #: play.c:716
 #, c-format
@@ -7322,7 +7323,7 @@ msgstr ""
 #: play.c:1121 play.c:3676
 #, c-format
 msgid "%s rolls %1i and %1i.\n"
-msgstr "%s のロールは %1i と %1i.\n"
+msgstr "%s の出目は %1i と %1i。\n"
 
 #: play.c:1149 play.c:2549
 msgid "Considering move..."
@@ -7348,21 +7349,21 @@ msgstr "(%s のダブルはキャンセルされました)\n"
 #: play.c:1587
 #, c-format
 msgid "%s wins a %s and %d point.\n"
-msgstr "%s の %s 勝ちで %d ポイント.\n"
+msgstr "%s の %s で %d ポイント勝ち。\n"
 
 #: play.c:1588
 #, c-format
 msgid "%s wins a %s and %d points.\n"
-msgstr "%s の %s 勝ちで %d ポイント.\n"
+msgstr "%s の %s で %d ポイント勝ち。\n"
 
 #: play.c:1620
 #, c-format
 msgid "%s has won the match.\n"
-msgstr ""
+msgstr "%s はマッチに勝ちました。\n"
 
 #: play.c:1719
 msgid "You can only accept if the cube or a resignation has been offered."
-msgstr ""
+msgstr "相手がダブルか投了しようとしたときだけ了承できます。"
 
 #: play.c:1734 play.c:2051 play.c:2176 play.c:2379 play.c:2585 play.c:3420
 #: play.c:3483 play.c:3627 play.c:3756
@@ -7372,7 +7373,7 @@ msgstr ""
 
 #: play.c:1740 play.c:2057
 msgid "No resignation was offered."
-msgstr ""
+msgstr "相手は投了していません"
 
 #: play.c:1746
 #, c-format
@@ -7385,11 +7386,11 @@ msgstr ""
 
 #: play.c:1784
 msgid "Invalid annotation."
-msgstr ""
+msgstr "無効な注釈"
 
 #: play.c:1798 play.c:1812 play.c:1827 play.c:1844
 msgid "Invalid annotation"
-msgstr ""
+msgstr "無効な注釈"
 
 #: play.c:1851 play.c:1886
 msgid "You cannot annotate this move."
@@ -7402,7 +7403,7 @@ msgstr ""
 #: play.c:1858
 #, c-format
 msgid "Move marked as %s.\n"
-msgstr ""
+msgstr "ムーブを %s としてマークしました。\n"
 
 #: play.c:1891
 msgid "Luck annotation cleared."
@@ -7411,7 +7412,7 @@ msgstr ""
 #: play.c:1893
 #, c-format
 msgid "Roll marked as %s.\n"
-msgstr ""
+msgstr "ロールを %s としてマークしました。\n"
 
 #: play.c:1969
 msgid "You must select a move to clear the comment from."
@@ -7424,7 +7425,7 @@ msgstr ""
 #: play.c:2063
 #, c-format
 msgid "%s declines the %s.\n"
-msgstr ""
+msgstr "%s は %s を拒否しました。\n"
 
 #: play.c:2182
 msgid "Doubling is forbidden by the Crawford rule (see `help set crawford')."
@@ -7433,13 +7434,16 @@ msgstr ""
 
 #: play.c:2189
 msgid "The doubling cube has been disabled (see `help set cube use')."
-msgstr ""
+msgstr "ダブルは無効になっています (see `help set cube use')."
 
 #: play.c:2196
 msgid ""
 "The `double' command is for offering the cube, not accepting it.  Use\n"
 "`redouble' to immediately offer the cube back at a higher value."
 msgstr ""
+"`double' コマンドはダブルに使い、テイクには使いません。\n"
+"ビーバー(ラクーン)には `redouble' を使ってください。"
+
 
 #: play.c:2204
 msgid "You are only allowed to double if you are on roll."
@@ -7451,7 +7455,7 @@ msgstr "ロールの後ではダブルできません -- 次の手番まで待ってください。"
 
 #: play.c:2217
 msgid "You do not own the cube."
-msgstr "キューブを所有していません。"
+msgstr "キューブが手元にありません。"
 
 #: play.c:2223 play.c:3426
 #, c-format
@@ -7461,42 +7465,42 @@ msgstr "キューブはすでに %d です。これ以上ダブルできません。\n"
 #: play.c:2241
 #, c-format
 msgid "%s doubles.\n"
-msgstr ""
+msgstr "%s ダブル。\n"
 
 #: play.c:2373
 msgid "The cube must have been offered before you can drop it."
-msgstr ""
+msgstr "パスできるのはダブルをかけられたときだけです。"
 
 #: play.c:2401
 #, c-format
 msgid "%s refuses the cube and gives up %d point.\n"
-msgstr ""
+msgstr "%s はパスし、%s ポイント負け。\n"
 
 #: play.c:2402
 #, c-format
 msgid "%s refuses the cube and gives up %d points.\n"
-msgstr ""
+msgstr "%s はパスし、%s ポイント負け。\n"
 
 #: play.c:2440
 #, c-format
 msgid "      Doubles to %d"
-msgstr ""
+msgstr "      %s にダブル"
 
 #: play.c:2443
 msgid "      Takes"
-msgstr ""
+msgstr "      テイク"
 
 #: play.c:2446
 msgid "      Drop"
-msgstr ""
+msgstr "      パス"
 
 #: play.c:2451
 msgid "      Resigns"
-msgstr ""
+msgstr "      投了"
 
 #: play.c:2591
 msgid "You must roll the dice before you can move."
-msgstr ""
+msgstr "ムーブの前にロールしてください。"
 
 #: play.c:2597
 #, c-format
@@ -7514,15 +7518,15 @@ msgstr ""
 
 #: play.c:2770
 msgid "Illegal move."
-msgstr ""
+msgstr "不正なムーブです。"
 
 #: play.c:2777
 msgid "The match is already over."
-msgstr ""
+msgstr "マッチは終了しています。"
 
 #: play.c:2857
 msgid "You must specify a valid match length (1 or longer)."
-msgstr ""
+msgstr "有効なマッチのポイント数を指定してください (1以上)."
 
 #: play.c:2865
 #, c-format
@@ -7530,12 +7534,14 @@ msgid ""
 "GNU Backgammon is compiled with support only for matches of length %i\n"
 "and below\n"
 msgstr ""
+"GNU Backgammon は %i ポイント以下のマッチをサポートしています。\n"
 
 #: play.c:2876
 msgid ""
 "Are you sure you want to start a new match, and discard the game in "
 "progress? "
 msgstr ""
+"現在のゲームを破棄して新しいマッチを始めますか? "
 
 #: play.c:2895
 #, c-format
@@ -7547,6 +7553,7 @@ msgid ""
 "Are you sure you want to start a new session, and discard the game in "
 "progress? "
 msgstr ""
+"現在のゲームを破棄して新しいセッションを始めますか? "
 
 #: play.c:2929
 msgid "A new session has been started."
@@ -7732,7 +7739,7 @@ msgstr "%s の手番、キューブアクションは？"
 #: postscript.c:1036 postscript.c:1044
 #, c-format
 msgid " (%d points)"
-msgstr ""
+msgstr " (%d ポイント)"
 
 #: postscript.c:1297
 #, c-format
@@ -8028,31 +8035,30 @@ msgstr "シードを %d に設定。\n"
 
 #: set.c:157
 msgid "Seed initialised from system random data."
-msgstr ""
+msgstr "/dev/urandom でシードを初期化しました。"
 
 #: set.c:158
 msgid "Seed initialised by system clock."
-msgstr ""
+msgstr "時刻でシードを初期化しました。"
 
 #: set.c:164
 #, c-format
 msgid "You are already using the %s generator.\n"
-msgstr ""
+msgstr "すでに %s 乱数生成器を使用中です。\n"
 
 #: set.c:192
 msgid "You must specify a valid modulus (see `help set rng bbs')."
-msgstr ""
-"有効な乱数生成モジュールを指定しなければなりません。 (see `help set rng "
-"bbs')."
+msgstr "有効なモジュロ(法)を指定しなければなりません。"
+"(see `help set rng bbs')."
 
 #: set.c:203
 msgid "You must specify two valid factors (see `help set rng bbs')."
-msgstr ""
+msgstr "ふたつの有効な要素を指定してください。(see `help set rng bbs')"
 
 #: set.c:241
 #, c-format
 msgid "You are still using the %s generator.\n"
-msgstr ""
+msgstr "%s 乱数生成器を使います.\n"
 
 #: set.c:255
 #, c-format
@@ -8152,15 +8158,15 @@ msgstr ""
 #: set.c:392 set.c:408
 #, c-format
 msgid "`%s' threshold set to %.3f.\n"
-msgstr ""
+msgstr "`%s' の閾値を %.3f に設定しました。\n"
 
 #: set.c:464
 msgid "Move analysis and commentary will be displayed."
-msgstr ""
+msgstr "ムーブ解析とコメントが表示されます。"
 
 #: set.c:465
 msgid "Move analysis and commentary will not be displayed."
-msgstr ""
+msgstr "ムーブ解析とコメントは表示されません。"
 
 #: set.c:474
 msgid "Show window with messages"
@@ -8199,15 +8205,15 @@ msgstr ""
 #: set.c:512
 #, c-format
 msgid "Automatic doubles will be used (up to a limit of %d).\n"
-msgstr ""
+msgstr "オートマチックダブルを採用します (%d回まで)。\n"
 
 #: set.c:515
 msgid "A single automatic double will be permitted."
-msgstr ""
+msgstr "オートマチックダブルを採用します (1回まで)。"
 
 #: set.c:517
 msgid "Automatic doubles will not be used."
-msgstr ""
+msgstr "オートマチックダブルを採用しません。"
 
 #: set.c:523
 msgid ""
@@ -9774,11 +9780,11 @@ msgstr ""
 
 #: show.c:249
 msgid "Cubeful rollout."
-msgstr ""
+msgstr "キューブフルのロールアウト。"
 
 #: show.c:250
 msgid "Cubeless rollout."
-msgstr ""
+msgstr "キューブレスのロールアウト。"
 
 #: show.c:252
 msgid "Rollout as opening move enabled."
@@ -9791,7 +9797,7 @@ msgstr ""
 #: show.c:254
 #, c-format
 msgid "%s dice generator with seed %u.\n"
-msgstr ""
+msgstr "%s 乱数生成器をシード %u で.\n"
 
 #: show.c:273
 msgid "Evaluation parameters:"
