@@ -5955,11 +5955,11 @@ msgstr "学習率:"
 
 #: gtkgame.c:8501
 msgid "Annealing rate:"
-msgstr ""
+msgstr "アニーリング率:"
 
 #: gtkgame.c:8507
 msgid "Threshold:"
-msgstr ""
+msgstr "閾値:"
 
 #: gtkgame.c:8613
 msgid "GNU Backgammon - Advanced options"
