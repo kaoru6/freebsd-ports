@@ -2,6 +2,8 @@
 # Copyright (C) 2002 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Yoshito Takeuchi <kinchan@kinchan.com>, 2002
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gnubg 0.12\n"
