@@ -1,4 +1,4 @@
-@unexec rm %%X11BASE%%/bin/xasahi
+bin/xasahi
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
