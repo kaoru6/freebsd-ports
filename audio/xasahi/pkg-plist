@@ -9,7 +9,7 @@ bin/xasahi
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
 @dirrm %%RUBY_SITELIBDIR%%/xasahi
 share/doc/ja/xasahi/README
-@dirrm share/xasahi/doc/ja/xasahi 2>/dev/null || true
+@dirrm share/xasahi/doc/ja/xasahi
 @unexec rmdir %%X11BASE%%/share/xasahi 2>/dev/null || true
 @comment share/examples/xasahi/dot-xasahi/config
 @comment share/examples/xasahi/dot-xasahi/cddb
