@@ -4,6 +4,8 @@ bin/xasahi
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
+%%ESOUND%%%%RUBY_SITEARCHLIBDIR%%/esdaudio.so
+%%ESOUND%%%%RUBY_SITELIBDIR%%/xasahi/esdaudio.rb
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
 %%RUBY_SITELIBDIR%%/xasahi/led.rb
 %%RUBY_SITELIBDIR%%/xasahi/mpg123.rb

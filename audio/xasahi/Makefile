@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2001.02.05
+PORTVERSION=	2001.04.15
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
-DISTNAME=	asahi-rb.beta1c
+DISTNAME=	asahi-rb.current
 
 MAINTAINER=	kaoru@kaisei.org
 
@@ -37,7 +37,9 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 .if defined(HAVE_ESOUND)
 RUBY_EXTCONF_SUBDIRS+=	esd
 XASAHI_FILES+=	esdaudio.rb
-PLIST=		${PKGDIR}/pkg-plist.esd
+PLIST_SUB+=	ESOUND=""
+.else
+PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 post-patch:
