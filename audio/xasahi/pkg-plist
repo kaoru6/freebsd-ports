@@ -41,7 +41,7 @@ share/examples/ja/xasahi/dot-xasahi/play_list/EB332C9E21038D11347E20070000330400
 share/examples/ja/xasahi/dot-xasahi/play_list/F91115EF30119401109F333F933113EB32301332
 share/examples/ja/xasahi/dot-xasahi/play_list/FB331176221FBC021F0B33164D111688000FAD13
 share/examples/ja/xasahi/dot-xasahi/play_list/Hotchpotch
-share/examples/ja/xasahi/dot-xasahi/play_list/I've
+@unexec rm %D/share/examples/ja/xasahi/dot-xasahi/play_list/I?ve 2> /dev/null ||true
 share/examples/ja/xasahi/dot-xasahi/play_list/all
 share/examples/ja/xasahi/dot-xasahi/play_list/default
 share/examples/ja/xasahi/dot-xasahi/play_list/favorite
