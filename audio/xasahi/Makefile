@@ -17,8 +17,9 @@ BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
-#		timidity:${PORTSDIR}/audio/timidity++
+		timidity:${PORTSDIR}/audio/timidity++
 
+DIST_SUBDIR=	ruby
 USE_GTK=	yes
 WANT_ESOUND=	yes
 WANT_IMLIB=	yes
