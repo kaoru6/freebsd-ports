@@ -56,7 +56,7 @@ post-install:
 #	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 #	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${EXAMPLE_DIR}
-	cd ${WRKSRC}/example &&	${CP} -r * ${EXAMPLE_DIR}
+	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xasahi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
