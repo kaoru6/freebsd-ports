@@ -1,5 +1,5 @@
 # New ports collection makefile for:	changelog2graph
-# Date created:		20 Nov 2000
+# Date created:		15 Nov 2000
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
@@ -9,19 +9,21 @@ PORTNAME=	changelog2graph
 PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/attic/
-DISTFILES=	changelog2graph
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=
+EXTRACT_ONLY=
 
 MAINTAINER=	kaoru@kaisei.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Chart/PNGgraph.pm:${PORTSDIR}/graphics/p5-Chart-PNGgraph
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Chart/PNGgraph.pm:${PORTSDIR}/graphics/p5-Chart-PNGgraph \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 
-EXTRACT_ONLY=
 NO_BUILD=	yes
 USE_PERL5=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cp ${DISTDIR}/${PORTNAME} ${WRKSRC}
+	${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/changelog2graph ${PREFIX}/bin
