@@ -640,7 +640,7 @@ msgstr "この乱数生成器はシードを見ることが出来ません。"
 #: dice.c:635
 #, c-format
 msgid "Fetching %d random numbers from <www.random.org>\n"
-msgstr "乱数 %d を <www.random.org> から取ってきます。\n"
+msgstr "乱数を %d 個 <www.random.org> から取ってきます。\n"
 
 #: dice.c:678
 msgid "Done."
