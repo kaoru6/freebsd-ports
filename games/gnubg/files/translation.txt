@@ -436,3 +436,6 @@ Market window
 #~ msgid "Click dice icon to roll"
 #~ msgstr "さいころをクリックするとロールする"
 
+
+
+手番と振り番はどっちが正しい？

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnubg 0.12\n"
 "POT-Creation-Date: 2003-01-09 15:40+0100\n"
-"PO-Revision-Date: 2003-01-10 03:21+0900\n"
+"PO-Revision-Date: 2003-01-10 03:33+0900\n"
 "Last-Translator: TAKAHASHI Kaoru <kaoru@kaisei.org>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "最低ね!"
 msgid "Beginner"
 msgstr "初級者"
 
-# FIXME
+# 適当な表現があれば変更
 #: analysis.c:46
 msgid "Casual player"
 msgstr "初中級"
@@ -49,7 +49,7 @@ msgstr "神の領域"
 
 #: analysis.c:52
 msgid "N/A"
-msgstr "該当無し"
+msgstr "N/A"
 
 #: analysis.c:55
 msgid "Haaa-haaa"
@@ -617,7 +617,7 @@ msgid ""
 "That is not a valid initial state for the Blum, Blum and Shub generator.\n"
 "Please choose a different seed and/or modulus."
 msgstr ""
-"Blum-Blum-Shub 乱数生成器の初期状態が無効です。\n"
+"Blum-Blum-Shub 乱数生成器の初期状態が有効ではありません。\n"
 "別のシードとモジュロを指定してください。"
 
 #: dice.c:380
@@ -784,8 +784,8 @@ msgid ""
 "%s: incorrect weights version (version %s  is required, but these weights "
 "are %.2f)\n"
 msgstr ""
-"%s: 正しくない weights バージョンです（バージョン %s が必要ですが、\n"
-"この weights は %.2f です)\n"
+"%s: 正しくない weights バージョンです"
+"(バージョン %s が必要ですが、この weights は %.2f です)\n"
 
 #: eval.c:751
 #, c-format
@@ -793,8 +793,8 @@ msgid ""
 "%s: incorrect weights version (version %s is required,\n"
 "but these weights are %s)\n"
 msgstr ""
-"%s: 正しくない weights バージョンです (バージョン %s が必要ですが、\n"
-"この weights のバージョンは %s です)\n"
+"%s: 正しくない weights バージョンです\n"
+"(バージョン %s が必要ですが、この weights のバージョンは %s です)\n"
 
 #: eval.c:3389
 msgid "Win "
@@ -806,11 +806,11 @@ msgstr "負け"
 
 #: eval.c:3395
 msgid "(backgammon)\n"
-msgstr "（バックギャモン）\n"
+msgstr "(バックギャモン)\n"
 
 #: eval.c:3398
 msgid "(gammon)\n"
-msgstr "（ギャモン）\n"
+msgstr "(ギャモン)\n"
 
 #: eval.c:3400
 msgid "(single)\n"
@@ -1002,7 +1002,7 @@ msgid ""
 "This installation of GNU Backgammon was compiled without\n"
 "socket support, and does not implement external controllers."
 msgstr ""
-"インストールされている GNU Backgammon は socket support されずに\n"
+"インストールされている GNU Backgammon は socket をサポートせずに\n"
 "コンパイルされていますので、外部接続は使えません。"
 
 #: external.c:239
@@ -2117,6 +2117,7 @@ msgstr ""
 msgid "Set options for HTML export"
 msgstr "HTML エクスポートのオプション設定"
 
+# ???
 #: gnubg.c:1137
 msgid "Control which blocks to include in exports"
 msgstr "エクスポートにどのブロック（？）を含めるか調整する"
@@ -2450,7 +2451,7 @@ msgstr "エクスポート設定"
 
 #: gnubg.c:1345
 msgid "Set geometry of windows"
-msgstr "Windows の表示設定"
+msgstr "ウィンドウの表示設定"
 
 #: gnubg.c:1347
 msgid "Set brightness and colour for highlighting lines"
@@ -2478,7 +2479,7 @@ msgstr "マッチの外部情報を記録します。"
 
 #: gnubg.c:1357
 msgid "Display window with messages"
-msgstr "メッセージを window に表示"
+msgstr "メッセージをウィンドウに表示"
 
 #: gnubg.c:1360
 msgid "Synonym for `set matchequitytable'"
@@ -2506,7 +2507,7 @@ msgstr "ポストクロフォードゲームかどうかの設定"
 
 #: gnubg.c:1371
 msgid "Set the priority of gnubg"
-msgstr ""
+msgstr "gnubg の優先度設定"
 
 #: gnubg.c:1372
 msgid "Customise the prompt gnubg prints when ready for commands"
@@ -2530,7 +2531,7 @@ msgstr "マッチまたはセッションスコアの設定"
 
 #: gnubg.c:1383
 msgid "Set the dice generator seed"
-msgstr "ダイスの目生成 seed の設定"
+msgstr "ダイス(乱数生成器)の seed の設定"
 
 #: gnubg.c:1386
 msgid "Control audio parameters"
@@ -5869,9 +5870,10 @@ msgstr "ナックギャモン"
 msgid "Egyptian rule"
 msgstr "Egyptian ルール"
 
+# 「ゲームとダイス」の下にあるメニューの項目
 #: gtkgame.c:8102
 msgid "Dice generator"
-msgstr "ダイス生成"
+msgstr "ダイス"
 
 #: gtkgame.c:8109
 msgid "Manual dice"
