@@ -18,6 +18,7 @@ PATCHFILES=	xmascot26a-lf-patch.gz
 MAINTAINER=	kaoru@kaisei.org
 
 PATCH_WRKSRC=	${WRKDIR}
+DIST_SUBDIR=	xmascot
 
 USE_IMAKE=	yes
 MAN1=		xmascot.1
