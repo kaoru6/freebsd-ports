@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2001.05.30
+PORTVERSION=	2001.10.14
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -37,10 +37,10 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 RUBY_SETUP=	setup.rb --esd
-PLIST_SUB+=	ESOUND=""
+PLIST_SUB+=	ESOUND="" PCM="@comment "
 .else
 RUBY_SETUP=	setup.rb
-PLIST_SUB+=	ESOUND="@comment "
+PLIST_SUB+=	ESOUND="@comment " PCM=""
 .endif
 
 post-patch:
@@ -53,6 +53,7 @@ do-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
 	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
+	strip ${RUBY_SITEARCHLIBDIR}/esd.so
 	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
 	${MKDIR} ${EXAMPLE_DIR}
 	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
