@@ -14,7 +14,7 @@ DISTNAME=	asahi-rb.current
 
 MAINTAINER=	kaoru@kaisei.org
 
-BUILD_DEPENDS=	ibcdaudio-config:${PORTSDIR}/audio/libcdaudio
+BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
@@ -23,12 +23,11 @@ NO_INSTALL=	yes
 USE_GTK=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF_SUBDIRS=	cdaudio
+RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 
 do-build:
 	cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} dot-xasahi.tar.gz ${EXTRACT_AFTER_ARGS}
-	cd ${WRKSRC}/lib && ./extconf.rb && make
-#	cd ${WRKSRC}/lib && make
+	cd ${WRKSRC}/lib && make
 	cd ${WRKSRC}/cdaudio && make
 
 do-install:
