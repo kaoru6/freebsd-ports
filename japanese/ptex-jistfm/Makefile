@@ -16,6 +16,7 @@ MAINTAINER=	kaoru@kaisei.org
 DIST_SUBDIR=	ptex
 NO_BUILD=	yes
 USE_ZIP=	yes
+WRKSRC=		${WRKDIR}
 
 TEXMF=		${PREFIX}/share/texmf
 FILES=		jis-v.tfm jis.tfm jisg-v.tfm jisg.tfm \
