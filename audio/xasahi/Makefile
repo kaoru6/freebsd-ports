@@ -17,7 +17,7 @@ BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
-		timidity:${PORTSDIR}/audio/timidity++
+#		timidity:${PORTSDIR}/audio/timidity++
 
 USE_GTK=	yes
 WANT_ESOUND=	yes
@@ -30,7 +30,7 @@ RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 
 CONFIG_CMD?=	${GTK_CONFIG}
 
-XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb
+XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb esdaudio.rb
 EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
 
 post-patch:
@@ -40,6 +40,7 @@ post-patch:
 pre-build:
 .if defined(HAVE_ESOUND)
 	cd ${WRKSRC} && ./setup.rb --esd
+RUBY_EXTCONF_SUBDIRS+=	esd
 .else
 	cd ${WRKSRC} && ./setup.rb
 .endif
@@ -49,6 +50,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
+.if defined(HAVE_ESOUND)
+	${INSTALL_PROGRAM} ${WRKSRC}/esd/esd.so	${RUBY_SITEARCHLIBDIR}
+.else
+	cd ${WRKSRC} && ./setup.rb
+.endif
 	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
 	cd ${WRKSRC} && \
 		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
