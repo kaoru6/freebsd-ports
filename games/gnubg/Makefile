@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 
+CONFIGURE_ARGS += --with-gtk
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS += --disable-nls
 .else
