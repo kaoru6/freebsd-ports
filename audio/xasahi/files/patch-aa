@@ -1,0 +1,20 @@
+--- setup.rb.orig	Mon Dec 30 20:39:39 2002
++++ setup.rb	Tue Jan 21 20:40:45 2003
+@@ -17,7 +17,7 @@
+ #
+ NAME			= 'xasahi'
+ BODY_SCRIPT		= 'asahi.rb'
+-BINDIRS			= [ '/usr/X11R6/bin', '/usr/local/bin', '/usr/bin', '/bin']
++BINDIRS = ["/usr/local/bin"] 
+ LIB_CDAUDIO		= 'cdaudio/cdaudio.so'
+ LIB_LEAFPLAYER	= 'lib/lfplib.so'
+ LIB_MPG123		= 'mpg123.rb'
+@@ -140,7 +140,7 @@
+ 	##
+ 	## WRITING 5
+ 	##
+-	if $OPT_esd
++	if false
+ 		f.print <<"MAKEFILE"
+ 	cd #{File::dirname( LIB_ESD)}; make site-install
+ MAKEFILE

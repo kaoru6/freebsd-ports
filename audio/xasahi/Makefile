@@ -53,14 +53,14 @@ post-patch:
 do-configure:
 	cd ${WRKSRC} && ./${RUBY_SETUP}
 
-do-install:
+post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xasahi ${WRKSRC}/disc_id ${PREFIX}/bin
-	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
-	cd ${WRKSRC} && \
-		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
-	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
-	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so ${RUBY_SITEARCHLIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
+#	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
+#	cd ${WRKSRC} && \
+#		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
+#	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
+#	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so ${RUBY_SITEARCHLIBDIR}
+#	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
 	${MKDIR} ${EXAMPLE_DIR}
 	cd ${WRKSRC}/example &&	${CP} -R * ${EXAMPLE_DIR}
 .if !defined(NOPORTDOCS)
