@@ -1,10 +1,3 @@
-@unexec rm %D/share/doc/txfonts/00update.txt 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdoc.pdf 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdoc.ps 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdoc.tex 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdocA4.pdf 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdocA4.ps 2>/dev/null || true
-@unexec rm %D/share/doc/txfonts/txfontsdocA4.tex 2>/dev/null || true
 share/texmf/dvips/config/tx8r.enc
 share/texmf/dvips/config/txr.map
 share/texmf/dvips/config/txr1.map
@@ -126,6 +119,7 @@ share/texmf/fonts/tfm/txr/txbex.tfm
 share/texmf/fonts/tfm/txr/txbexa.tfm
 share/texmf/fonts/tfm/txr/txbi.tfm
 share/texmf/fonts/tfm/txr/txbmi.tfm
+share/texmf/fonts/tfm/txr/txbmi1.tfm
 share/texmf/fonts/tfm/txr/txbmia.tfm
 share/texmf/fonts/tfm/txr/txbsc.tfm
 share/texmf/fonts/tfm/txr/txbsl.tfm
@@ -143,6 +137,7 @@ share/texmf/fonts/tfm/txr/txex.tfm
 share/texmf/fonts/tfm/txr/txexa.tfm
 share/texmf/fonts/tfm/txr/txi.tfm
 share/texmf/fonts/tfm/txr/txmi.tfm
+share/texmf/fonts/tfm/txr/txmi1.tfm
 share/texmf/fonts/tfm/txr/txmia.tfm
 share/texmf/fonts/tfm/txr/txr.tfm
 share/texmf/fonts/tfm/txr/txsc.tfm
@@ -246,6 +241,7 @@ share/texmf/fonts/vf/txr/tcxsssl.vf
 share/texmf/fonts/vf/txr/txb.vf
 share/texmf/fonts/vf/txr/txbi.vf
 share/texmf/fonts/vf/txr/txbmi.vf
+share/texmf/fonts/vf/txr/txbmi1.vf
 share/texmf/fonts/vf/txr/txbsc.vf
 share/texmf/fonts/vf/txr/txbsl.vf
 share/texmf/fonts/vf/txr/txbss.vf
@@ -253,6 +249,7 @@ share/texmf/fonts/vf/txr/txbsssc.vf
 share/texmf/fonts/vf/txr/txbsssl.vf
 share/texmf/fonts/vf/txr/txi.vf
 share/texmf/fonts/vf/txr/txmi.vf
+share/texmf/fonts/vf/txr/txmi1.vf
 share/texmf/fonts/vf/txr/txr.vf
 share/texmf/fonts/vf/txr/txsc.vf
 share/texmf/fonts/vf/txr/txsl.vf
@@ -282,6 +279,14 @@ share/texmf/fonts/vf/txr/tyxttsl.vf
 share/texmf/tex/latex/txr/ly1txr.fd
 share/texmf/tex/latex/txr/ly1txss.fd
 share/texmf/tex/latex/txr/ly1txtt.fd
+share/texmf/tex/latex/txr/omltxmi.fd
+share/texmf/tex/latex/txr/omltxr.fd
+share/texmf/tex/latex/txr/omstxr.fd
+share/texmf/tex/latex/txr/omstxsy.fd
+share/texmf/tex/latex/txr/omxtxex.fd
+share/texmf/tex/latex/txr/ot1txr.fd
+share/texmf/tex/latex/txr/ot1txss.fd
+share/texmf/tex/latex/txr/ot1txtt.fd
 share/texmf/tex/latex/txr/t1txr.fd
 share/texmf/tex/latex/txr/t1txss.fd
 share/texmf/tex/latex/txr/t1txtt.fd
@@ -289,21 +294,11 @@ share/texmf/tex/latex/txr/ts1txr.fd
 share/texmf/tex/latex/txr/ts1txss.fd
 share/texmf/tex/latex/txr/ts1txtt.fd
 share/texmf/tex/latex/txr/txfonts.sty
-@exec if [ -x %D/bin/mktexlsr -a -f %D/share/texmf/ls-R ] ; then %D/bin/mktexlsr ; fi
-@dirrm share/texmf/tex/latex/txr
-@dirrm share/texmf/fonts/vf/txr
-@dirrm share/texmf/fonts/type1/txr
-@dirrm share/texmf/fonts/tfm/txr
-@dirrm share/texmf/fonts/afm/txr
-@dirrm share/doc/txfonts
-@unexec rmdir %D/share/texmf/tex/latex 2>/dev/null || true
-@unexec rmdir %D/share/texmf/tex 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/vf 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/type1 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/tfm 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/afm 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts 2>/dev/null || true
-@unexec rmdir %D/share/texmf/dvips/config 2>/dev/null || true
-@unexec rmdir %D/share/texmf/dvips 2>/dev/null || true
-@unexec rmdir %D/share/texmf 2>/dev/null || true
-@unexec if [ -x %D/bin/mktexlsr -a -f %D/share/texmf/ls-R ] ; then %D/bin/mktexlsr ; fi
+share/texmf/tex/latex/txr/utxexa.fd
+share/texmf/tex/latex/txr/utxmia.fd
+share/texmf/tex/latex/txr/utxr.fd
+share/texmf/tex/latex/txr/utxss.fd
+share/texmf/tex/latex/txr/utxsya.fd
+share/texmf/tex/latex/txr/utxsyb.fd
+share/texmf/tex/latex/txr/utxsyc.fd
+share/texmf/tex/latex/txr/utxtt.fd
