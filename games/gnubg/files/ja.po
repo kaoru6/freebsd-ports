@@ -2214,7 +2214,7 @@ msgstr "優先度を低に設定する"
 
 #: gnubg.c:1206
 msgid "Specify priority numerically"
-msgstr "数値で優先度を指定する"
+msgstr "数値 (niceness) で優先度を指定する"
 
 #: gnubg.c:1209
 msgid "Set priority to normal"
@@ -6293,11 +6293,11 @@ msgstr "速い"
 
 #: gtkprefs.c:762
 msgid "Light azimuth"
-msgstr ""
+msgstr "光源の方位(角度)"
 
 #: gtkprefs.c:764
 msgid "Light elevation"
-msgstr ""
+msgstr "光源の高度(角度)"
 
 #: gtkprefs.c:807
 msgid "Chequer shape:"
@@ -6305,11 +6305,11 @@ msgstr "チェッカーの形状:"
 
 #: gtkprefs.c:809
 msgid "Flat"
-msgstr ""
+msgstr "平ら"
 
 #: gtkprefs.c:812
 msgid "Round"
-msgstr ""
+msgstr "丸い"
 
 #: gtkprefs.c:973
 #, c-format
