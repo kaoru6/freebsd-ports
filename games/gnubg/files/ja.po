@@ -15,7 +15,7 @@ msgstr ""
 
 #: analysis.c:44
 msgid "Awful!"
-msgstr ""
+msgstr "最低ね!"
 
 #: analysis.c:45
 msgid "Beginner"
@@ -206,7 +206,6 @@ msgid "Luck rating"
 msgstr "運の評価"
 
 #: analysis.c:1421
-#, fuzzy
 msgid "Cube decisions statistics:"
 msgstr "キューブアクション統計:"
 
@@ -277,7 +276,7 @@ msgstr "エラー率（決断毎の平均）"
 
 #: analysis.c:1606
 msgid "Match winning chance"
-msgstr "Match winning chance"
+msgstr ""
 
 #: analysis.c:1607
 #, fuzzy
@@ -1657,7 +1656,7 @@ msgstr "指定するタイプ（評価 or ロールアウト）"
 #: gnubg.c:764
 #, fuzzy
 msgid "Specify parameters for neural net evaluation"
-msgstr "neural net 評価値を指定する"
+msgstr "ニューラルネット評価値を指定する"
 
 #: gnubg.c:767
 #, fuzzy
@@ -1685,9 +1684,8 @@ msgid "Select whether dice rolls will be analysed"
 msgstr "出目を解析するかどうか選択する"
 
 #: gnubg.c:783
-#, fuzzy
 msgid "Specify parameters for the luck analysis"
-msgstr "チェッカープレイ解析値を指定する"
+msgstr "運の解析パラメータを指定する"
 
 #: gnubg.c:785 gnubg.c:907 gnubg.c:918 gnubg.c:945 gnubg.c:967 gnubg.c:1018
 #: set.c:115
@@ -1751,8 +1749,9 @@ msgid "Control use of the doubling cube"
 msgstr "ダブリングキューブの使用を制限する"
 
 #: gnubg.c:823
+# 掛け金を設定する？
 msgid "Fix what the cube stake has been set to"
-msgstr "掛け金を設定する？"
+msgstr ""
 
 #: gnubg.c:827
 msgid "set width of window"
@@ -1791,13 +1790,12 @@ msgid "Record the name of the match commentator"
 msgstr ""
 
 #: gnubg.c:852
-#, fuzzy
 msgid "Record miscellaneous notes about the match"
 msgstr "マッチのメモを記録"
 
 #: gnubg.c:854
 msgid "Record the date when the match was played"
-msgstr ""
+msgstr "マッチの日付を記録"
 
 #: gnubg.c:856
 msgid "Record the name of the event the match is from"
@@ -1805,7 +1803,7 @@ msgstr ""
 
 #: gnubg.c:858
 msgid "Record the location where the match was played"
-msgstr ""
+msgstr "マッチの場所を記録"
 
 #: gnubg.c:860
 msgid "Record the ratings of the players"
@@ -1849,7 +1847,7 @@ msgstr "I.S.A.A.C. 乱数生成器を使用する"
 
 #: gnubg.c:886
 msgid "Enter all dice rolls manually"
-msgstr "ダイスの出目をマニュアルで入力する"
+msgstr "ダイスの出目を手動で入力する"
 
 #: gnubg.c:887
 msgid "Use the MD5 generator"
@@ -1939,7 +1937,7 @@ msgstr "`quasirandom' の同義語"
 
 #: gnubg.c:979
 msgid "Specify the base pseudo-random seed to use for rollouts"
-msgstr "ロールアウト用の基本 pseudo-ramdom seed を指定する"
+msgstr "ロールアウト用の基本乱数シードを指定する"
 
 #: gnubg.c:981
 msgid "Control how many rollouts to perform"
@@ -1952,7 +1950,7 @@ msgstr "ロールアウト値を指定する"
 
 #: gnubg.c:985
 msgid "Use lookahead during rollouts to reduce variance"
-msgstr "reduce variance ロールアウト中、先読みを使う"
+msgstr "ロールアウト中の先読みで枝切りをする"
 
 #: gnubg.c:991
 msgid "Set chequerplay evaluation when truncating a rollout"
@@ -2195,37 +2193,36 @@ msgid "Set default path for loading match equity files"
 msgstr "マッチエクイティファイル入力のデフォルトパス設定"
 
 #: gnubg.c:1194
-#, fuzzy
 msgid "Set default path for loading TrueMoneyGames .tmg files"
 msgstr "TrueMoneyGames .tmg ファイル入力のデフォルトパス設定"
 
 #: gnubg.c:1199
 msgid "Set priority to above normal"
-msgstr ""
+msgstr "優先度を通常以上に設定する"
 
 #: gnubg.c:1201
 msgid "Set priority to below normal"
-msgstr ""
+msgstr "優先度を通常以下に設定する"
 
 #: gnubg.c:1203
 msgid "Set priority to highest"
-msgstr ""
+msgstr "優先度を高に設定する"
 
 #: gnubg.c:1205
 msgid "Set priority to idle"
-msgstr ""
+msgstr "優先度を低に設定する"
 
 #: gnubg.c:1206
 msgid "Specify priority numerically"
-msgstr ""
+msgstr "数値で優先度を指定する"
 
 #: gnubg.c:1209
 msgid "Set priority to normal"
-msgstr ""
+msgstr "優先度を通常に設定する"
 
 #: gnubg.c:1211
 msgid "Set priority to time critical"
-msgstr ""
+msgstr "優先度をリアルタイムに設定する"
 
 #: gnubg.c:1216 gnubg.c:1219
 msgid "Use ESD sound system"
@@ -2471,7 +2468,6 @@ msgid "set Match ID"
 msgstr "Match ID 設定"
 
 #: gnubg.c:1354
-#, fuzzy
 msgid "Record auxiliary match information"
 msgstr "マッチの外部情報を記録します。"
 
@@ -3534,12 +3530,10 @@ msgid "Initialising"
 msgstr ""
 
 #: gnubg.c:6349
-#, fuzzy
 msgid "Random number generator"
-msgstr "乱数生成"
+msgstr "乱数生成器"
 
 #: gnubg.c:6376
-#, fuzzy
 msgid "match equity table"
 msgstr "マッチエクイティテーブル"
 
@@ -3726,9 +3720,8 @@ msgid "..."
 msgstr "..."
 
 #: gtkchequer.c:511
-#, fuzzy
 msgid "Show"
-msgstr "遅い"
+msgstr "表示"
 
 #: gtkchequer.c:512 gtkcube.c:829 gtkcube.c:943 gtkcube.c:944
 msgid "Copy"
@@ -3805,7 +3798,6 @@ msgid "Diff."
 msgstr "違い"
 
 #: gtkcolour.c:167
-#, fuzzy
 msgid "Choose a colour"
 msgstr "色の選択"
 
@@ -3814,28 +3806,27 @@ msgid "Take analysis"
 msgstr "テイク解析"
 
 #: gtkcube.c:109 gtkcube.c:402
-#, fuzzy, c-format
+#, c-format
 msgid "Cubeless %d-ply %s: %s (Money: %s)"
 msgstr "キューブレス %d-ply %s: %s (マネーゲーム: %s)"
 
 #: gtkcube.c:111 gtkcube.c:118 gtkcube.c:126 gtkcube.c:132 gtkcube.c:404
 #: gtkcube.c:411 gtkcube.c:419 gtkcube.c:425
-#, fuzzy
 msgid "equity"
 msgstr "エクイティ"
 
 #: gtkcube.c:116 gtkcube.c:409
-#, fuzzy, c-format
+#, c-format
 msgid "Cubeless %d-ply %s: %s"
 msgstr "キューブレス %d-ply %s: %s"
 
 #: gtkcube.c:125 gtkcube.c:418
-#, fuzzy, c-format
+#, c-format
 msgid "Cubeless rollout %s: %s (Money: %s)"
 msgstr "キューブレス・ロールアウト %s: %s (マネーゲーム: %s)"
 
 #: gtkcube.c:131 gtkcube.c:424
-#, fuzzy, c-format
+#, c-format
 msgid "Cubeless rollout %s: %s"
 msgstr "キューブレス・ロールアウト %s: %s"
 
@@ -3860,19 +3851,17 @@ msgid "Proper cube action: "
 msgstr "正しいキューブアクション: "
 
 #: gtkcube.c:923 gtkcube.c:924
-#, fuzzy
 msgid "Rollout cube decision with current settings"
-msgstr "現在の設定でキューブ決定のロールアウト"
+msgstr "現在の設定でキューブアクションのロールアウト"
 
 #: gtkcube.c:927 gtkcube.c:928
-#, fuzzy
 msgid "Evaluate cube decision with current settings"
-msgstr "現在の設定でキューブ決定評価"
+msgstr "現在の設定でキューブアクション評価"
 
 #: gtkexport.c:405
-#, fuzzy, c-format
+#, c-format
 msgid "%dx%d pixels"
-msgstr "%d ピップ"
+msgstr "%dx%d ピクセル"
 
 #: gtkexport.c:432
 msgid "Annotations"
@@ -3891,7 +3880,6 @@ msgid "Legend"
 msgstr "警告"
 
 #: gtkexport.c:436 html.c:3449 postscript.c:894
-#, fuzzy
 msgid "Match Information"
 msgstr "マッチの情報"
 
@@ -4044,14 +4032,12 @@ msgid "Inline (in tags)"
 msgstr ""
 
 #: gtkexport.c:736
-#, fuzzy
 msgid "External file"
 msgstr "外部ファイル"
 
 #: gtkexport.c:747
-#, fuzzy
 msgid "PNG export options"
-msgstr "HTML エクスポートオプション"
+msgstr "PNG エクスポートオプション"
 
 #: gtkexport.c:765
 msgid "Size of PNG images:"
@@ -4079,28 +4065,27 @@ msgstr "GNU Backgammon - ゲームレコード"
 
 #: gtkgame.c:1014
 msgid "Move back to the previous game"
-msgstr ""
+msgstr "前のゲームに戻る"
 
 #: gtkgame.c:1019
 msgid "Move back to the previous roll"
-msgstr ""
+msgstr "前のロールに戻る"
 
 #: gtkgame.c:1024
 msgid "Move ahead to the next roll"
-msgstr ""
+msgstr "次のロールに進む"
 
 #: gtkgame.c:1029
-#, fuzzy
 msgid "Move ahead to the next game"
 msgstr "次のゲームに進む"
 
 #: gtkgame.c:1035
 msgid "Move back to the previous marked decision"
-msgstr ""
+msgstr "前のマーク済アクションに戻る"
 
 #: gtkgame.c:1041
 msgid "Move ahead to the next marked decision"
-msgstr ""
+msgstr "次のマーク済アクションに進む"
 
 #: gtkgame.c:1045
 msgid "(no game)"
@@ -4117,26 +4102,26 @@ msgid "Redouble to %d"
 msgstr "%d にリダブル"
 
 #: gtkgame.c:1185
-#, fuzzy, c-format
+#, c-format
 msgid "Beaver to %d"
-msgstr "ビーバーを許可"
+msgstr "%d にビーバー"
 
 #: gtkgame.c:1185
-#, fuzzy, c-format
+#, c-format
 msgid "Raccoon to %d"
-msgstr "ラクーンポイント（ＲＰ）"
+msgstr "%d にラクーン"
 
 #: gtkgame.c:1208
 msgid " Resigns"
-msgstr "投了"
+msgstr " 投了"
 
 #: gtkgame.c:1362
 msgid "Equity before resignation: "
-msgstr "投了前のエクイティ"
+msgstr "投了前のエクイティ: "
 
 #: gtkgame.c:1370
 msgid "Equity after resignation: "
-msgstr "投了後のエクイティ"
+msgstr "投了後のエクイティ: "
 
 #: gtkgame.c:1378
 msgid "Difference: "
@@ -5889,7 +5874,7 @@ msgstr "ナックギャモン"
 
 #: gtkgame.c:8075
 msgid "Egyptian rule"
-msgstr ""
+msgstr "Egyptian ルール"
 
 #: gtkgame.c:8078
 msgid "Dice generator"
@@ -6144,11 +6129,11 @@ msgstr "光沢あり"
 
 #: gtkprefs.c:284 gtkprefs.c:393
 msgid "Diffuse"
-msgstr "拡散"
+msgstr "光沢の拡散"
 
 #: gtkprefs.c:288 gtkprefs.c:398
 msgid "Specular"
-msgstr "集中"
+msgstr "光沢の集中"
 
 #: gtkprefs.c:321
 msgid "Die colour"
@@ -6176,83 +6161,83 @@ msgstr "背景色:"
 
 #: gtkprefs.c:483
 msgid "First point colour:"
-msgstr ""
+msgstr "1ポイントの色:"
 
 #: gtkprefs.c:484
 msgid "Second point colour:"
-msgstr ""
+msgstr "2ポイントの色:"
 
 #: gtkprefs.c:520
 msgid "Smooth"
-msgstr ""
+msgstr "塗り潰し"
 
 #: gtkprefs.c:524
 msgid "Speckled"
-msgstr ""
+msgstr "斑点つき"
 
 #: gtkprefs.c:551
 msgid "Alder"
-msgstr ""
+msgstr "ハンノキ"
 
 #: gtkprefs.c:552
 msgid "Ash"
-msgstr ""
+msgstr "トネリコ"
 
 #: gtkprefs.c:553
 msgid "Basswood"
-msgstr ""
+msgstr "シナノキ"
 
 #: gtkprefs.c:554
 msgid "Beech"
-msgstr ""
+msgstr "ブナ"
 
 #: gtkprefs.c:555
 msgid "Cedar"
-msgstr ""
+msgstr "ヒマラヤスギ"
 
 #: gtkprefs.c:556
 msgid "Ebony"
-msgstr ""
+msgstr "黒檀"
 
 #: gtkprefs.c:557
 msgid "Fir"
-msgstr ""
+msgstr "モミ"
 
 #: gtkprefs.c:558
 msgid "Maple"
-msgstr ""
+msgstr "楓"
 
 #: gtkprefs.c:559
 msgid "Oak"
-msgstr ""
+msgstr "オーク"
 
 #: gtkprefs.c:560
 msgid "Pine"
-msgstr ""
+msgstr "松"
 
 #: gtkprefs.c:561
 msgid "Redwood"
-msgstr ""
+msgstr "アカスギ"
 
 #: gtkprefs.c:562
 msgid "Walnut"
-msgstr ""
+msgstr "胡桃"
 
 #: gtkprefs.c:563
 msgid "Willow"
-msgstr ""
+msgstr "柳"
 
 #: gtkprefs.c:575
 msgid "Wooden"
-msgstr ""
+msgstr "木材"
 
 #: gtkprefs.c:604
 msgid "Painted"
-msgstr ""
+msgstr "色指定"
 
 #: gtkprefs.c:626
 msgid "Show hinges"
-msgstr ""
+msgstr "蝶番を表示"
 
 #: gtkprefs.c:663
 msgid "Numbered point labels"
@@ -7849,7 +7834,7 @@ msgstr "プレイヤー %s の記録がありません。\n"
 #: record.c:484
 #, c-format
 msgid "Record for player %s erased.\n"
-msgstr "プレイヤー %s の記録を消去しました。"
+msgstr "プレイヤー %s の記録を消去しました。\n"
 
 #: record.c:497
 msgid "Are you sure you want to erase all player records?"
