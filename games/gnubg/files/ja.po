@@ -7474,17 +7474,17 @@ msgstr "パスできるのはダブルをかけられたときだけです。"
 #: play.c:2401
 #, c-format
 msgid "%s refuses the cube and gives up %d point.\n"
-msgstr "%s はパスし、%s ポイント負け。\n"
+msgstr "%s はパスし、%d ポイント負け。\n"
 
 #: play.c:2402
 #, c-format
 msgid "%s refuses the cube and gives up %d points.\n"
-msgstr "%s はパスし、%s ポイント負け。\n"
+msgstr "%s はパスし、%d ポイント負け。\n"
 
 #: play.c:2440
 #, c-format
 msgid "      Doubles to %d"
-msgstr "      %s にダブル"
+msgstr "      %d にダブル"
 
 #: play.c:2443
 msgid "      Takes"
