@@ -15,8 +15,8 @@ MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio \
 		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
-LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
-#		gtk12:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio \
+		gtk12:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
@@ -47,8 +47,8 @@ post-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${X11BASE}/share/doc/ja/xasahi
-	${INSTALL_DATA} ${WRKSRC}/README ${X11BASE}/share/doc/ja/xasahi
+	${MKDIR} ${PREFIX}/share/doc/ja/xasahi
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
 .endif
 
 .include <bsd.port.mk>
