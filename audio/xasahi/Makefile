@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	0.3
+PORTVERSION=	0.a3
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.alpha3
@@ -15,6 +15,8 @@ MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	ibcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	lcdaudio.1:${PORTSDIR}/audio/libcdaudio
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
+		timidity:${PORTSDIR}/audio/timidity++
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
