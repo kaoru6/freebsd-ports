@@ -1,14 +1,16 @@
-%%RUBY_SITEARCHLIBDIR%%/lfplib.so
+bin/xasahi
+%%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
-bin/asahi.rb
-%%RUBY_SITELIBDIR%%/disc_id
-%%RUBY_SITELIBDIR%%/pcaudio.rb
-%%RUBY_SITELIBDIR%%/mpg123.rb
-%%RUBY_SITELIBDIR%%/timidity.rb
-%%RUBY_SITELIBDIR%%/playlist.rb
+%%RUBY_SITELIBDIR%%/xasahi/mpg123.rb
+%%RUBY_SITELIBDIR%%/xasahi/timidity.rb
+%%RUBY_SITELIBDIR%%/xasahi/pcaudio.rb
+%%RUBY_SITELIBDIR%%/xasahi/playlist.rb
+%%RUBY_SITELIBDIR%%/xasahi/asahi.rb
+@dirrm %%RUBY_SITELIBDIR%%/xasahi
 share/doc/ja/xasahi/README
 @dirrm share/doc/ja/xasahi
 @unexec rmdir %D/share/xasahi 2>/dev/null || true
-share/examples/xasahi/dot-xasahi/config
-share/examples/xasahi/dot-xasahi/cddb
-@dirrm share/examples/xasahi/dot-xasahi
+@comment share/examples/xasahi/dot-xasahi/config
+@comment share/examples/xasahi/dot-xasahi/cddb
+@comment @dirrm share/examples/xasahi/dot-xasahi

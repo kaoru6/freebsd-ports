@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	20001110
+PORTVERSION=	20001112
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -21,28 +21,28 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
 
-#NO_INSTALL=	yes
 USE_GTK=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 
-do-build:
-	cd ${WRKSRC}/lib && make
-	cd ${WRKSRC}/cdaudio && make
+pre-build:
+	cd ${WRKSRC} && ./setup.rb
 
 post-build:
 	cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} dot-xasahi.tar.gz ${EXTRACT_AFTER_ARGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so ${RUBY_SITEARCHLIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/asahi.rb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${RUBY_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/pcaudio.rb  ${RUBY_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/mpg123.rb  ${RUBY_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/timidity.rb ${RUBY_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/playlist.rb ${RUBY_SITELIBDIR}
+	${CP} -p ${WRKSRC}/lib/lfplib.so	${RUBY_SITEARCHLIBDIR}/xasahi
+	${CP} -p ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/mpg123.rb	${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/timidity.rb	${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/pcaudio.rb	${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/playlist.rb	${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/asahi.rb	${RUBY_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
+
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xasahi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
