@@ -50,18 +50,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdaudio/cdaudio.so	${RUBY_SITEARCHLIBDIR}
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
-	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
-	for file in ${XASAHI_FILES}; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/"$$file" \
-			${RUBY_SITELIBDIR}/xasahi ; \
-	done
 	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/disc_id	${PREFIX}/bin
 
 post-install:
-#	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
 #	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 #	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
+	${INSTALL_SCRIPT} ${WRKSRC}/disc_id ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/examples/ja/xasahi
 	for file in ${EXAMPLE_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/dot-xasahi/"$$file" \
