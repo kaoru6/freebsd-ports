@@ -11,7 +11,7 @@ PORTVERSION=	3.1.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/texfaq/
 #	${MASTER_SITE_TEX_CTAN}/fonts
-DISTFILES=	txfonts-3_1_1b.zip
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/g}b.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kaoru@kaisei.org
