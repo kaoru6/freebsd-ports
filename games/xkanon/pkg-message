@@ -1,0 +1,14 @@
+
+You must install original data of the Kanon for Windows.
+To do so:
+
+    - Mount the Kanon's CD-ROM:
+
+	# mount /cdrom
+
+    - Run install script (There're 2 cases by game's version):
+
+	# xkanon-[all-]install /cdrom 
+
+Data require about 200MB disk space.
+

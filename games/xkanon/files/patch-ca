@@ -1,0 +1,280 @@
+diff -c ../xkanon-beta13/image_di_Xbpp.cc ./image_di_Xbpp.cc
+*** ../xkanon-beta13/image_di_Xbpp.cc	Sun Sep  3 06:17:17 2000
+--- ./image_di_Xbpp.cc	Sun Sep  3 22:04:56 2000
+***************
+*** 37,42 ****
+--- 37,43 ----
+  extern unsigned short middle16_data1[32*32];
+  extern unsigned short middle16_data2[64*64];
+  extern unsigned short middle16_data3[32*32];
++ extern unsigned short middle16_data4[64*64];
+  extern unsigned short middle15_data1[32*32];
+  extern unsigned short middle15_data2[32*32];
+  
+***************
+*** 137,143 ****
+  }
+  #define SetMiddleColor32 SetMiddleColor24
+  inline void SetMiddleColor24(char* dest, char* src, int c) {
+! 	unsigned int s,d; c = 0xff-c;
+  	s = *(unsigned char*)src++; d = *(unsigned char*)dest;
+  	d *= c; d>>=8;
+  	if (d+s > 0xff) *(unsigned char*)dest = 0xff;
+--- 138,144 ----
+  }
+  #define SetMiddleColor32 SetMiddleColor24
+  inline void SetMiddleColor24(char* dest, char* src, int c) {
+! 	unsigned int s,d; c &= 0xff; c = 0xff-c;
+  	s = *(unsigned char*)src++; d = *(unsigned char*)dest;
+  	d *= c; d>>=8;
+  	if (d+s > 0xff) *(unsigned char*)dest = 0xff;
+***************
+*** 244,250 ****
+  	*(short*)dest = *(short*)src;
+  }
+  inline void Copy1Pixel24(char* dest, char* src) {
+! 	*(short*)dest = *(short*)src;
+  }
+  inline void Copy1Pixel32(char* dest, char* src) {
+  	*(int*)dest = *(int*)src;
+--- 245,253 ----
+  	*(short*)dest = *(short*)src;
+  }
+  inline void Copy1Pixel24(char* dest, char* src) {
+! 	dest[0]=src[0];
+! 	dest[1]=src[1];
+! 	dest[2]=src[2];
+  }
+  inline void Copy1Pixel32(char* dest, char* src) {
+  	*(int*)dest = *(int*)src;
+***************
+*** 471,478 ****
+  				if (mask_char == -1) {
+  					SetMiddleColorWithTable(d, s, dat, dat2);
+  				} else {
+! 					int f = mask_char; f &= 0xff; f *= fade; f >>= 8;
+! 					SetMiddleColor(d, s, f);
+  				}
+  			}
+  			s += ByPP; d += ByPP;
+--- 474,485 ----
+  				if (mask_char == -1) {
+  					SetMiddleColorWithTable(d, s, dat, dat2);
+  				} else {
+! 					int tmp; Copy1Pixel((char*)&tmp, d);
+! 					SetMiddleColor((char*)&tmp, s, mask_char); SetMiddleColorWithTable(d, (char*)&tmp, dat, dat2);
+! /*
+! **					int f = mask_char; f &= 0xff; f *= fade; f >>= 8;
+! **					SetMiddleColor(d, s, f);
+! */
+  				}
+  			}
+  			s += ByPP; d += ByPP;
+***************
+*** 982,1006 ****
+  #endif
+  			for (j=0; j<width; j++) {
+  #if BiPP == 15
+- 				register char c1 = ss[0] + dat[ dif[0] ];
+- 				register char c2 = ss[1] + dat[ dif[1] ];
+- 				register char c3 = ss[2] + dat[ dif[2] ];
+  				*(short*)dd = (
+! 					(int(c1)<<10) |
+! 					(int(c2)<<5) |
+! 					int(c3)
+  				);
+  #elif BiPP == 16
+- 				register char c1 = ss[0] + dat[ dif[0] ];
+- 				register char c2 = ss[1] + dat2[ dif[1] ];
+- 				register char c3 = ss[2] + dat[ dif[2] ];
+- 				c1 = ss[0];
+- 				c2 = ss[1];
+- 				c3 = ss[2];
+  				*(short*)dd = (
+! 					(int(c1)<<11) |
+! 					(int(c2)<<5) |
+! 					int(c3)
+  				);
+  #elif BiPP == 24 || BiPP == 32
+  				dd[0] = ss[0] + dat[ dif[0] ];
+--- 989,1004 ----
+  #endif
+  			for (j=0; j<width; j++) {
+  #if BiPP == 15
+  				*(short*)dd = (
+! 					(int(ss[0] + dat[ dif[0] ])<<10) |
+! 					(int(ss[1] + dat[ dif[1] ])<<5) |
+! 					int( ss[2] + dat[ dif[2] ])
+  				);
+  #elif BiPP == 16
+  				*(short*)dd = (
+! 					(int(ss[0] + dat[ dif[0] ])<<11) |
+! 					(int(ss[1] + dat2[dif[1] ])<<5) |
+! 					int( ss[2] + dat[ dif[2] ])
+  				);
+  #elif BiPP == 24 || BiPP == 32
+  				dd[0] = ss[0] + dat[ dif[0] ];
+***************
+*** 1056,1066 ****
+  #endif
+  			for (j=0; j<width; j++) {
+  #if BiPP == 15
+! 				register int c1 = *(unsigned short*)s;
+! 				register int c2 = *(unsigned short*)d;
+! 				register char c1_1 = (c1>>10)&0x1f;
+! 				register char c1_2 = (c1>>5)&0x1f;
+! 				register char c1_3 = c1 & 0x1f;
+  				// マスクとり
+  				if (*m == 0) {
+  					dif[0] = dif[1] = dif[2] = 0;
+--- 1054,1064 ----
+  #endif
+  			for (j=0; j<width; j++) {
+  #if BiPP == 15
+! 				int c1 = *(unsigned short*)s;
+! 				int c2 = *(unsigned short*)d;
+! 				char c1_1 = (c1>>10)&0x1f;
+! 				char c1_2 = (c1>>5)&0x1f;
+! 				char c1_3 = c1 & 0x1f;
+  				// マスクとり
+  				if (*m == 0) {
+  					dif[0] = dif[1] = dif[2] = 0;
+***************
+*** 1069,1090 ****
+  					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+  					dif[0] = ((c2>>10)&0x1f)-c1_1; dif[1] = ( (c2>>5)&0x1f)-c1_2; dif[2] = (c2&0x1f)-c1_3;
+  				} else {
+! 					int c = (*m) & 0xff; int cc = 256-c;
+! 					int c2_1 = (int(c2>>10)&0x1f) * cc + (int(c1_1))*c;
+! 					int c2_2 = (int(c2>>5)&0x1f) * cc + (int(c1_2))*c; 
+! 					int c2_3 = (int(c2 & 0x1f)) * cc + (int(c1_3))*c;
+! 					c2_1 >>= 8; c2_2 >>= 8; c2_3 >>= 8;
+! 					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+! 					dif[0] = c2_1-c1_1; dif[1] = c2_2-c1_2; dif[2] = c2_3-c1_3;
+  					ss[0] = c2_1; ss[1] = c2_2; ss[2] = c2_3;
+  					dif[0] = ((c2>>10)&0x1f)-c2_1; dif[1] = ( (c2>>5)&0x1f)-c2_2; dif[2] = (c2&0x1f)-c2_3;
+  				}
+  #elif BiPP == 16
+! 				register int c1 = *(unsigned short*)s;
+! 				register int c2 = *(unsigned short*)d;
+! 				register char c1_1 = (c1>>11)&0x1f;
+! 				register char c1_2 = (c1>>5)&0x3f;
+! 				register char c1_3 = c1 & 0x1f;
+  				// マスクとり
+  				if (*m == 0) {
+  					dif[0] = dif[1] = dif[2] = 0;
+--- 1067,1089 ----
+  					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+  					dif[0] = ((c2>>10)&0x1f)-c1_1; dif[1] = ( (c2>>5)&0x1f)-c1_2; dif[2] = (c2&0x1f)-c1_3;
+  				} else {
+! 					int m1 = (int(*m) & 0xf8) << 2;
+! 					int c2_1 = c1_1 + middle16_data3[ (int(c2>>10)&0x1f) + m1];
+! 					int c2_2 = c1_2 + middle16_data3[ (int(c2>>5)&0x1f) + m1];
+! 					int c2_3 = c1_3 + middle16_data3[ (int(c2)&0x1f) + m1];
+! 					/* 最大 0x1f で飽和 */
+! 					c2_1 = (c2_1&0x1f) | ( ((c2_1>>5)+0x0f) ^ 0x0f);
+! 					c2_2 = (c2_2&0x1f) | ( ((c2_1>>5)+0x0f) ^ 0x0f);
+! 					c2_3 = (c2_3&0x1f) | ( ((c2_1>>5)+0x0f) ^ 0x0f);
+  					ss[0] = c2_1; ss[1] = c2_2; ss[2] = c2_3;
+  					dif[0] = ((c2>>10)&0x1f)-c2_1; dif[1] = ( (c2>>5)&0x1f)-c2_2; dif[2] = (c2&0x1f)-c2_3;
+  				}
+  #elif BiPP == 16
+! 				int c1 = *(unsigned short*)s;
+! 				int c2 = *(unsigned short*)d;
+! 				char c1_1 = (c1>>11)&0x1f;
+! 				char c1_2 = (c1>>5)&0x3f;
+! 				char c1_3 = c1 & 0x1f;
+  				// マスクとり
+  				if (*m == 0) {
+  					dif[0] = dif[1] = dif[2] = 0;
+***************
+*** 1093,1105 ****
+  					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+  					dif[0] = ((c2>>11)&0x1f)-c1_1; dif[1] = ( (c2>>5)&0x3f)-c1_2; dif[2] = (c2&0x1f)-c1_3;
+  				} else {
+! 					int c = (*m) & 0xff; int cc = 256-c;
+! 					int c2_1 = (int(c2>>11)&0x1f) * cc + (int(c1_1))*c;
+! 					int c2_2 = (int(c2>>5)&0x3f) * cc + (int(c1_2))*c; 
+! 					int c2_3 = (int(c2 & 0x1f)) * cc + (int(c1_3))*c;
+! 					c2_1 >>= 8; c2_2 >>= 8; c2_3 >>= 8;
+! 					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+! 					dif[0] = c2_1-c1_1; dif[1] = c2_2-c1_2; dif[2] = c2_3-c1_3;
+  					ss[0] = c2_1; ss[1] = c2_2; ss[2] = c2_3;
+  					dif[0] = ((c2>>11)&0x1f)-c2_1; dif[1] = ( (c2>>5)&0x3f)-c2_2; dif[2] = (c2&0x1f)-c2_3;
+  				}
+--- 1092,1105 ----
+  					ss[0] = c1_1; ss[1] = c1_2; ss[2] = c1_3;
+  					dif[0] = ((c2>>11)&0x1f)-c1_1; dif[1] = ( (c2>>5)&0x3f)-c1_2; dif[2] = (c2&0x1f)-c1_3;
+  				} else {
+! 					int m1 = (int(*m) & 0xf8) << 2; int m2 = (int(*m) & 0xfc)<<4;
+! 					int c2_1 = c1_1 + middle16_data3[ (int(c2>>11)&0x1f) + m1];
+! 					int c2_2 = c1_2 + middle16_data4[ (int(c2>>5)&0x3f) + m2];
+! 					int c2_3 = c1_3 + middle16_data3[ (int(c2)&0x1f) + m1];
+! 					/* 最大 0x1f で飽和 */
+! 					c2_1 = (c2_1&0x1f) | ( ((c2_1>>5)+0x0f) ^ 0x0f);
+! 					c2_2 = (c2_2&0x3f) | ( ((c2_1>>6)+0x1f) ^ 0x1f);
+! 					c2_3 = (c2_3&0x1f) | ( ((c2_1>>5)+0x0f) ^ 0x0f);
+  					ss[0] = c2_1; ss[1] = c2_2; ss[2] = c2_3;
+  					dif[0] = ((c2>>11)&0x1f)-c2_1; dif[1] = ( (c2>>5)&0x3f)-c2_2; dif[2] = (c2&0x1f)-c2_3;
+  				}
+***************
+*** 1116,1131 ****
+  					dif[1] = int(*(unsigned char*)(d+1)) - int(*(unsigned char*)(s+1));
+  					dif[2] = int(*(unsigned char*)(d+2)) - int(*(unsigned char*)(s+2));
+  				} else {
+! 					int c = (*m) & 0xff; int cc = 256-c;
+! 					int c1_1 = int(s[0]) & 0xff;
+! 					int c2_1 = ( (int(d[0]) & 0xff ) * cc + c1_1 * c) >> 8;
+! 					ss[0] = c1_1; dif[0] = c2_1 - c1_1;
+! 					int c1_2 = int(s[1]) & 0xff;
+! 					int c2_2 = ( (int(d[1]) & 0xff ) * cc + c1_2 * c) >> 8;
+! 					ss[1] = c1_1; dif[1] = c2_1 - c1_1;
+! 					int c1_3 = int(s[2]) & 0xff;
+! 					int c2_3 = ( (int(d[2]) & 0xff ) * cc + c1_3 * c) >> 8;
+! 					ss[2] = c1_1; dif[2] = c2_1 - c1_1;
+  				}
+  #else
+  #error "bpp is not 15,16,24,32";
+--- 1116,1134 ----
+  					dif[1] = int(*(unsigned char*)(d+1)) - int(*(unsigned char*)(s+1));
+  					dif[2] = int(*(unsigned char*)(d+2)) - int(*(unsigned char*)(s+2));
+  				} else {
+! 					int c = (*m) & 0xff; int cc = 0xff-c;
+! 					int c1_1 = int( *(unsigned char*)(s+0) ) << 8;
+! 					c1_1 += int( *(unsigned char*)(d+0) ) * cc;
+! 					c1_1 >>= 8; if (c1_1 > 0xff) c1_1 = 0xff;
+! 					ss[0] = c1_1; dif[0] = int( *(unsigned char*)(d+0) ) - c1_1;
+! 					c1_1 = int( *(unsigned char*)(s+1) ) << 8;
+! 					c1_1 += int( *(unsigned char*)(d+1) ) * cc;
+! 					c1_1 >>= 8; if (c1_1 > 0xff) c1_1 = 0xff;
+! 					ss[1] = c1_1; dif[1] = int( *(unsigned char*)(d+1) ) - c1_1;
+! 					c1_1 = int( *(unsigned char*)(s+2) ) << 8;
+! 					c1_1 += int( *(unsigned char*)(d+2) ) * cc;
+! 					c1_1 >>= 8; if (c1_1 > 0xff) c1_1 = 0xff;
+! 					ss[2] = c1_1; dif[2] = int( *(unsigned char*)(d+2) ) - c1_1;
+  				}
+  #else
+  #error "bpp is not 15,16,24,32";
+diff -c ../xkanon-beta13/image_di_nobpp.cc ./image_di_nobpp.cc
+*** ../xkanon-beta13/image_di_nobpp.cc	Sat Sep  2 23:17:54 2000
+--- ./image_di_nobpp.cc	Sun Sep  3 21:34:33 2000
+***************
+*** 130,135 ****
+--- 130,136 ----
+  unsigned short middle16_data1[32*32];
+  unsigned short middle16_data2[64*64];
+  unsigned short middle16_data3[32*32];
++ unsigned short middle16_data4[64*64];
+  unsigned short middle15_data1[32*32];
+  unsigned short middle15_data2[32*32];
+  
+***************
+*** 153,158 ****
+--- 154,160 ----
+  	for (i=0; i<64; i++) {
+  		for (j=0; j<64; j++) {
+  			middle16_data2[ j + (i<<6)] =( ( ( 0x3f - i) * j ) / 0x3f ) << 5;
++ 			middle16_data4[ j + (i<<6)] =( ( ( 0x3f - i) * j ) / 0x3f );
+  		}
+  	}
+  }
