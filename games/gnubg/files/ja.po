@@ -495,7 +495,8 @@ msgstr "データベースが空です。"
 
 #: database.c:133
 msgid "You must specify a file to export to (see `help database export')."
-msgstr "エクスポートするファイルを指定して下さい。(see `help database export')."
+msgstr ""
+"エクスポートするファイルを指定して下さい。(see `help database export')."
 
 #: database.c:216
 msgid "You must specify a file to import from (see `help database import')."
@@ -784,8 +785,8 @@ msgid ""
 "%s: incorrect weights version (version %s  is required, but these weights "
 "are %.2f)\n"
 msgstr ""
-"%s: 正しくない weights バージョンです"
-"(バージョン %s が必要ですが、この weights は %.2f です)\n"
+"%s: 正しくない weights バージョンです(バージョン %s が必要ですが、この "
+"weights は %.2f です)\n"
 
 #: eval.c:751
 #, c-format
@@ -3015,7 +3016,8 @@ msgstr "このシステムはシェルエスケープをサポートしていません"
 
 #: gnubg.c:2290
 msgid "This installation of GNU Backgammon was compiled without Guile support."
-msgstr "インストールされている GNU Backgammon は Guile をサポートしていません。"
+msgstr ""
+"インストールされている GNU Backgammon は Guile をサポートしていません。"
 
 #: gnubg.c:2300
 msgid "Incomplete command -- try `help'."
@@ -3353,7 +3355,8 @@ msgid ""
 "Warning: this game was edited during play, and cannot be recorded in this "
 "format."
 msgstr ""
-"警告: このゲームはプレイ中に編集されたのでこのフォーマットでは記録出来ません。"
+"警告: このゲームはプレイ中に編集されたのでこのフォーマットでは記録出来ませ"
+"ん。"
 
 #: gnubg.c:3879
 msgid "You must specify a file to load from (see `help load commands')."
@@ -3365,19 +3368,22 @@ msgstr "ゲーム進行中に Jellyfish ポジションをインポートしなければなりません"
 
 #: gnubg.c:3905
 msgid "You must specify a position file to import (see `help import pos')."
-msgstr "インポートするポジションファイルを指定しなければありません"
-"(see `help import pos')."
+msgstr ""
+"インポートするポジションファイルを指定しなければありません(see `help import "
+"pos')."
 
 #: gnubg.c:3927
 msgid "You must specify a match file to import (see `help import mat')."
-msgstr "インポートするマッチファイルを指定しなければなりません"
-"(see `help import mat')."
+msgstr ""
+"インポートするマッチファイルを指定しなければなりません(see `help import "
+"mat')."
 
 #: gnubg.c:3947
 msgid ""
 "You must specify an oldmoves file to import (see `help import oldmoves')."
-msgstr "インポートする oldmoves ファイルを指定しなければなりません"
-"(see `help import oldmoves')."
+msgstr ""
+"インポートする oldmoves ファイルを指定しなければなりません(see `help import "
+"oldmoves')."
 
 #: gnubg.c:3968
 msgid "You must specify an SGG file to import (see `help import sgg')."
@@ -3410,8 +3416,7 @@ msgstr ""
 #: gnubg.c:4239
 msgid ""
 "You must specify a valid number of hidden nodes (try `help new weights').\n"
-msgstr ""
-"有効なノード数を指定してください (try `help new weights').\n"
+msgstr "有効なノード数を指定してください (try `help new weights').\n"
 
 #: gnubg.c:4248
 #, c-format
@@ -5500,11 +5505,9 @@ msgstr ""
 "under certain conditions.  There is absolutely no warranty for GNU "
 "Backgammon.\n"
 "訳注: 非常に重要な文章のため、原文を残しています。  -- 参考訳\n"
-"GNU Backgammon はフリーソフトウェアで、"
-"GNU General Public License version 2 の適用を受けています。"
-"そして、改造は歓迎しますし、"
-"または／そしてこのコピーを一定の条件の下で自由に配布できます。"
-"GNU Backgammon は完全に無保証です。"
+"GNU Backgammon はフリーソフトウェアで、GNU General Public License version 2 "
+"の適用を受けています。そして、改造は歓迎しますし、または／そしてこのコピーを"
+"一定の条件の下で自由に配布できます。GNU Backgammon は完全に無保証です。"
 
 #: gtkgame.c:6621
 msgid "Copying conditions"
@@ -7445,7 +7448,6 @@ msgstr ""
 "`double' コマンドはダブルに使い、テイクには使いません。\n"
 "ビーバー(ラクーン)には `redouble' を使ってください。"
 
-
 #: play.c:2204
 msgid "You are only allowed to double if you are on roll."
 msgstr "あなたの振り番でのみダブルできます。"
@@ -7534,15 +7536,13 @@ msgstr "有効なマッチのポイント数を指定してください (1以上)."
 msgid ""
 "GNU Backgammon is compiled with support only for matches of length %i\n"
 "and below\n"
-msgstr ""
-"GNU Backgammon は %i ポイント以下のマッチをサポートしています。\n"
+msgstr "GNU Backgammon は %i ポイント以下のマッチをサポートしています。\n"
 
 #: play.c:2876
 msgid ""
 "Are you sure you want to start a new match, and discard the game in "
 "progress? "
-msgstr ""
-"現在のゲームを破棄して新しいマッチを始めますか? "
+msgstr "現在のゲームを破棄して新しいマッチを始めますか? "
 
 #: play.c:2895
 #, c-format
@@ -7553,8 +7553,7 @@ msgstr "新しい %d ポイントマッチを開始しました。\n"
 msgid ""
 "Are you sure you want to start a new session, and discard the game in "
 "progress? "
-msgstr ""
-"現在のゲームを破棄して新しいセッションを始めますか? "
+msgstr "現在のゲームを破棄して新しいセッションを始めますか? "
 
 #: play.c:2929
 msgid "A new session has been started."
@@ -8049,8 +8048,8 @@ msgstr "すでに %s 乱数生成器を使用中です。\n"
 
 #: set.c:192
 msgid "You must specify a valid modulus (see `help set rng bbs')."
-msgstr "有効なモジュロ(法)を指定しなければなりません。"
-"(see `help set rng bbs')."
+msgstr ""
+"有効なモジュロ(法)を指定しなければなりません。(see `help set rng bbs')."
 
 #: set.c:203
 msgid "You must specify two valid factors (see `help set rng bbs')."
