@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gnubg
-PORTVERSION=	0.12.030110
+PORTVERSION=	0.12.030116
 CATEGORIES=	games
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/snapshots/ \
 		ftp://alpha.gnu.org/gnu/gnubg/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.12.//}
-DISTFILES=	${DISTNAME}.tar.gz gnubg.weights-0.13a.gz \
-		gnubg_ts0.bd.gz gnubg_os0.bd.gz
+DISTFILES=	${DISTNAME}.tar.gz \
+		gnubg.weights-0.13a.gz gnubg_ts0.bd.gz gnubg_os0.bd.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
