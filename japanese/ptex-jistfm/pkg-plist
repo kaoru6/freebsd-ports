@@ -6,3 +6,4 @@ share/texmf/fonts/tfm/ptex/jisgn-v.tfm
 share/texmf/fonts/tfm/ptex/jisgn.tfm
 share/texmf/fonts/tfm/ptex/jisn-v.tfm
 share/texmf/fonts/tfm/ptex/jisn.tfm
+@unexec rmdir %D/share/texmf/fonts/tfm/ptex 2>/dev/null || true
