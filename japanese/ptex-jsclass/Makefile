@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	kaoru@kaisei.org
 
+NO_BUILD=	yes
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha/ \
 		qkc:${PORTSDIR}/japanese/qkc
 #		platex:${PORTSDIR}/japanese/platex-euc
@@ -29,18 +30,12 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && lha x ${DISTDIR}/${DISTNAME}
 
-pre-build:
+do-patch:
 	cd ${WRKSRC} && qkc -ju *
-
-do-build:
 
 do-install:
 	${MKDIR} ${JSDIR}
-	for file in ${JSFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/"$$file" ${JSDIR} ; \
-	done
-.if exists(${PREFIX}/share/texmf/ls-R)
+	cd ${WRKSRC} && ${INSTALL_DATA} ${JSFILES} ${JSDIR}
 	mktexlsr
-.endif
 
 .include <bsd.port.mk>

@@ -13,10 +13,8 @@ DISTNAME=	asahi-rb.current
 
 MAINTAINER=	kaoru@kaisei.org
 
-BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio \
-		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
-LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio \
-		gtk12:${PORTSDIR}/x11-toolkits/gtk12
+BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		timidity:${PORTSDIR}/audio/timidity++
@@ -29,6 +27,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF_SUBDIRS=	lib cdaudio
 #USE_RUBY_SETUP=	yes
+
+CONFIG_CMD?=	${GTK_CONFIG}
 
 XASAHI_FILES=	mpg123.rb timidity.rb pcaudio.rb playlist.rb asahi.rb led.rb
 EXAMPLE_FILES=	cddb config
@@ -44,6 +44,13 @@ CDDB_FILES=	1E200AA40230E8032112230035110ECB311C8E23 \
 		EB332C9E21038D11347E200700003304000A8113 \
 		FB331176221FBC021F0B33164D111688000FAD13
 
+EXAMPLE_DIR=	${PREFIX}/share/examples/ja/xasahi
+PLAYLIST_DIR=	${PREFIX}/share/examples/ja/xasahi/play_list
+
+
+post-patch:
+	 ${PERL} -i -pe  's|gtk-config |${CONFIG_CMD} |g' ${WRKSRC}/lib/extconf.rb
+
 pre-build:
 	cd ${WRKSRC} && ./setup.rb
 
@@ -56,10 +63,8 @@ do-install:
 	${MKDIR} ${RUBY_SITEARCHLIBDIR}/xasahi
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lfplib.so ${RUBY_SITEARCHLIBDIR}/xasahi
 	${MKDIR} ${RUBY_SITELIBDIR}/xasahi
-	for file in ${XASAHI_FILES}; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/"$$file" \
-			${RUBY_SITELIBDIR}/xasahi ; \
-	done
+	cd ${WRKSRC} && \
+		${INSTALL_SCRIPT} ${XASAHI_FILES} ${RUBY_SITELIBDIR}/xasahi
 	${INSTALL_SCRIPT} ${WRKSRC}/xasahi	${PREFIX}/bin
 
 post-install:
@@ -68,16 +73,12 @@ post-install:
 #	${INSTALL_SCRIPT} ${WRKSRC}/tool/voice.rb ${PREFIX}/bin
 #	strip ${RUBY_SITEARCHLIBDIR}/cdaudio.so
 #	strip ${RUBY_SITEARCHLIBDIR}/xasahi/lfplib.so
-	${MKDIR} ${PREFIX}/share/examples/ja/xasahi
-	for file in ${EXAMPLE_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/dot-xasahi/"$$file" \
-			${PREFIX}/share/examples/ja/xasahi ; \
-	done
-	${MKDIR} ${PREFIX}/share/examples/ja/xasahi/play_list
-	for file in ${PLAYLIST_FILES} ${CDDB_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/dot-xasahi/play_list/"$$file" \
-			${PREFIX}/share/examples/ja/xasahi/play_list ; \
-	done
+	${MKDIR} ${EXAMPLE_DIR}
+	cd ${WRKSRC}/dot-xasahi/ && \
+		${INSTALL_DATA} ${EXAMPLE_FILES} ${EXAMPLE_DIR}
+	${MKDIR} ${PLAYLIST_DIR}
+	cd ${WRKSRC}/dot-xasahi/play_list/ && \
+		${INSTALL_DATA} ${PLAYLIST_FILES} ${CDDB_FILES} ${PLAYLIST_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xasahi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/xasahi
