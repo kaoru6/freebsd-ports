@@ -1,2 +1,19 @@
 share/doc/ja/xasahi/README
 @dirrm share/doc/ja/xasahi
+share/examples/xasahi/dot-xasahi/play_list/4E232E0C0325C73000E6200D5C022C2331327513
+share/examples/xasahi/dot-xasahi/play_list/57312ED80027A4013266211B1E21254003071D11
+share/examples/xasahi/dot-xasahi/play_list/5D111069120A533133FB310B140218100010AF32
+share/examples/xasahi/dot-xasahi/play_list/8A231577330AE80300C220291F31281E2320D330
+share/examples/xasahi/dot-xasahi/play_list/A4013951112ACB323AFF3323A6233107322B2731
+share/examples/xasahi/dot-xasahi/play_list/FB331176221FBC021F0B33164D111688000FAD13
+share/examples/xasahi/dot-xasahi/play_list/all
+share/examples/xasahi/dot-xasahi/play_list/default
+share/examples/xasahi/dot-xasahi/play_list/favorite
+share/examples/xasahi/dot-xasahi/play_list/rippers
+share/examples/xasahi/dot-xasahi/play_list/test
+share/examples/xasahi/dot-xasahi/play_list/test2
+@dirrm share/examples/xasahi/dot-xasahi/play_list
+share/examples/xasahi/dot-xasahi/config
+share/examples/xasahi/dot-xasahi/cddb
+@dirrm share/examples/xasahi/dot-xasahi
+
