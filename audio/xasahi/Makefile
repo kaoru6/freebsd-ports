@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.12.04
+PORTVERSION=	2000.12.05
 CATEGORIES=	audio
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
@@ -16,8 +16,8 @@ MAINTAINER=	kaoru@kaisei.org
 BUILD_DEPENDS=	libcdaudio-config:${PORTSDIR}/audio/libcdaudio
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
-		mpg123:${PORTSDIR}/audio/mpg123 \
-		timidity:${PORTSDIR}/audio/timidity++
+		mpg123:${PORTSDIR}/audio/mpg123
+#		timidity:${PORTSDIR}/audio/timidity++
 
 USE_GTK=	yes
 WANT_ESOUND=	yes
