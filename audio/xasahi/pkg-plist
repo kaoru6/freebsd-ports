@@ -1,4 +1,4 @@
-bin/xasahi
+@unexec rm %%X11BASE%%/bin/xasahi
 %%RUBY_SITEARCHLIBDIR%%/xasahi/lfplib.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/xasahi
 %%RUBY_SITEARCHLIBDIR%%/cdaudio.so
@@ -8,9 +8,9 @@ bin/xasahi
 %%RUBY_SITELIBDIR%%/xasahi/playlist.rb
 %%RUBY_SITELIBDIR%%/xasahi/asahi.rb
 @dirrm %%RUBY_SITELIBDIR%%/xasahi
-share/doc/ja/xasahi/README
-@dirrm share/doc/ja/xasahi
-@unexec rmdir %D/share/xasahi 2>/dev/null || true
+@unexec rm %%X11BASE%%/share/doc/ja/xasahi/README
+@unexec rmdir %%X11BASE%%/share/xasahi/doc/ja/xasahi 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/share/xasahi 2>/dev/null || true
 @comment share/examples/xasahi/dot-xasahi/config
 @comment share/examples/xasahi/dot-xasahi/cddb
 @comment @dirrm share/examples/xasahi/dot-xasahi

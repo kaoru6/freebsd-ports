@@ -5,7 +5,7 @@
  NAME			= 'xasahi'
  BODY_SCRIPT		= 'asahi.rb'
 -BINDIRS			= [ '/usr/X11R6/bin', '/usr/local/bin', '/usr/bin', '/bin']
-+BINDIRS			= [ '/usr/local/bin' ]
++BINDIRS			= [ '/usr/X11R6/bin' ]
  LIB_CDAUDIO		= 'cdaudio/cdaudio.so'
  LIB_LEAFPLAYER	= 'lib/lfplib.so'
  LIB_MPG123		= 'mpg123.rb'
