@@ -1,12 +1,11 @@
---- xasahi.orig	Sat Nov 11 14:49:37 2000
-+++ xasahi	Sat Nov 11 14:50:34 2000
-@@ -1,7 +1,7 @@
- #! /bin/sh
- 
- # CD-ROMデバイスのファイル名
--DEVCDROM=/dev/cd1c
-+DEVCDROM=/dev/cdrom
- DEVAUDIO=/dev/dsp
- 
--exec ruby -s asahi.rb -cd=$DEVCDROM -pcm=$DEVAUDIO -djvol=210
-+exec ruby -s asahi.rb -cd=$DEVCDROM -pcm=$DEVAUDIO
+--- setup.rb.orig	Mon Nov 13 00:41:46 2000
++++ setup.rb	Mon Nov 13 00:41:58 2000
+@@ -14,7 +14,7 @@
+ #
+ NAME			= 'xasahi'
+ BODY_SCRIPT		= 'asahi.rb'
+-BINDIRS			= [ '/usr/X11R6/bin', '/usr/local/bin', '/usr/bin', '/bin']
++BINDIRS			= [ '/usr/local/bin' ]
+ LIB_CDAUDIO		= 'cdaudio/cdaudio.so'
+ LIB_LEAFPLAYER	= 'lib/lfplib.so'
+ LIB_MPG123		= 'mpg123.rb'
