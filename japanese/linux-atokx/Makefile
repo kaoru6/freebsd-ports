@@ -1,22 +1,27 @@
-# New ports collection makefile for:	leafpak
-# Date created:				25 Sep 2000
+# New ports collection makefile for:	ATOK X
+# Date created:				26 Sep 2000
 # Whom:                 		TAKAHASHI Kaoru
 #
 # $FreeBSD$
 #
 
-PORTNAME=	leafpak
-PORTVERSION=	1.1
-CATEGORIES=	graphics
-MASTER_SITES=	http://hoshina.denpa.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+PORTNAME=	atokx
+PORTVERSION=	1.0.1
+CATEGORIES=	japanese
+DISTFILES=	${PORTNAME}-1.0-1.i386.tgz \
+		iiimf.tgz
 
 MAINTAINER=	kaoru@kaisei.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+IGNOREFILES=	${DISTFILES}
+RESTRICTED=     "You should buy from Justsystem Co., Ltd."
+NO_CDROM=       "You should buy from Justsystem Co., Ltd."
+NO_PACKAGE=     "You should buy from Justsystem Co., Ltd."
+NO_BUILD=       yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/leafpak ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/leafpak2 ${PREFIX}/bin
+do-fetch:
+	@${DO_NADA}
+fetch-list:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
