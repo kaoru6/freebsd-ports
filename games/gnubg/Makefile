@@ -24,8 +24,11 @@ MAN6=	gnubg.6
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20
+USE_GETTEXT=	yes
+USE_GNOME=	libxml2 gtk20
 WANT_ESOUND=	yes
+
+CONFIGURE_ARGS += --with-x --with-gtk2 --enable-nls --with-timecontrol
 
 .if defined(HAVE_ESOUND)
 CONFIGURE_ARGS += --with-esound
@@ -35,10 +38,14 @@ CONFIGURE_ARGS += --without-esound
 
 .if defined(WITH_NAS)
 CONFIGURE_ARGS += --enable-nas
+.else
+CONFIGURE_ARGS += --disable-nas
 .endif
 
 .if defined(WITH_GUILE)
 CONFIGURE_ARGS += --with-guile
+.else
+CONFIGURE_ARGS += --without-guile
 .endif
 
 .if defined(WITH_PYTHON)
@@ -56,8 +63,5 @@ post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz > ${WRKSRC}/gnubg.weights
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
-
-post-build:
-	@(cd ${WRKSRC} && ./makebearoff -t 6x6 -f gnubg_ts0.bd)
 
 .include <bsd.port.mk>
