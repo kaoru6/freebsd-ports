@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gnubg 0.12\n"
 "POT-Creation-Date: 2003-01-06 13:08+0900\n"
 "PO-Revision-Date: 2002-12-09 05:44+0900\n"
-"Last-Translator: Yoshito Takeuchi <kinchan@kinchan.com>\n"
+"Last-Translator: TAKAHASHI Kaoru <kaoru@kaisei.org>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=EUC-JP\n"
@@ -318,12 +318,10 @@ msgid "GNU Backgammon"
 msgstr ""
 
 #: bearoff.c:71
-#, fuzzy
 msgid "ExactBearoff"
-msgstr "正確なベアオフ"
+msgstr "的確なベアオフ"
 
 #: bearoff.c:72
-#, fuzzy
 msgid "Unknown program"
 msgstr "未知のプログラム"
 
@@ -398,7 +396,7 @@ msgstr "キューブレスエクイティ"
 
 #: bearoff.c:764
 msgid "Owned cube"
-msgstr "自分側にキューブ"
+msgstr "自分がキューブ所有"
 
 #: bearoff.c:765 gtktheory.c:900
 msgid "Centered cube"
@@ -406,7 +404,7 @@ msgstr "センターキューブ"
 
 #: bearoff.c:766
 msgid "Opponent owns cube"
-msgstr "相手側にキューブ"
+msgstr "相手がキューブ所有"
 
 #: bearoff.c:811
 msgid "Bearing off\t\t\t\tBearing at least one chequer off\n"
@@ -417,7 +415,6 @@ msgid "Rolls\tPlayer\tOpponent\tPlayer\tOpponent\n"
 msgstr "ロール\tプレイヤー\t相手\tプレイヤー\t相手\n"
 
 #: bearoff.c:859
-#, fuzzy
 msgid ""
 "\n"
 "Average rolls\n"
@@ -438,7 +435,8 @@ msgstr "\tプレイヤー\t相手\tプレイヤー\t相手\n"
 msgid ""
 "incomplete bearoff database\n"
 "(expected size: %d)\n"
-msgstr "%s: ベアオフデータベースが不完全\n"
+msgstr ""
+"ベアオフデータベースが不完全\n"
 "(expected size: %d)\n"
 
 #: bearoff.c:1095
@@ -467,7 +465,9 @@ msgstr "%s: ベアオフデータベースが不完全\n"
 msgid ""
 "%s: incomplete bearoff database\n"
 "(illegal number of chequers is %d)"
-msgstr "%s: ベアオフデータベースが不完全\n"
+msgstr ""
+"%s: ベアオフデータベースが不完全\n"
+"(illegal number of chequers is %d)"
 
 #: bearoff.c:1204
 #, c-format
@@ -478,9 +478,8 @@ msgid ""
 msgstr ""
 
 #: bearoff.c:1240
-#, fuzzy
 msgid "Unknown bearoff database\n"
-msgstr "%s: ベアオフデータベースが不完全\n"
+msgstr "不明なベアオフデータベース\n"
 
 #: database.c:79
 msgid "Position       Win   W(g)  W(bg) L(g)  L(bg) Trials Date"
@@ -488,16 +487,15 @@ msgstr "Position       Win   W(g)  W(bg) L(g)  L(bg) Trials Date"
 
 #: database.c:89
 msgid " (no rollout data)\n"
-msgstr " (ロールアウトしたデータがありません)\n"
+msgstr " （ロールアウトしたデータがありません）\n"
 
 #: database.c:111
 msgid "The database is empty."
-msgstr "データベースがからです。"
+msgstr "データベースが空です。"
 
 #: database.c:133
 msgid "You must specify a file to export to (see `help database export')."
-msgstr ""
-"エクスポートするファイルを指定して下さい。(see `help database export')."
+msgstr "エクスポートするファイルを指定して下さい。(see `help database export')."
 
 #: database.c:216
 msgid "You must specify a file to import from (see `help database import')."
@@ -510,8 +508,7 @@ msgstr "%s: おかしなポジションデータです。"
 
 #: database.c:363
 msgid "There are no unevaluated positions in the database to roll out."
-msgstr ""
-"ロールアウトするのにデータベースで評価されていないポジションがありません。"
+msgstr "ロールアウトするのにデータベースで評価されていないポジションがありません。"
 
 #: database.c:379
 msgid ""
@@ -531,21 +528,22 @@ msgid ""
 "must be a number of positions to train on."
 msgstr ""
 "`database train' を指定するなら\n"
-"トレーニングするためにポジションのナンバーが必要です。"
+"訓練するためにポジションのナンバーが必要です。"
 
 #: database.c:492
 msgid "Training from database..."
-msgstr "データベースのトレーニング中"
+msgstr "データベースの訓練中..."
 
 #: database.c:541
 msgid "There are no target evaluations in the database to train from."
-msgstr "データベースにトレーニングする目的の評価がありません。"
+msgstr "訓練するデータベースに目的の評価がありません。"
 
 #: database.c:623
 #, c-format
 msgid ""
 "Error in: p(W) %5.3f p(WG) %5.3f p(WBG) %5.3f p(LG) %5.3f p(LBG) %5.3f\n"
-msgstr "エラー: p(W) %5.3f p(WG) %5.3f p(WBG) %5.3f p(LG) %5.3f p(LBG) %5.3f\n"
+msgstr ""
+"エラー: p(W) %5.3f p(WG) %5.3f p(WBG) %5.3f p(LG) %5.3f p(LBG) %5.3f\n"
 
 #: database.c:628
 #, c-format
@@ -570,7 +568,7 @@ msgstr "ANSI"
 
 #: dice.c:81 gtkgame.c:8110
 msgid "Blum, Blum and Shub"
-msgstr ""
+msgstr "Blum-Blum-Shub"
 
 #: dice.c:82 gtkgame.c:8113
 msgid "BSD"
@@ -582,7 +580,7 @@ msgstr "ISAAC"
 
 #: dice.c:84
 msgid "manual"
-msgstr "マニュアル"
+msgstr "手動"
 
 #: dice.c:85 gtkgame.c:8119
 msgid "MD5"
@@ -590,19 +588,19 @@ msgstr "MD5"
 
 #: dice.c:86 gtkgame.c:8122
 msgid "Mersenne Twister"
-msgstr ""
+msgstr "Mersenne Twister"
 
 #: dice.c:87
 msgid "www.random.org"
-msgstr ""
+msgstr "www.random.org"
 
 #: dice.c:88
 msgid "user supplied"
-msgstr ""
+msgstr "ユーザの提供する関数"
 
 #: dice.c:130
 msgid "Enter dice: "
-msgstr "さいころ入力: "
+msgstr "ダイスの目を入力: "
 
 #: dice.c:147
 msgid "You must enter two numbers between 1 and 6."
@@ -611,13 +609,14 @@ msgstr "１から６の間の数をふたつ入れて下さい。"
 #: dice.c:235 dice.c:247
 #, c-format
 msgid "%s is an invalid Blum factor; using %s instead.\n"
-msgstr ""
+msgstr "%s は無効な Blum factor です。%s を代わりに使います。\n"
 
 #: dice.c:320
 msgid ""
 "That is not a valid initial state for the Blum, Blum and Shub generator.\n"
 "Please choose a different seed and/or modulus."
 msgstr ""
+
 
 #: dice.c:380
 #, c-format
@@ -698,7 +697,7 @@ msgstr "評価無し"
 
 #: eval.c:289
 msgid "Neural net evaluation"
-msgstr "Neual net 評価"
+msgstr "ニューラルネット評価"
 
 #: eval.c:290 eval.c:5236 gtkchequer.c:507 gtkcube.c:826 gtkrace.c:458
 #: html.c:2188 text.c:866
@@ -730,9 +729,8 @@ msgid "world class"
 msgstr "世界クラス"
 
 #: eval.c:427
-#, fuzzy
 msgid "Tiny"
-msgstr "tiny"
+msgstr ""
 
 #: eval.c:428
 msgid "Narrow"
@@ -743,9 +741,8 @@ msgid "Normal"
 msgstr ""
 
 #: eval.c:430
-#, fuzzy
 msgid "Large"
-msgstr "large"
+msgstr ""
 
 #: eval.c:431
 msgid "Huge"
@@ -757,13 +754,12 @@ msgid "Double"
 msgstr "ダブル"
 
 #: eval.c:465
-#, fuzzy
 msgid "Beaver"
-msgstr "ビーバー！"
+msgstr "ビーバー"
 
 #: eval.c:466
 msgid "Raccoon"
-msgstr ""
+msgstr "ラクーン"
 
 #: eval.c:684 eval.c:737
 #, c-format
@@ -806,7 +802,7 @@ msgstr "（ギャモン）\n"
 
 #: eval.c:3411
 msgid "(single)\n"
-msgstr "(１点)\n"
+msgstr "(シングル)\n"
 
 #: eval.c:3548
 msgid "Evaluator: \t"
@@ -841,7 +837,7 @@ msgid ""
 msgstr ""
 
 #: eval.c:3736
-#, fuzzy, c-format
+#, c-format
 msgid "trained on %d positions"
 msgstr "%d ポジションから訓練されました"
 
@@ -965,23 +961,20 @@ msgstr "%s %1i-ply"
 
 #: eval.c:5232 gtkgame.c:5025 gtkgame.c:5589 html.c:243 show.c:109
 msgid "Cubeful"
-msgstr ""
+msgstr "キューブフル"
 
 #: eval.c:5232 gtkgame.c:5588 html.c:240 show.c:109
 msgid "Cubeless"
-msgstr "キューブなし"
+msgstr "キューブレス"
 
 #: export.c:289 htmlimages.c:105
-#, fuzzy, c-format
+#, c-format
 msgid "You must specify a file to export to (see `%s')\n"
-msgstr ""
-"エクスポートするファイルを指定して下さい。(see `help database export')."
+msgstr "エクスポートするファイルを指定して下さい。(see `%s')\n"
 
 #: export.c:521
-#, fuzzy
 msgid "You must specify a file to export to (see `help export position png')."
-msgstr ""
-"エクスポートするファイルを指定して下さい(see `help export position html')."
+msgstr "エクスポートするファイルを指定して下さい。(see `help export position png')"
 
 #: external.c:150
 msgid "External connection closed."
@@ -1173,7 +1166,6 @@ msgid "<player>"
 msgstr ""
 
 #: gnubg.c:417
-#, fuzzy
 msgid "<player> [rating]"
 msgstr "<プレイヤー> [レーティング]"
 
@@ -1234,18 +1226,16 @@ msgid "Clear analysis for entire match"
 msgstr ""
 
 #: gnubg.c:467
-#, fuzzy
 msgid "Clear analysis for entire session"
-msgstr "セッションの全てのゲームを解析して注釈をつけます。"
+msgstr ""
 
 #: gnubg.c:469
 msgid "Clear analysis for this move"
 msgstr ""
 
 #: gnubg.c:473
-#, fuzzy
 msgid "Clear previous analysis"
-msgstr "テイク解析"
+msgstr "直前の解析をクリア"
 
 #: gnubg.c:475
 msgid "Compute analysis and annotate current game"
@@ -1269,7 +1259,7 @@ msgstr "ムーブについての注釈を消します。"
 
 #: gnubg.c:492
 msgid "Erase annotations for a dice roll"
-msgstr "さいころの目についての注釈を消します。"
+msgstr "ダイスの目についての注釈を消します。"
 
 #: gnubg.c:495
 msgid "Erase skill annotations for a move"
@@ -1451,33 +1441,30 @@ msgid "Records a log of the match in text format"
 msgstr "マッチの棋譜を、text 形式で記録します。"
 
 #: gnubg.c:605
-#, fuzzy
 msgid "Save the current position in .html format (special for GammonOnLine)"
-msgstr "現在のポジションを、.html 形式で記録します。(GammonOnLine 向け)"
+msgstr "現在のポジションを、.html 形式で保存します。(GammonOnLine 向け)"
 
 #: gnubg.c:608
 msgid "Save the current position in Encapsulated PostScript format"
-msgstr "現在のポジションを、Encapsulated PostScript 形式で記録します。"
+msgstr "現在のポジションを、Encapsulated PostScript 形式で保存します。"
 
 #: gnubg.c:611
 msgid "Save the current position in .html format"
-msgstr "現在のポジションを、.html 形式で記録します。"
+msgstr "現在のポジションを、.html 形式で保存します。"
 
 #: gnubg.c:614
-#, fuzzy
 msgid "Save the current position in Portable Network Graphics (PNG) format"
-msgstr "現在のポジションを、text 形式で記録します。"
+msgstr "現在のポジションを、PNG 形式で保存します。"
 
 #: gnubg.c:617
 msgid "Save the current position in .pos format"
-msgstr "現在のポジションを、.pos 形式で記録します。"
+msgstr "現在のポジションを、.pos 形式で保存します。"
 
 #: gnubg.c:620
 msgid "Save the current position in text format"
-msgstr "現在のポジションを、text 形式で記録します。"
+msgstr "現在のポジションを、text 形式で保存します。"
 
 #: gnubg.c:625
-#, fuzzy
 msgid "Records a log of the session in .html format"
 msgstr "セッションの棋譜を、.html 形式で記録します。"
 
@@ -1534,9 +1521,8 @@ msgid "Import an SGG match"
 msgstr "SGG(GamesGrid 形式）のマッチファイルをインポートします。"
 
 #: gnubg.c:667
-#, fuzzy
 msgid "Import an TMG match"
-msgstr "SGG(GamesGrid 形式）のマッチファイルをインポートします。"
+msgstr "TMG のマッチファイルをインポートします。"
 
 #: gnubg.c:670
 msgid "Show the moves made in this game"
@@ -1576,7 +1562,7 @@ msgstr "任意の場所から新しいマッチをプレイする"
 
 #: gnubg.c:695
 msgid "Start a new (money) session"
-msgstr "新しい（マネー）セッションをスタート"
+msgstr "新しい（マネー）セッションを始める"
 
 #: gnubg.c:697
 msgid "Create new (random) neural net weights"
@@ -1611,7 +1597,6 @@ msgid "View the player records"
 msgstr ""
 
 #: gnubg.c:724
-#, fuzzy
 msgid "Record the current board position to a file"
 msgstr "現在のポジションをファイルに記録します。"
 
@@ -1737,7 +1722,7 @@ msgstr "フォースドムーブを自動的に行うか指定する"
 
 #: gnubg.c:804
 msgid "Control whether dice will be rolled automatically"
-msgstr "ダイスの出目を自動的に行うか指定する"
+msgstr "ダイスを自動的に振るか指定する"
 
 #: gnubg.c:808
 msgid "Ask for confirmation before aborting a game in progress"
@@ -1777,11 +1762,11 @@ msgstr "Window の高さを設定"
 
 #: gnubg.c:831
 msgid "set x-position of window"
-msgstr "Window の x-position を設定"
+msgstr "Window の x座標を設定"
 
 #: gnubg.c:833
 msgid "set y-position of window"
-msgstr "Window の y-position を設定"
+msgstr "Window の y座標を設定"
 
 #: gnubg.c:838
 msgid "set geometry of annotation window"
@@ -1806,7 +1791,7 @@ msgstr ""
 #: gnubg.c:852
 #, fuzzy
 msgid "Record miscellaneous notes about the match"
-msgstr "ゲームのメモを記録"
+msgstr "マッチのメモを記録"
 
 #: gnubg.c:854
 msgid "Record the date when the match was played"
@@ -1830,7 +1815,7 @@ msgstr ""
 
 #: gnubg.c:866
 msgid "Show match equities as percentages (on) or probabilities (off)"
-msgstr "マッチエクイティ表示をパーセント表示（on)、見込み数値（off)"
+msgstr "マッチエクイティ表示をパーセント表示(on)、見込み数値(off)"
 
 #: gnubg.c:868
 msgid "Show output in MWC (on) or equity (off) (match play only)"
@@ -1842,14 +1827,13 @@ msgstr ""
 
 #: gnubg.c:873
 msgid "Show winning chances as percentages (on) or probabilities (off)"
-msgstr "勝率表示を、パーセント表示（on)、見込み数値（off)"
+msgstr "勝率表示をパーセント表示(on)、見込み数値(off)で"
 
 #: gnubg.c:877
 msgid "Use the ANSI C rand() (usually linear congruential) generator"
 msgstr "ANSI C の rand() 関数を使用する (線形合同法)"
 
 #: gnubg.c:879
-#, fuzzy
 msgid "Use the Blum, Blum and Shub generator"
 msgstr "Blum-Blum-Shub 法を使用する"
 
@@ -1945,7 +1929,7 @@ msgstr ""
 
 #: gnubg.c:975
 msgid "Specify the random number generator algorithm for rollouts"
-msgstr "ロールアウト用の乱数生成アルゴリズムを指定する"
+msgstr "ロールアウト用の乱数生成器を指定する"
 
 #: gnubg.c:978
 msgid "Synonym for `quasirandom'"
@@ -2133,9 +2117,8 @@ msgid "Control which blocks to include in exports"
 msgstr "エクスポートにどのブロック（？）を含めるか調整する"
 
 #: gnubg.c:1139
-#, fuzzy
 msgid "Set options for PNG export"
-msgstr "HTML エクスポートのオプション設定"
+msgstr "PNG エクスポートのオプション設定"
 
 #: gnubg.c:1141
 msgid "Control display of boards/players in exports"
@@ -2212,7 +2195,7 @@ msgstr "マッチエクイティファイル入力のデフォルトパス設定"
 #: gnubg.c:1194
 #, fuzzy
 msgid "Set default path for loading TrueMoneyGames .tmg files"
-msgstr "マッチエクイティファイル入力のデフォルトパス設定"
+msgstr "TrueMoneyGames .tmg ファイル入力のデフォルトパス設定"
 
 #: gnubg.c:1199
 msgid "Set priority to above normal"
@@ -2314,7 +2297,7 @@ msgstr "投了"
 
 #: gnubg.c:1254 gtkgame.c:7924 sound.c:89
 msgid "Roll"
-msgstr "さいころを振る"
+msgstr "ダイスを振る"
 
 #: gnubg.c:1256
 msgid "Starting of GNU Backgammon"
@@ -2552,7 +2535,7 @@ msgstr "オーディオパラメータの調整"
 
 #: gnubg.c:1388
 msgid "Control training parameters"
-msgstr "トレーニングパラメータの調整"
+msgstr "訓練パラメータの調整"
 
 #: gnubg.c:1389
 msgid "Set which player is on roll"
@@ -2716,7 +2699,7 @@ msgstr "コマンド入力可能なプロンプトか見る"
 
 #: gnubg.c:1479
 msgid "Display which random number generator is being used"
-msgstr "どの乱数生成をつかっているか表示"
+msgstr "使用中の乱数生成器を表示"
 
 #: gnubg.c:1481
 msgid "Display the evaluation settings used during rollouts"
@@ -2744,7 +2727,7 @@ msgstr "ポジションの Thorp Count 計算"
 
 #: gnubg.c:1494
 msgid "Display the training parameters"
-msgstr "練習モードのパラメータ表示"
+msgstr "訓練モードのパラメータ表示"
 
 #: gnubg.c:1497
 msgid "Show which player is on roll"
@@ -2760,7 +2743,7 @@ msgstr "プレイ中にエラーがあると警告"
 
 #: gnubg.c:1503
 msgid "Various kinds of warranty you do not have"
-msgstr "いろいろな保証はありません"
+msgstr "どんな種類の保証もありません"
 
 #: gnubg.c:1506 gnubg.c:1580
 msgid "Swap players"
@@ -2900,7 +2883,7 @@ msgstr "現在のゲームを終わることを申し込む"
 
 #: gnubg.c:1573
 msgid "Roll the dice"
-msgstr "さいころを振る"
+msgstr "ダイスを振る"
 
 #: gnubg.c:1575
 msgid "Have gnubg perform rollouts of a position"
@@ -2924,7 +2907,7 @@ msgstr "ダブルを受け入れる。"
 
 #: gnubg.c:1582
 msgid "Update gnubg's weights from training data"
-msgstr "gnubg の weights をトレーニングデータからアップデートする"
+msgstr "gnubg の weights を訓練データからアップデートする"
 
 #: gnubg.c:1585
 msgid "Copy the primary selection to the clipboard"
@@ -2932,7 +2915,7 @@ msgstr "最初の選択をクリップボードにコピーする"
 
 #: gnubg.c:1597
 msgid "Guile supported."
-msgstr "狡猾さをサポート"
+msgstr "Guile をサポート"
 
 #: gnubg.c:1600
 msgid "Position databases supported."
@@ -2969,19 +2952,19 @@ msgstr "外部コマンド"
 
 #: gnubg.c:1621
 msgid "  ESD sound system"
-msgstr ""
+msgstr " ESD サウンドシステム"
 
 #: gnubg.c:1624
 msgid "  NAS sound system"
-msgstr ""
+msgstr " NAS サウンドシステム"
 
 #: gnubg.c:1626
 msgid "  /dev/dsp"
-msgstr ""
+msgstr " /dev/dsp"
 
 #: gnubg.c:1628
 msgid "  MS Windows sound system"
-msgstr ""
+msgstr " MS Windows サウンドシステム"
 
 #: gnubg.c:1875
 msgid "Current position"
@@ -3012,7 +2995,7 @@ msgstr "イリーガルポジション"
 #: gnubg.c:2025
 #, c-format
 msgid "You must specify whether to set %s on or off (see `help set %s').\n"
-msgstr "%s は on か of にセットしなければなりません( see `help set %s').\n"
+msgstr "%s は on か off にセットしなければなりません( see `help set %s').\n"
 
 #: gnubg.c:2057
 #, c-format
@@ -3021,7 +3004,7 @@ msgstr ""
 
 #: gnubg.c:2109
 msgid "(Interrupted)"
-msgstr ""
+msgstr "(中断されました)"
 
 #: gnubg.c:2229
 msgid "This system does not support shell escapes."
@@ -3482,7 +3465,7 @@ msgstr ""
 
 #: gnubg.c:4823
 msgid "Training..."
-msgstr "トレーニング中..."
+msgstr "訓練中..."
 
 #: gnubg.c:5545 gnubg.c:7132
 msgid "Please answer `y' or `n'."
@@ -3592,12 +3575,11 @@ msgstr ""
 
 #: gnubg.c:6482 gnubg.c:6509
 msgid "Loading"
-msgstr ""
+msgstr "読み込み中"
 
 #: gnubg.c:6482
-#, fuzzy
 msgid "User Settings"
-msgstr "あらかじめ定義した設定"
+msgstr "ユーザー設定"
 
 #: gnubg.c:6489
 msgid "Doing"
@@ -3668,7 +3650,7 @@ msgstr ""
 
 #: gtkboard.c:2589
 msgid "Roll dice"
-msgstr "さいころを振る"
+msgstr "ダイスを振る"
 
 #: gtkboard.c:2590 gtkboard.c:2603 gtkboard.c:2627 gtkboard.c:2649
 #: gtkboard.c:2662 gtkboard.c:2682 gtkboard.c:2704 gtkboard.c:2719
@@ -3838,7 +3820,7 @@ msgstr "違い"
 #: gtkcolour.c:167
 #, fuzzy
 msgid "Choose a colour"
-msgstr "さいころの色"
+msgstr "色の選択"
 
 #: gtkcube.c:96
 msgid "Take analysis"
@@ -3872,7 +3854,7 @@ msgstr "キューブレス・ロールアウト %s: %s"
 
 #: gtkcube.c:272
 msgid "Correct response: "
-msgstr "正しいレスポンス："
+msgstr "正しいレスポンス: "
 
 #: gtkcube.c:309
 msgid "Beaver!"
@@ -3888,7 +3870,7 @@ msgstr "キューブ解析"
 
 #: gtkcube.c:550
 msgid "Proper cube action: "
-msgstr "正しいキューブアクション："
+msgstr "正しいキューブアクション: "
 
 #: gtkcube.c:923 gtkcube.c:924
 #, fuzzy
@@ -4090,7 +4072,7 @@ msgstr ""
 
 #: gtkgame.c:640
 msgid "GNU Backgammon - Dice"
-msgstr "GNU Backgammon - さいころ"
+msgstr "GNU Backgammon - ダイス"
 
 #: gtkgame.c:687
 msgid "GNU Backgammon - Cube"
@@ -4692,39 +4674,39 @@ msgstr "/_解析/評価エンジン"
 
 #: gtkgame.c:2348
 msgid "/_Train"
-msgstr "/_トレーニング"
+msgstr "/_訓練"
 
 #: gtkgame.c:2349
 msgid "/_Train/D_ump database"
-msgstr "/_トレーニング/データベースのダンプ"
+msgstr "/_訓練/データベースのダンプ"
 
 #: gtkgame.c:2351
 msgid "/_Train/_Generate database"
-msgstr "/_トレーニング/_データベースの作成"
+msgstr "/_訓練/_データベースの作成"
 
 #: gtkgame.c:2353
 msgid "/_Train/_Rollout database"
-msgstr "/_トレーニング/_データベースのロールアウト"
+msgstr "/_訓練/_データベースのロールアウト"
 
 #: gtkgame.c:2355
 msgid "/_Train/_Import database..."
-msgstr "/_トレーニング/_データベースのインポート..."
+msgstr "/_訓練/_データベースのインポート..."
 
 #: gtkgame.c:2356
 msgid "/_Train/_Export database..."
-msgstr "/_トレーニング/_データベースのエクスポート..."
+msgstr "/_訓練/_データベースのエクスポート..."
 
 #: gtkgame.c:2357
 msgid "/_Train/-"
-msgstr "/_トレーニング/-"
+msgstr "/_訓練/-"
 
 #: gtkgame.c:2358
 msgid "/_Train/Train from _database"
-msgstr "/_トレーニング/データベースをトレーニングする"
+msgstr "/_訓練/データベースを訓練する"
 
 #: gtkgame.c:2360
 msgid "/_Train/Train with _TD(0)"
-msgstr "/_トレーニング/TD(0)をトレーニングする"
+msgstr "/_訓練/TD(0)を訓練する"
 
 #: gtkgame.c:2361
 msgid "/_Settings"
@@ -4769,7 +4751,7 @@ msgstr "/_設定/高度なオプション..."
 
 #: gtkgame.c:2374
 msgid "/_Settings/Save settings"
-msgstr "/_設定/設定のセーブ"
+msgstr "/_設定/設定の保存"
 
 #: gtkgame.c:2376
 msgid "/_Windows"
@@ -4953,16 +4935,15 @@ msgstr ".mat マッチファイルをインポート"
 
 #: gtkgame.c:3409
 msgid "Save game"
-msgstr "ゲームをセーブ"
+msgstr "ゲームを保存"
 
 #: gtkgame.c:3418
 msgid "Save match or session"
-msgstr "マッチまたはセッションをセーブ"
+msgstr "マッチまたはセッションを保存"
 
 #: gtkgame.c:3427
-#, fuzzy
 msgid "Save position"
-msgstr "ポジションをセーブ"
+msgstr "ポジションを保存"
 
 #: gtkgame.c:3436
 msgid "Save weights"
@@ -5752,7 +5733,7 @@ msgstr ""
 
 #: gtkgame.c:7719 show.c:1706
 msgid "Load and save of SGF files"
-msgstr "SGF ファイルをロード、セーブする"
+msgstr "SGF ファイルを読み込み、保存する"
 
 #: gtkgame.c:7720
 msgid "SGF (gnubg)"
@@ -5913,7 +5894,7 @@ msgstr "テーブルを反対にする"
 
 #: gtkgame.c:8062
 msgid "Game & Dice"
-msgstr "ゲームとさいころ"
+msgstr "ゲームとダイス"
 
 #: gtkgame.c:8069
 msgid "Clockwise movement"
@@ -5933,11 +5914,11 @@ msgstr "ダイス生成"
 
 #: gtkgame.c:8085
 msgid "Manual dice"
-msgstr "手動さいころ"
+msgstr "手動ダイス"
 
 #: gtkgame.c:8089
 msgid "Random Number Generator"
-msgstr "乱数生成"
+msgstr "乱数生成器"
 
 #: gtkgame.c:8125
 msgid "<www.random.org>"
@@ -6156,9 +6137,8 @@ msgid "moves within"
 msgstr ""
 
 #: gtkmovefilter.c:288
-#, fuzzy
 msgid "Predefined move filters:"
-msgstr "あらかじめ定義した設定"
+msgstr "あらかじめ定義した move filter:"
 
 #: gtkmovefilter.c:327 gtkmovefilter.c:337 html.c:2184 text.c:862
 #, c-format
@@ -6166,67 +6146,60 @@ msgid "%d-ply"
 msgstr ""
 
 #: gtkmovefilter.c:438
-#, fuzzy
 msgid "GNU Backgammon - Move filter setup"
-msgstr "GNU Backgammon - ヘルプ"
+msgstr "GNU Backgammon - Move filter 設定"
 
 #: gtkmovefilter.c:478
-#, fuzzy
 msgid "Move filter"
-msgstr "ムーブ制限："
+msgstr "Move filter"
 
 #: gtkprefs.c:242
 msgid "Colour:"
-msgstr ""
+msgstr "色:"
 
 #: gtkprefs.c:260
 msgid "Refractive Index:"
-msgstr "屈折率"
+msgstr "屈折率:"
 
 #: gtkprefs.c:271 gtkprefs.c:378
 msgid "Dull"
-msgstr ""
+msgstr "光沢なし"
 
 #: gtkprefs.c:275 gtkprefs.c:382
 msgid "Shiny"
-msgstr ""
+msgstr "光沢あり"
 
 #: gtkprefs.c:284 gtkprefs.c:393
 msgid "Diffuse"
-msgstr ""
+msgstr "拡散"
 
 #: gtkprefs.c:288 gtkprefs.c:398
 msgid "Specular"
-msgstr ""
+msgstr "集中"
 
 #: gtkprefs.c:321
-#, fuzzy
 msgid "Die colour"
-msgstr "さいころの色"
+msgstr "ダイスの色"
 
 #: gtkprefs.c:329
-#, fuzzy
 msgid "Die colour same as chequer colour"
-msgstr "さいころの色はチェッカーと同じ"
+msgstr "チェッカーと同じダイスの色"
 
 #: gtkprefs.c:349
-#, fuzzy
 msgid "Die colour:"
-msgstr "さいころの色"
+msgstr "ダイスの色:"
 
 #: gtkprefs.c:412
-#, fuzzy
 msgid "Pip colour:"
-msgstr "さいころの色"
+msgstr "ダイスの目の色:"
 
 #: gtkprefs.c:453
-#, fuzzy
 msgid "Cube colour:"
-msgstr "さいころの色"
+msgstr "キューブの色:"
 
 #: gtkprefs.c:481
 msgid "Background colour:"
-msgstr ""
+msgstr "背景色:"
 
 #: gtkprefs.c:483
 msgid "First point colour:"
@@ -6313,7 +6286,6 @@ msgid "Numbered point labels"
 msgstr "ポイントに数字を付ける"
 
 #: gtkprefs.c:670
-#, fuzzy
 msgid "Show dice below board when human player on roll"
 msgstr "どちらの手番か表示"
 
@@ -6327,15 +6299,15 @@ msgstr "不正な入力でビープ音を鳴らす"
 
 #: gtkprefs.c:689
 msgid "Show higher die on left"
-msgstr "さいころの大きな目を左側にする"
+msgstr "大きな目のダイスを左側にする"
 
 #: gtkprefs.c:695
 msgid "Show Position ID and Match ID"
-msgstr ""
+msgstr "ポジションIDとマッチIDを表示"
 
 #: gtkprefs.c:701
 msgid "Show pip count permanently"
-msgstr ""
+msgstr "ピップカウントを常に表示"
 
 #: gtkprefs.c:709
 msgid "Animation"
@@ -6343,15 +6315,15 @@ msgstr "アニメーション表示"
 
 #: gtkprefs.c:721
 msgid "Blink moving chequers"
-msgstr "動作中のチェッカーをちかちかさせる"
+msgstr "移動中のチェッカーを点滅させる"
 
 #: gtkprefs.c:727
 msgid "Slide moving chequers"
-msgstr "動作中のチェッカーをスライドさせる"
+msgstr "チェッカーを滑らかに移動させる"
 
 #: gtkprefs.c:745
 msgid "Speed:"
-msgstr "スピード"
+msgstr "スピード:"
 
 #: gtkprefs.c:747
 msgid "Slow"
@@ -6359,7 +6331,7 @@ msgstr "遅い"
 
 #: gtkprefs.c:750
 msgid "Fast"
-msgstr "早い"
+msgstr "速い"
 
 #: gtkprefs.c:762
 msgid "Light azimuth"
@@ -6370,9 +6342,8 @@ msgid "Light elevation"
 msgstr ""
 
 #: gtkprefs.c:807
-#, fuzzy
 msgid "Chequer shape:"
-msgstr "チェッカーの形状"
+msgstr "チェッカーの形状:"
 
 #: gtkprefs.c:809
 msgid "Flat"
@@ -6388,52 +6359,48 @@ msgid "by %s"
 msgstr ""
 
 #: gtkprefs.c:981
-#, fuzzy
 msgid "(user defined board design)"
-msgstr "ユーザ定義の設定"
+msgstr "（ユーザ定義のボードデザイン）"
 
 #: gtkprefs.c:982
 msgid "(predefined board design)"
-msgstr ""
+msgstr "（定義済みのボードデザイン）"
 
 #: gtkprefs.c:1022
-#, fuzzy
 msgid "unknown title"
-msgstr "不明なボードタイプ\n"
+msgstr "タイトル不明"
 
 #: gtkprefs.c:1023
-#, fuzzy
 msgid "unknown author"
-msgstr "不明なボードタイプ\n"
+msgstr "作者不明"
 
 #: gtkprefs.c:1111
-#, fuzzy
 msgid "GNU Backgammon - Add current board design"
-msgstr "GNU Backgammon - キューブ決定"
+msgstr "GNU Backgammon - 現在のボードデザインを追加"
 
 #: gtkprefs.c:1126
 msgid "Title of new design:"
-msgstr ""
+msgstr "デザインのタイトル"
 
 #: gtkprefs.c:1143
 msgid "Author of new design:"
-msgstr ""
+msgstr "デザインの作者"
 
 #: gtkprefs.c:1388
 msgid "Selected board design"
-msgstr ""
+msgstr "選択されたボードデザイン"
 
 #: gtkprefs.c:1443
 msgid "Remove design"
-msgstr ""
+msgstr "デザインを削除"
 
 #: gtkprefs.c:1451
 msgid "Add current design"
-msgstr ""
+msgstr "現在のデザインを追加"
 
 #: gtkprefs.c:1459
 msgid "Save designs"
-msgstr ""
+msgstr "デザインを保存"
 
 #: gtkprefs.c:1683
 msgid "GNU Backgammon - Appearance"
@@ -6444,17 +6411,16 @@ msgid "General"
 msgstr "一般"
 
 #: gtkprefs.c:1707
-#, fuzzy
 msgid "Designs"
-msgstr "投了"
+msgstr "デザイン"
 
 #: gtkprefs.c:1710
 msgid "Chequers (0)"
-msgstr "チェッカー（０）"
+msgstr "チェッカー (0)"
 
 #: gtkprefs.c:1712
 msgid "Chequers (1)"
-msgstr "チェッカー（１）"
+msgstr "チェッカー (1)"
 
 #: gtkprefs.c:1715
 msgid "Border"
@@ -6462,11 +6428,11 @@ msgstr "枠"
 
 #: gtkprefs.c:1717
 msgid "Dice (0)"
-msgstr "さいころ（０）"
+msgstr "ダイス (0)"
 
 #: gtkprefs.c:1719
 msgid "Dice (1)"
-msgstr "さいころ（１）"
+msgstr "ダイス (1)"
 
 #: gtkprefs.c:2088
 #, c-format
@@ -6491,7 +6457,7 @@ msgstr "%d ピップ"
 #: gtkrace.c:101
 #, fuzzy
 msgid "Difference:"
-msgstr "偏差"
+msgstr "偏差:"
 
 #: gtkrace.c:106 gtkrace.c:123
 #, c-format
@@ -6515,7 +6481,6 @@ msgid "take"
 msgstr ""
 
 #: gtkrace.c:309
-#, fuzzy
 msgid "Pips"
 msgstr "ピップ"
 
@@ -6563,11 +6528,11 @@ msgstr ""
 
 #: gtktexi.c:84
 msgid "Next:"
-msgstr "次"
+msgstr "次:"
 
 #: gtktexi.c:84
 msgid "Prev:"
-msgstr "前"
+msgstr "前:"
 
 #: gtktexi.c:84
 msgid "Up:"
@@ -6583,35 +6548,35 @@ msgstr ""
 
 #: gtktheory.c:244 gtktheory.c:253 show.c:1513
 msgid "Take Point (TP)"
-msgstr "テイクポイント（ＴＰ）"
+msgstr "テイクポイント (TP)"
 
 #: gtktheory.c:245 show.c:1514
 msgid "Beaver Point (BP)"
-msgstr "ビーバーポイント（ＢＰ）"
+msgstr "ビーバーポイント (BP)"
 
 #: gtktheory.c:246 show.c:1515
 msgid "Raccoon Point (RP)"
-msgstr "ラクーンポイント（ＲＰ）"
+msgstr "ラクーンポイント (RP)"
 
 #: gtktheory.c:247 show.c:1516
 msgid "Initial Double Point (IDP)"
-msgstr "初期ダブルポイント（ＩＤＰ）"
+msgstr "初期ダブルポイント (IDP)"
 
 #: gtktheory.c:248 show.c:1517
 msgid "Redouble Point (RDP)"
-msgstr "リダブルポイント（ＲＤＰ）"
+msgstr "リダブルポイント (RDP)"
 
 #: gtktheory.c:249 gtktheory.c:255 show.c:1518
 msgid "Cash Point (CP)"
-msgstr "キャッシュポイント（ＣＰ）"
+msgstr "キャッシュポイント (CP)"
 
 #: gtktheory.c:250 gtktheory.c:256 show.c:1519
 msgid "Too good Point (TP)"
-msgstr "Too good ポイント（ＴＰ）"
+msgstr "Too good ポイント (TP)"
 
 #: gtktheory.c:254
 msgid "Double point (DP)"
-msgstr "ダブルポイント（ＤＰ）"
+msgstr "ダブルポイント (DP)"
 
 #: gtktheory.c:273
 #, c-format
@@ -6640,7 +6605,7 @@ msgstr "マッチプレイ"
 
 #: gtktheory.c:576
 msgid "Money game"
-msgstr "マネープレイ"
+msgstr "マネーゲーム"
 
 #: gtktheory.c:585
 msgid "Reset"
@@ -6676,11 +6641,11 @@ msgstr "ギャモン勝ちとバックギャモン勝ちのパーセント"
 
 #: gtktheory.c:744
 msgid "bg rate(%)"
-msgstr "バックギャモン勝ち率（％）"
+msgstr "バックギャモン勝ち率 (%)"
 
 #: gtktheory.c:745
 msgid "gammon rate(%)"
-msgstr "ギャモン勝ち率（％）"
+msgstr "ギャモン勝ち率 (%)"
 
 #: gtktheory.c:787
 msgid "Market window"
@@ -6689,7 +6654,7 @@ msgstr "マーケットウィンドウ"
 #: gtktheory.c:791
 #, c-format
 msgid "Market window for player %s"
-msgstr ""
+msgstr "プレイヤー %s のマーケットウィンドウ"
 
 #: gtktheory.c:825
 msgid "Window graph"
@@ -6698,7 +6663,7 @@ msgstr "ウィンドウグラフ"
 #: gtktheory.c:828
 #, c-format
 msgid "Window graph for player %s"
-msgstr ""
+msgstr "プレイヤー %s のウィンドウグラフ"
 
 #: gtktheory.c:848
 msgid "Gammon values at 0-away, 0-away for 0-cube"
@@ -6843,7 +6808,7 @@ msgstr "マッチプレイ"
 
 #: html.c:1796
 msgid "money game"
-msgstr "マネープレイ"
+msgstr "マネーゲーム"
 
 #: html.c:1799
 #, c-format
@@ -6889,29 +6854,29 @@ msgstr ""
 
 #: html.c:2047 text.c:751
 msgid "Alert: missed double"
-msgstr "警告：ダブルをミス"
+msgstr "警告: ダブルをミス"
 
 #: html.c:2072 text.c:774
 msgid "Alert: wrong take"
-msgstr "警告：間違ったテイク"
+msgstr "警告: 間違ったテイク"
 
 #: html.c:2094 text.c:794
 msgid "Alert: wrong pass"
-msgstr "警告：間違ったパス"
+msgstr "警告: 間違ったパス"
 
 #: html.c:2120 text.c:818
 msgid "Alert: wrong double"
-msgstr "警告：間違ったダブル"
+msgstr "警告: 間違ったダブル"
 
 #: html.c:2140 text.c:835
 #, c-format
 msgid "Alert: double decision marked %s"
-msgstr "警告：キューブアクション %s はマークされました"
+msgstr "警告: キューブアクション %s はマークされました"
 
 #: html.c:2148 text.c:841
 #, c-format
 msgid "Alert: take decision marked %s"
-msgstr "警告：テイク %s はマークされました。"
+msgstr "警告: テイク %s はマークされました。"
 
 #: html.c:2197 html.c:2204 text.c:873 text.c:880
 msgid "cubeless equity"
@@ -6922,13 +6887,12 @@ msgid "cubeless MWC"
 msgstr "キューブレスマッチ勝率"
 
 #: html.c:2199 text.c:875
-#, fuzzy
 msgid "Money"
 msgstr "マネー"
 
 #: html.c:2256 text.c:924
 msgid "Proper cube action:"
-msgstr "正しいキューブアクション"
+msgstr "正しいキューブアクション:"
 
 #: html.c:2273
 msgid "Rollout details"
@@ -6937,7 +6901,7 @@ msgstr "ロールアウト詳細"
 #: html.c:2450 text.c:1139
 #, c-format
 msgid "Alert: %s move"
-msgstr "警告： %s ムーブ"
+msgstr "警告: %s ムーブ"
 
 #: html.c:2473 text.c:1160
 #, c-format
@@ -9579,14 +9543,14 @@ msgid "Tutor warnings will be give for play marked `%s'.\n"
 msgstr ""
 
 #: set.c:3323
-#, fuzzy, c-format
+#, c-format
 msgid "You must specify a colour -- try `help set %s'.\n"
 msgstr "色を指定しなければなりません -- try `help set %s'.\n"
 
 #: set.c:3330
-#, fuzzy, c-format
+#, c-format
 msgid "Unknown colour '%s' -- try `help set %s colour'.\n"
-msgstr "理解できない色です。`%s' -- try `help set %s colour'.\n"
+msgstr "`%s' は理解できない色です。 -- try `help set %s colour'.\n"
 
 #: set.c:3359
 msgid "highlightcolour light"
@@ -9716,9 +9680,8 @@ msgid "Priority changes are not supported on this platform.\n"
 msgstr ""
 
 #: set.c:3717
-#, fuzzy
 msgid "You must specify a priority between -20 and 20."
-msgstr "-20 から 20 の間の優先度を指定する必要があります。"
+msgstr "-20 から 20 の間で優先度を指定する必要があります。"
 
 #: set.c:3739
 msgid "Allow GNU Backgammon to manipulate the dice."
@@ -9729,9 +9692,8 @@ msgid "Disallow GNU Backgammon to manipulate the dice."
 msgstr ""
 
 #: set.c:3752
-#, fuzzy
 msgid "You must specify a size between 1 and 20."
-msgstr "-20 から 20 の間の優先度を指定する必要があります。"
+msgstr "1 から 20 の間でサイズを指定する必要があります。"
 
 #: sgf.c:146
 msgid "warning: no backgammon games in SGF file"
@@ -10729,11 +10691,11 @@ msgstr ""
 
 #: sound.c:80
 msgid "Starting GNU Backgammon"
-msgstr ""
+msgstr "GNU Backgammon 開始時"
 
 #: sound.c:81
 msgid "Exiting GNU Backgammon"
-msgstr ""
+msgstr "GNU Backgammon 終了時"
 
 #: sound.c:83
 msgid "Doubling"
@@ -10965,11 +10927,10 @@ msgid "Comments: %s\n"
 msgstr ""
 
 #: text.c:1432
-#, fuzzy
 msgid ""
 "Statistics from player records:\n"
-"\n"
-msgstr "ゲーム全体の統計"
+""
+msgstr ""
 
 #: text.c:1564
 #, c-format
@@ -10977,6 +10938,8 @@ msgid ""
 "%s wins %d points\n"
 "\n"
 msgstr ""
+"%s の %d ポイント勝ち\n"
+"\n"
 
 #: text.c:1569
 #, c-format
@@ -10984,6 +10947,8 @@ msgid ""
 "%s wins %d point\n"
 "\n"
 msgstr ""
+"%s の %d ポイント勝ち\n"
+"\n"
 
 #: text.c:1605
 msgid "You must specify a file to export to (see `help exportgame text')."
