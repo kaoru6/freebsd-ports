@@ -16,6 +16,7 @@ MAINTAINER=	kaoru@kaisei.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+DIST_SUBDIR=	ptex
 NO_BUILD=	yes
 
 TEXMF=		${PREFIX}/share/texmf
