@@ -5,27 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ptex-jistfm
+PORTNAME=	jis-tfm
 PORTVERSION=	1.0
 CATEGORIES=	japanese print
+DISTNAME=	${PORTNAME}
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/texfaq/
-DISTNAME=	jis-tfm
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kaoru@kaisei.org
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 DIST_SUBDIR=	ptex
 NO_BUILD=	yes
+USE_ZIP=	yes
 
 TEXMF=		${PREFIX}/share/texmf
 FILES=		jis-v.tfm jis.tfm jisg-v.tfm jisg.tfm \
 		jisgn-v.tfm jisgn.tfm jisn-v.tfm jisn.tfm
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && unzip ${DISTDIR}/${DISTNAME}
 
 do-install:
 	${MKDIR} ${TEXMF}/fonts/tfm/ptex
