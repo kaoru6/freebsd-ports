@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xasahi
-PORTVERSION=	2000.12.11
+PORTVERSION=	2000.12.12
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~kgt/Archive/
 DISTNAME=	asahi-rb.current
