@@ -6,7 +6,7 @@
  
 -$CFLAGS += `gtk-config --cflags`.chomp
 -$LDFLAGS += `gtk-config --libs`.chomp
-+$CFLAGS += `gtk12-config --cflags`.chomp
-+$LDFLAGS += `gtk12-config --libs`.chomp
++$CFLAGS += ' ' + `gtk12-config --cflags`.chomp
++$LDFLAGS += ' ' + `gtk12-config --libs`.chomp
  
  create_makefile( "lfplib")
