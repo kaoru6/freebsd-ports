@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptex-jsclasses
-PORTVERSION=	2001.02.26
+PORTVERSION=	2001.04.26
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.matsusaka-u.ac.jp/~okumura/jsclasses/
 DISTNAME=	jsclasses
