@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Template-Multilingual
 # Date created:		19 June 2005
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisie.org>
+# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
