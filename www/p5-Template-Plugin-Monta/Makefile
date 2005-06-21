@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Template-Plugin-Monta
-# Date created:		14 June 2005
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisie.org>
+# Date created:		2005-06-14
+# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
