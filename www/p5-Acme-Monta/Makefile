@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Acme
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	TV of Japan is reproduced in Web
+COMMENT=	Monta Method reproduced in Web
 
 PERL_CONFIGURE=	yes
 
