@@ -12,8 +12,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	TT Plugin to Monta method
+MAINTAINER=	kaoru@kaisei.org
+COMMENT=	Template-Toolkit plugin to Monta Method
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS=	${BUILD_DEPENDS} \
