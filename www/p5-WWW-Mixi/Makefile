@@ -17,11 +17,10 @@ COMMENT=	"Perl module of Automated interface to the Mixi"
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/RobotUA.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Mixi.3 WWW::Mixi::Cookbook.3 WWW::Mixi::Mixi.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
