@@ -2,7 +2,7 @@
 # Date created:				14 June 2005
 # Whom:	      				TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD$
+# $FreeBSD: ports/www/p5-Acme-Monta/Makefile,v 1.2 2005/07/28 16:22:46 leeym Exp $
 #
 
 PORTNAME=	Acme-Monta
@@ -12,11 +12,19 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Acme
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Monta Method reproduced in Web
+MAINTAINER=	kaoru@kaisei.org
+COMMENT=	Monta Method reproduced in web
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Acme::Monta.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' \
+		${WRKSRC}/lib/Acme/Monta.pm
+.endif
+
+.include <bsd.port.post.mk>

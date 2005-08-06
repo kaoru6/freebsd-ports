@@ -2,7 +2,7 @@
 # Date created:		19 June 2005
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD$
+# $FreeBSD: ports/www/p5-Template-Multilingual/Makefile,v 1.1 2005/07/18 10:34:34 erwin Exp $
 #
 
 PORTNAME=	Template-Multilingual
@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Template::Multilingual.3 \
 		Template::Multilingual::Parser.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=         Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
