@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Acme/Takahashi/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Takahashi/Method/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Takahashi/Method
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Takahashi
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Acme/Takahashi
+@unexec rmdir %D/%%SITE_PERL%%/Acme 2>/dev/null || true
