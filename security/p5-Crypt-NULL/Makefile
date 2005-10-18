@@ -1,8 +1,8 @@
 # New ports collection makefile for:	p5-Crypt-NULL
-# Date created:		2005-08-07
+# Date created:		2005-08-06
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD$
+# $FreeBSD: ports/security/p5-Crypt-NULL/Makefile,v 1.1 2005/09/15 15:02:39 lth Exp $
 #
 
 PORTNAME=	Crypt-NULL
