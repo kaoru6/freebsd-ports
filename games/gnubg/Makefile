@@ -2,12 +2,12 @@
 # Date created:		8 Dec 2002
 # Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
-# $FreeBSD: ports/games/gnubg/Makefile,v 1.11 2005/03/12 10:51:59 marcus Exp $
+# $FreeBSD: ports/games/gnubg/Makefile,v 1.12 2005/11/05 05:19:08 marcus Exp $
 #
 
 PORTNAME=	gnubg
 PORTVERSION=	0.14.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/
