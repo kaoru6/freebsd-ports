@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	WWW-2ch
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kaoru@kaisei.org
-COMMENT=	"Perl module for scraping of a popular bbs of Japan"
+COMMENT=	"Perl module for scraping of 2ch.net BBS"
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor
 
 PERL_CONFIGURE=	yes
 
