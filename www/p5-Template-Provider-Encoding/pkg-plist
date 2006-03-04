@@ -11,3 +11,4 @@
 @dirrm %%SITE_PERL%%/Template/Provider
 @dirrm %%SITE_PERL%%/Template/Stash
 @dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
