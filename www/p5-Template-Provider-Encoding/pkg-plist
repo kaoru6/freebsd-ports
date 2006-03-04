@@ -1,7 +1,8 @@
 @comment $FreeBSD$
-%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encoding/.packlist
-%%SITE_PERL%%/WWW/2ch.pm
-@comment @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/2ch/
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encoding/.packlist
+%%SITE_PERL%%/Template/Provider/Encoding.pm
+%%SITE_PERL%%/Template/Stash/ForceUTF8.pm
+%%SITE_PERL%%/Template/Plugin/encoding.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encoding
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
