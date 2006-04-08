@@ -21,7 +21,7 @@ COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
 
-CONFLICTS=	zebra-0* quagga-0*
+#CONFLICTS=	zebra-0* quagga-0*
 
 SNAPSHOT=	20060320
 WRKSRC=		${WRKDIR}
@@ -33,11 +33,11 @@ COPTS=		-I${LOCALBASE}/include -DMD5_DIGEST_LENGTH=16
 LDADD=		-L${LOCALBASE}/lib -levent -lmd
 
 PLIST_FILES=	sbin/ospfctl	\
-		sbin/ospfd
+		sbin/openospfd
 
 MAN5=		ospfd.conf.5
 MAN8=		ospfctl.8	\
-		ospfd.8
+		openospfd.8
 
 SUBDIRS=	ospfd \
 		ospfctl
@@ -53,6 +53,7 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/ospfd/
 
 post-patch:
+	cp ${WRKSRC}/ospfd/ospfd.8 ${WRKSRC}/ospfd/openospfd.8
 	@${REINPLACE_CMD} -e "s|sys/hash.h|hash.h|" ${WRKSRC}/ospfd/lsupdate.c
 	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/ospfctl/ospfctl.c
 	@${REINPLACE_CMD} -e "s|rtm_fmask|rtm_use|" ${WRKSRC}/ospfd/kroute.c
