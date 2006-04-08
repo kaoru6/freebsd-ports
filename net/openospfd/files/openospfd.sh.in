@@ -12,7 +12,7 @@
 #
 # openospfd_enable="YES"
 #
-# See ospfd(8) for openospfd_flags
+# See openospfd(8) for openospfd_flags
 #
 
 . "%%RC_SUBR%%"
@@ -21,7 +21,7 @@ name="openospfd"
 rcvar=`set_rcvar`
 
 extra_commands="reload"
-command="%%PREFIX%%/sbin/ospfd"
+command="%%PREFIX%%/sbin/openospfd"
 required_files="%%PREFIX%%/etc/ospfd.conf"
 
 load_rc_config "$name"
