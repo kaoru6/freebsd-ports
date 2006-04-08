@@ -53,7 +53,7 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/ospfd/
 
 post-patch:
-	cp ${WRKSRC}/ospfd/ospfd.8 ${WRKSRC}/ospfd/openospfd.8
+	@${CP} ${WRKSRC}/ospfd/ospfd.8 ${WRKSRC}/ospfd/openospfd.8
 	@${REINPLACE_CMD} -e "s|sys/hash.h|hash.h|" ${WRKSRC}/ospfd/lsupdate.c
 	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/ospfctl/ospfctl.c
 	@${REINPLACE_CMD} -e "s|rtm_fmask|rtm_use|" ${WRKSRC}/ospfd/kroute.c
