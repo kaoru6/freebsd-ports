@@ -1,3 +1,0 @@
-bin/mendex
-%%PORTDOCS%%share/doc/mendex/README
-%%PORTDOCS%%@dirrm share/doc/mendex
