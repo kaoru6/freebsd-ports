@@ -26,7 +26,7 @@ COMMENT=	Improved version of the ezmlm-0.53 mailing list management software
 QMAIL_DIR?=	/var/qmail
 
 # LANGUAGE is the ISO code for the language to use in ezmlmrc
-LANGUAGE?=	en_US
+LANGUAGE?=	jp
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
