@@ -8,7 +8,7 @@
 PORTNAME=	changelog2graph
 PORTVERSION=	0.0.20000429
 CATEGORIES=	misc
-MASTER_SITES=	http://namazu.org/~satoru/attic/
+MASTER_SITES=	http://0xcc.net/attic/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
