@@ -2,7 +2,7 @@
 # Date created:        6 December 2002
 # Whom:                Sebastien Gioria <gioria@FreeBSD.ORG>
 #
-# $FreeBSD: ports/databases/mantis/Makefile,v 1.11 2006/08/24 10:59:20 miwi Exp $
+# $FreeBSD: ports/databases/mantis/Makefile,v 1.12 2006/12/03 22:27:50 miwi Exp $
 #
 
 PORTNAME=	mantis
