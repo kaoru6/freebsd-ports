@@ -1,0 +1,39 @@
+
+$FreeBSD: ports/net/asterisk16/files/patch-configure,v 1.7 2009/08/02 19:34:55 mezz Exp $
+
+--- configure.orig
++++ configure
+@@ -4042,8 +4042,6 @@
+ case "${host_os}" in
+      freebsd*)
+      ac_default_prefix=/usr/local
+-     CPPFLAGS=-I/usr/local/include
+-     LDFLAGS=-L/usr/local/lib
+      ;;
+ 
+      darwin*)
+@@ -42186,7 +42184,7 @@
+ 
+ 	fi
+ 
+-	PLATFORM_OPENH323="h323_${PWLIB_PLATFORM}_${OPENH323_SUFFIX}"
++	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
+ 
+ 	if test "${HAS_OPENH323:-unset}" != "unset"; then
+ 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
+@@ -47218,6 +47216,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <ptlib.h>
+ #include <h323.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -47258,6 +47257,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <ptlib.h>
+ #include <h323.h>
+ _ACEOF
+ if { (ac_try="$ac_cpp conftest.$ac_ext"
