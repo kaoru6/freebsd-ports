@@ -14,9 +14,7 @@ DISTNAME=	asterisk-sound-jp_${PORTVERSION:S|.||}_pre
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Japanese sound files for Asterisk 1.6
 
-CONFLICTS=	ja-asterisk-sound
-
-#RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
 
 NO_BUILD=	yes
 ASTERISKSDIR=	${LOCALBASE}/share/asterisk/sounds
