@@ -22,14 +22,18 @@ ASTERISKSDIR=	${LOCALBASE}/share/asterisk/sounds
 do-install:
 	@-${MKDIR} ${ASTERISKSDIR}
 	@${CP} -pR ${WRKDIR}/ja ${ASTERISKSDIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -pv ${WRKDIR}/ja/README.txt ${DOCSDIR}
+.endif
 
 post-install:
 	@cd ${WRKDIR} && ${FIND} ./ja -type f -o -type l | ${SED} -e 's,^\.,${ASTERISKSDIR:S|${LOCALBASE}/||},' > ${TMPPLIST}
 	@cd ${WRKDIR} && ${FIND} ./ja -type d -depth  | ${SED} -e 's,^\.,@dirrm ${ASTERISKSDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
 	@${ECHO} ${DOCSDIR:S|${LOCALBASE}/||}/README.txt >> ${TMPPLIST}
 	@${ECHO} "@dirrm" ${DOCSDIR:S|${LOCALBASE}/||}  >> ${TMPPLIST}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
