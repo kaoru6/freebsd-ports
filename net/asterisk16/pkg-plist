@@ -512,9 +512,9 @@ share/asterisk/images/kpad2.jpg
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/.asterisk-moh-opsound-wav
-share/asterisk/moh/CHANGES-asterisk-moh-opsound-2.01
-share/asterisk/moh/CREDITS-asterisk-moh-opsound-2.01
-share/asterisk/moh/LICENSE-asterisk-moh-opsound-2.01
+share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
+share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
+share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
 share/asterisk/moh/macroform-cold_day.wav
 share/asterisk/moh/macroform-robot_dity.wav
 share/asterisk/moh/macroform-the_simplicity.wav

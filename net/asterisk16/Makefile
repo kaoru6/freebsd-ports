@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.0.15
+PORTVERSION=	1.6.0.17
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
