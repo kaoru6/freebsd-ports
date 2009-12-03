@@ -1,5 +1,5 @@
 
-$FreeBSD: ports/net/asterisk16/files/patch-main::Makefile,v 1.7 2009/09/10 09:25:25 sobomax Exp $
+$FreeBSD: ports/net/asterisk16/files/patch-main::Makefile,v 1.8 2009/11/20 23:43:09 sobomax Exp $
 
 --- main/Makefile.orig
 +++ main/Makefile
@@ -14,7 +14,7 @@ $FreeBSD: ports/net/asterisk16/files/patch-main::Makefile,v 1.7 2009/09/10 09:25
  
  ast_expr2.c ast_expr2.h:
  	bison -o $@ -d --name-prefix=ast_yy ast_expr2.y
-@@ -159,7 +159,7 @@
+@@ -159,13 +159,13 @@
  GMIMELDFLAGS+=$(GMIME_LIB)
  endif
  
@@ -23,3 +23,11 @@ $FreeBSD: ports/net/asterisk16/files/patch-main::Makefile,v 1.7 2009/09/10 09:25
  	@$(CC) -c -o buildinfo.o $(_ASTCFLAGS) buildinfo.c $(ASTCFLAGS)
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
  ifneq ($(findstring chan_h323,$(MENUSELECT_CHANNELS)),)
+-	$(CMD_PREFIX) $(CC) $(STATIC_BUILD) -o $@ $(ASTLINK) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(GMIMELDFLAGS)
++	$(CMD_PREFIX) $(CC) $(STATIC_BUILD) -o $@ $(ASTLINK) $(LDFLAGS) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(GMIMELDFLAGS)
+ else
+-	$(CMD_PREFIX) $(CXX) $(STATIC_BUILD) -o $@ $(ASTLINK) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $(H323LDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(H323LDLIBS) $(GMIMELDFLAGS)
++	$(CMD_PREFIX) $(CXX) $(STATIC_BUILD) -o $@ $(ASTLINK) $(LDFLAGS) $(AST_EMBED_LDFLAGS) $(ASTLDFLAGS) $(H323LDFLAGS) $^ buildinfo.o $(AST_LIBS) $(AST_EMBED_LIBS) $(H323LDLIBS) $(GMIMELDFLAGS)
+ endif
+ 	$(CMD_PREFIX) $(ASTTOPDIR)/build_tools/strip_nonapi $@ || rm $@
+ 
