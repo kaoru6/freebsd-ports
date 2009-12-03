@@ -1,8 +1,8 @@
-*** channels/chan_sip.c.orig	2008-12-03 23:13:27.000000000 +0900
---- channels/chan_sip.c	2009-02-04 15:38:57.000000000 +0900
+*** channels/chan_sip.c.orig	Sat Nov 14 00:56:48 2009
+--- channels/chan_sip.c	Thu Dec  3 17:51:58 2009
 ***************
-*** 241,246 ****
---- 241,249 ----
+*** 244,249 ****
+--- 244,252 ----
   
   #define INITIAL_CSEQ                 101              /*!< our initial sip sequence number */
   
@@ -13,10 +13,10 @@
   #define DEFAULT_MIN_SE               90               /*!< Session-Timer Default Min-SE period (RFC 4028) */
   
 ***************
-*** 739,744 ****
---- 742,751 ----
+*** 748,753 ****
+--- 751,760 ----
+  /*! \brief Global list of addresses dynamic peers are not allowed to use */
   static struct ast_ha *global_contact_ha = NULL;
-  static int global_dynamic_exclude_static = 0;
   
 + /* RT-200NE HACK */
 + static char global_rt200ne[MAX_RT200NE][20];
@@ -26,8 +26,8 @@
    * \bug These counters are not handled in a thread-safe way ast_atomic_fetchadd_int()
    * should be used to modify these values. */
 ***************
-*** 1893,1898 ****
---- 1900,1906 ----
+*** 1921,1926 ****
+--- 1928,1934 ----
   static char *sip_show_registry(struct ast_cli_entry *e, int cmd, struct ast_cli_args *a);
   static char *sip_unregister(struct ast_cli_entry *e, int cmd, struct ast_cli_args *a);
   static char *sip_show_settings(struct ast_cli_entry *e, int cmd, struct ast_cli_args *a);
@@ -36,8 +36,8 @@
   static const struct cfsubscription_types *find_subscription_type(enum subscriptiontype subtype);
   static char *complete_sip_peer(const char *word, int state, int flags2);
 ***************
-*** 13325,13330 ****
---- 13333,13368 ----
+*** 14201,14206 ****
+--- 14209,14244 ----
   	return CLI_SUCCESS;
   }
   
@@ -75,8 +75,8 @@
   static const char *subscription_type2str(enum subscriptiontype subtype)
   {
 ***************
-*** 14336,14341 ****
---- 14374,14384 ----
+*** 15211,15216 ****
+--- 15249,15259 ----
   	const char *md5secret;
   	struct sip_auth *auth = NULL;	/* Realm authentication */
   
@@ -89,8 +89,8 @@
   		ast_copy_string(uri, p->domain, sizeof(uri));
   	else if (!ast_strlen_zero(p->uri))
 ***************
-*** 14343,14348 ****
---- 14386,14413 ----
+*** 15218,15223 ****
+--- 15261,15288 ----
   	else
   		snprintf(uri, sizeof(uri), "sip:%s@%s", p->username, ast_inet_ntoa(p->sa.sin_addr));
   
@@ -120,8 +120,8 @@
   
    	/* Check if we have separate auth credentials */
 ***************
-*** 21050,21055 ****
---- 21115,21124 ----
+*** 22278,22283 ****
+--- 22343,22352 ----
   
   	global_matchexterniplocally = FALSE;
   
@@ -133,8 +133,8 @@
   	memcpy(&global_jbconf, &default_jbconf, sizeof(struct ast_jb_conf));
   
 ***************
-*** 21390,21395 ****
---- 21459,21469 ----
+*** 22629,22634 ****
+--- 22698,22708 ----
   				default_maxcallbitrate = DEFAULT_MAX_CALL_BITRATE;
   		} else if (!strcasecmp(v->name, "matchexterniplocally")) {
   			global_matchexterniplocally = ast_true(v->value);
@@ -143,12 +143,12 @@
 + 				ast_copy_string(global_rt200ne[global_rt200ne_cnt], v->value, sizeof(global_rt200ne));
 + 				global_rt200ne_cnt++;
 + 			}
+  		} else if (!strcasecmp(v->name, "constantssrc")) {
+  			ast_set2_flag(&global_flags[1], ast_true(v->value), SIP_PAGE2_CONSTANT_SSRC);
   		} else if (!strcasecmp(v->name, "session-timers")) {
-  			int i = (int) str2stmode(v->value); 
-  			if (i < 0) {
 ***************
-*** 22201,22206 ****
---- 22275,22281 ----
+*** 23385,23390 ****
+--- 23459,23465 ----
   	AST_CLI_DEFINE(sip_show_registry, "List SIP registration status"),
   	AST_CLI_DEFINE(sip_unregister, "Unregister (force expiration) a SIP peer from the registry"),
   	AST_CLI_DEFINE(sip_show_settings, "Show SIP global settings"),
