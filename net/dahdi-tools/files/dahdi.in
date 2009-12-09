@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dahdi
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+# BEFORE: asterisk
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# zaptel_enable (bool):         Set to NO by default.
+#                               Set it to YES to enable zaptel.
+#
+
+. %%RC_SUBR%%
+
+kmod_dir=%%PREFIX%%/lib/dahdi
+
+name="dahdi"
+rcvar=${name}_enable
+
+start_cmd="dahdi_start"
+stop_cmd="dahdi_stop"
+
+load_rc_config $name
+
+: ${dahdi_enable="NO"}
+
+: ${dahdi_kmod_load="zaptel.ko qozap.ko wctdm.ko wctdm24xxp.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko wcte12xp.ko"}
+# Reverse list
+dahdi_kmod_unload=""
+for kmod in ${dahdi_kmod_load}
+do
+	dahdi_kmod_unload="${kmod} ${dahdi_kmod_unload}"
+done
+
+dahdi_start()
+{
+	echo -n " ${name}"
+	for kmod in ${dahdi_kmod_load}
+	do
+		if [ -e ${kmod_dir}/${kmod} ]
+		then
+			kldload ${kmod_dir}/${kmod} || exit 1
+		fi
+	done
+	%%PREFIX%%/bin/dahdi_cfg
+}
+
+dahdi_stop()
+{
+        echo -n " ${name}"
+	for kmod in ${dahdi_kmod_unload}
+	do
+		if [ -e ${kmod_dir}/${kmod} ]
+		then
+		        kldunload ${kmod}
+		fi
+	done
+}
+
+run_rc_command "$1"
