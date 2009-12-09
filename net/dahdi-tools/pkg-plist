@@ -11,8 +11,20 @@ bin/dahdi_cfg
 bin/wct4xxp-diag
 lib/libtonezone.a
 include/dahdi/tonezone.h
-@comment include/dahdi/kernel.h
-@comment include/dahdi/user.h
+include/dahdi/kernel.h
+include/dahdi/user.h
 @dirrmtry include/dahdi
 etc/dahdi/system.conf.sample
 @dirrmtry etc/dahdi
+lib/dahdi/linker.hints
+lib/dahdi/dahdi.ko
+lib/dahdi/dahdi_dummy.ko
+lib/dahdi/dahdi_echocan_kb1.ko
+lib/dahdi/dahdi_echocan_mg2.ko
+lib/dahdi/dahdi_echocan_sec.ko
+lib/dahdi/dahdi_echocan_sec2.ko
+lib/dahdi/wcb4xxp.ko
+lib/dahdi/wct1xxp.ko
+lib/dahdi/wct4xxp.ko
+lib/dahdi/wctdm.ko
+@dirrm lib/dahdi

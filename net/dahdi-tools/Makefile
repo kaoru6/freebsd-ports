@@ -1,6 +1,6 @@
 # New ports collection makefile for:	DAHDI Tools
 # Date created:				2009-12-10
-# Whom:					
+# Whom:					TAKAHASHI Kaoru
 #
 # $FreeBSD$
 #
@@ -11,11 +11,12 @@ CATEGORIES=	net
 MASTER_SITES=	http://triaez.kaisei.org/~kaoru/asterisk/
 
 MAINTAINER=	kaoru@kaisei.org
-COMMENT=	DAHDI Tools (without kernel module)
+COMMENT=	DAHDI Tools with kernel module
 
-WRKSRC=                ${WRKDIR}/${DISTNAME}/tools
+MAKE_ENV=	KMODDIR=${PREFIX}/lib/dahdi
+#WRKSRC=		${WRKDIR}/${DISTNAME}
 
-#post-install:
-#	cd ${WRKDIR}/${DISTNAME}/dahdi && ${MAKE} afterinstall
+pre-install:
+	${MKDIR} ${PREFIX}/lib/dahdi
 
 .include <bsd.port.mk>
