@@ -13,6 +13,7 @@ MASTER_SITES=	http://triaez.kaisei.org/~kaoru/asterisk/
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	DAHDI Tools with kernel module
 
+USE_RC_SUBR=	dahdi
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/dahdi
 #WRKSRC=		${WRKDIR}/${DISTNAME}
 

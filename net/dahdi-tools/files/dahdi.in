@@ -28,7 +28,8 @@ load_rc_config $name
 
 : ${dahdi_enable="NO"}
 
-: ${dahdi_kmod_load="zaptel.ko qozap.ko wctdm.ko wctdm24xxp.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko wcte12xp.ko"}
+: ${dahdi_kmod_load="dahdi.ko dahdi_dummy.ko"}
+#: ${dahdi_kmod_load="dahdi.ko dahdi_dummy.ko dahdi_echocan_kb1.ko dahdi_echocan_mg2.ko dahdi_echocan_sec.ko dahdi_echocan_sec2.ko wcb4xxp.ko wct1xxp.ko wct4xxp.ko wctdm.ko"}
 # Reverse list
 dahdi_kmod_unload=""
 for kmod in ${dahdi_kmod_load}
