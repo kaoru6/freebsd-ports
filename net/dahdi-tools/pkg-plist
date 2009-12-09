@@ -1,0 +1,18 @@
+bin/fxotune
+bin/dahdi_diag
+bin/dahdi_scan
+bin/dahdi_test
+bin/dahdi_tool
+bin/dahdi_speed
+bin/dahdi_monitor
+bin/fxstest
+bin/timertest
+bin/dahdi_cfg
+bin/wct4xxp-diag
+lib/libtonezone.a
+include/dahdi/tonezone.h
+@comment include/dahdi/kernel.h
+@comment include/dahdi/user.h
+@dirrmtry include/dahdi
+etc/dahdi/system.conf.sample
+@dirrmtry etc/dahdi
