@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.0.19
+PORTREVISION=	1
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -62,6 +63,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 #.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 #OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
+OPTIONS+=	DAHDI		"Enable DAHDI support" on
 
 # Include this since we have altered OPTIONS.
 #.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
@@ -77,16 +79,13 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
-.if !defined(WITH_ZAPTEL)
-PLIST_SUB+=	WITH_ZAPTEL="@comment "
-CONFIGURE_ARGS+= --without-zaptel
+
+.if !defined(WITH_DAHDI)
+PLIST_SUB+=	WITH_DAHDI="@comment "
+CONFIGURE_ARGS+=	--without-dahdi
 .else
-PLIST_SUB+=	WITH_ZAPTEL=""
-CONFIGURE_ARGS+= --with-zaptel
-BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
+PLIST_SUB+=	WITH_DAHDI=""
+CONFIGURE_ARGS+= --with-dahdi
 .endif
 
 #
