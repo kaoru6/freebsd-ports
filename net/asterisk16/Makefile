@@ -2,7 +2,7 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.126 2009/11/27 22:27:12 sobomax Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.128 2010/01/10 23:51:08 pgollucci Exp $
 #
 
 PORTNAME=	asterisk
@@ -17,7 +17,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt \
+		newt.52:${PORTSDIR}/devel/newt \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
