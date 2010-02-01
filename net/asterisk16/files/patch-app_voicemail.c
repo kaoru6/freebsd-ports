@@ -1,7 +1,7 @@
-*** apps/app_voicemail.c.org	Tue Aug 11 04:25:03 2009
---- apps/app_voicemail.c	Mon Aug 31 03:28:27 2009
+*** apps/app_voicemail.c.org	2009-12-05 02:39:32.000000000 +0900
+--- apps/app_voicemail.c	2009-12-27 03:47:42.000000000 +0900
 ***************
-*** 5346,5358 ****
+*** 5423,5435 ****
   		return d;
   	}
   
@@ -15,7 +15,7 @@
   		}
   		return res;
   	}
---- 5346,5389 ----
+--- 5423,5466 ----
   		return d;
   	}
   
@@ -61,19 +61,19 @@
   		return res;
   	}
 ***************
-*** 5871,5876 ****
---- 5902,5909 ----
-  			res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' Ad 'digits/pt-de' B 'digits/pt-de' Y 'digits/pt-as' HM ", NULL);
-  		else if (!strncasecmp(chan->language, "zh", 2)) /* CHINESE (Taiwan) syntax */
-  			res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "qR 'vm-received'", NULL);		
-+ 		else if (!strcasecmp(chan->language, "ja"))      /* Japanese syntax */
-+ 			res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "PHM q 'jp-ni' 'vm-received'", NULL);		
-  		else {
-  			res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q 'digits/at' IMp", NULL);
-  		}
+*** 5935,5940 ****
+--- 5966,5973 ----
+  		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q  H 'digits/kai' M ", NULL);
+  	} else if (!strncasecmp(chan->language, "it", 2)) {     /* ITALIAN syntax */
+  		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q 'digits/at' 'digits/hours' k 'digits/e' M 'digits/minutes'", NULL);
++ 	} else if (!strcasecmp(chan->language, "ja")) {		/* Japanese syntax */
++ 		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "PHM q 'jp-ni' 'vm-received'", NULL);
+  	} else if (!strncasecmp(chan->language, "nl", 2)) {     /* DUTCH syntax */
+  		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q 'digits/nl-om' HM", NULL);
+  	} else if (!strncasecmp(chan->language, "no", 2)) {     /* NORWEGIAN syntax */
 ***************
-*** 6414,6419 ****
---- 6447,6496 ----
+*** 6519,6524 ****
+--- 6552,6601 ----
   	return res;
   }
   
@@ -125,13 +125,13 @@
    *
    * It is hoped that this function can prevent the proliferation of 
 ***************
-*** 7197,7202 ****
---- 7274,7281 ----
-  		return vm_intro_zh(chan, vms);
-  	} else if (!strcasecmp(chan->language, "ua")) { /* UKRAINIAN syntax */
-  		return vm_intro_multilang(chan, vms, "n");
+*** 7360,7365 ****
+--- 7437,7444 ----
+  		return vm_intro_he(chan, vms);
+  	} else if (!strncasecmp(chan->language, "it", 2)) {  /* ITALIAN syntax */
+  		return vm_intro_it(chan, vms);
 + 	} else if (!strcasecmp(chan->language, "ja")) { /* Japanese syntax */
 + 		return vm_intro_ja(chan, vms);
-  	} else {					/* Default to ENGLISH */
-  		return vm_intro_en(chan, vms);
-  	}
+  	} else if (!strncasecmp(chan->language, "nl", 2)) {  /* DUTCH syntax */
+  		return vm_intro_nl(chan, vms);
+  	} else if (!strncasecmp(chan->language, "no", 2)) {  /* NORWEGIAN syntax */

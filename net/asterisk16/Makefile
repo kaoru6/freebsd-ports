@@ -2,12 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.128 2010/01/10 23:51:08 pgollucci Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.129 2010/01/29 10:32:17 sobomax Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.0.19
-PORTREVISION=	1
+PORTVERSION=	1.6.0.21
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -85,7 +84,7 @@ PLIST_SUB+=	WITH_DAHDI="@comment "
 CONFIGURE_ARGS+=	--without-dahdi
 .else
 PLIST_SUB+=	WITH_DAHDI=""
-CONFIGURE_ARGS+= --with-dahdi
+CONFIGURE_ARGS+=	--with-dahdi
 .endif
 
 #
