@@ -2,11 +2,12 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.129 2010/01/29 10:32:17 sobomax Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.135 2010/06/06 20:44:00 naddy Exp $
 #
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.0.21
+PORTREVISION=	4
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -20,7 +21,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
@@ -60,13 +61,12 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 .include <bsd.port.pre.mk>
 
-#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-#OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
-OPTIONS+=	DAHDI		"Enable DAHDI support" off
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+OPTIONS+=	DAHDI		"Enable DAHDI support" on
 
 # Include this since we have altered OPTIONS.
-#.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
-#.endif
+.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
+.endif
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
@@ -78,13 +78,16 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
-
 .if !defined(WITH_DAHDI)
 PLIST_SUB+=	WITH_DAHDI="@comment "
-CONFIGURE_ARGS+=	--without-dahdi
+CONFIGURE_ARGS+= --without-dahdi
 .else
 PLIST_SUB+=	WITH_DAHDI=""
-CONFIGURE_ARGS+=	--with-dahdi
+CONFIGURE_ARGS+= --with-dahdi
+BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
+		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
+LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 .endif
 
 #
@@ -142,7 +145,7 @@ CONFIGURE_ARGS+= --without-netsnmp
 .else
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+= --with-netsnmp
-LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if !defined(WITH_JABBER)
@@ -189,7 +192,7 @@ CONFIGURE_ARGS+= --with-curl=no \
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+= --with-curl \
 		--with-libcurl
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITH_SPANDSP)
