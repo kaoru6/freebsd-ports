@@ -1,8 +1,8 @@
-*** channels/chan_sip.c.org	2009-11-14 00:56:48.000000000 +0900
---- channels/chan_sip.c	2009-12-27 03:06:40.000000000 +0900
+*** channels/chan_sip.c.orig	Wed May 12 04:35:37 2010
+--- channels/chan_sip.c	Wed Aug  4 11:41:20 2010
 ***************
-*** 244,249 ****
---- 244,252 ----
+*** 241,246 ****
+--- 241,249 ----
   
   #define INITIAL_CSEQ                 101              /*!< our initial sip sequence number */
   
@@ -13,8 +13,8 @@
   #define DEFAULT_MIN_SE               90               /*!< Session-Timer Default Min-SE period (RFC 4028) */
   
 ***************
-*** 748,753 ****
---- 751,760 ----
+*** 746,751 ****
+--- 749,758 ----
   /*! \brief Global list of addresses dynamic peers are not allowed to use */
   static struct ast_ha *global_contact_ha = NULL;
   
@@ -36,8 +36,8 @@
   static const struct cfsubscription_types *find_subscription_type(enum subscriptiontype subtype);
   static char *complete_sip_peer(const char *word, int state, int flags2);
 ***************
-*** 14201,14206 ****
---- 14209,14244 ----
+*** 14467,14472 ****
+--- 14475,14510 ----
   	return CLI_SUCCESS;
   }
   
@@ -75,8 +75,8 @@
   static const char *subscription_type2str(enum subscriptiontype subtype)
   {
 ***************
-*** 15211,15216 ****
---- 15249,15259 ----
+*** 15477,15482 ****
+--- 15515,15525 ----
   	const char *md5secret;
   	struct sip_auth *auth = NULL;	/* Realm authentication */
   
@@ -89,8 +89,8 @@
   		ast_copy_string(uri, p->domain, sizeof(uri));
   	else if (!ast_strlen_zero(p->uri))
 ***************
-*** 15218,15223 ****
---- 15261,15288 ----
+*** 15484,15489 ****
+--- 15527,15554 ----
   	else
   		snprintf(uri, sizeof(uri), "sip:%s@%s", p->username, ast_inet_ntoa(p->sa.sin_addr));
   
@@ -120,22 +120,8 @@
   
    	/* Check if we have separate auth credentials */
 ***************
-*** 21878,21883 ****
---- 21943,21953 ----
-  				if (peer->maxcallbitrate < 0) {
-  					peer->maxcallbitrate = default_maxcallbitrate;
-  				}
-+ 			} else if (!strcasecmp(v->name, "rt200ne")) { /*RT-200NE HACK*/
-+ 				if (global_rt200ne_cnt < MAX_RT200NE) {
-+ 					ast_copy_string(global_rt200ne[global_rt200ne_cnt], v->value, sizeof(global_rt200ne));
-+ 					global_rt200ne_cnt++;
-+ 				}
-  			} else if (!strcasecmp(v->name, "session-timers")) {
-  				int i = (int) str2stmode(v->value);
-  				if (i < 0) {
-***************
-*** 22278,22283 ****
---- 22348,22357 ----
+*** 22543,22548 ****
+--- 22608,22617 ----
   
   	global_matchexterniplocally = FALSE;
   
@@ -147,8 +133,22 @@
   	memcpy(&global_jbconf, &default_jbconf, sizeof(struct ast_jb_conf));
   
 ***************
-*** 23385,23390 ****
---- 23459,23465 ----
+*** 22895,22900 ****
+--- 22964,22974 ----
+  				default_maxcallbitrate = DEFAULT_MAX_CALL_BITRATE;
+  		} else if (!strcasecmp(v->name, "matchexterniplocally")) {
+  			global_matchexterniplocally = ast_true(v->value);
++ 		} else if (!strcasecmp(v->name, "rt200ne")) { /*RT-200NE HACK*/
++ 			if (global_rt200ne_cnt < MAX_RT200NE) {
++ 				ast_copy_string(global_rt200ne[global_rt200ne_cnt], v->value, sizeof(global_rt200ne));
++ 				global_rt200ne_cnt++;
++ 			}
+  		} else if (!strcasecmp(v->name, "session-timers")) {
+  			int i = (int) str2stmode(v->value); 
+  			if (i < 0) {
+***************
+*** 23649,23654 ****
+--- 23723,23729 ----
   	AST_CLI_DEFINE(sip_show_registry, "List SIP registration status"),
   	AST_CLI_DEFINE(sip_unregister, "Unregister (force expiration) a SIP peer from the registry"),
   	AST_CLI_DEFINE(sip_show_settings, "Show SIP global settings"),
