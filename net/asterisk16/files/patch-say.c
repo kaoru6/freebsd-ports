@@ -1,5 +1,5 @@
-*** main/say.c.org	2009-10-02 09:03:52.000000000 +0900
---- main/say.c	2009-12-27 03:35:29.000000000 +0900
+*** main/say.c.orig	2010-01-05 06:51:55.000000000 +0900
+--- main/say.c	2010-06-09 00:06:40.000000000 +0900
 ***************
 *** 349,354 ****
 --- 349,355 ----
@@ -201,8 +201,8 @@
   		static int deprecation_warning = 0;
   		if (deprecation_warning++ % 10 == 0) {
 ***************
-*** 4297,4302 ****
---- 4407,4701 ----
+*** 4296,4301 ****
+--- 4406,4700 ----
   	return res;
   }
   
@@ -499,8 +499,8 @@
   
   /** ast_say_date_with_format_he Say formatted date in Hebrew
 ***************
-*** 6077,6082 ****
---- 6476,6483 ----
+*** 6076,6081 ****
+--- 6475,6482 ----
   		return ast_say_time_he(chan, t, ints, lang);
   	} else if (!strncasecmp(lang, "hu", 2)) { /* Hungarian syntax */
   		return(ast_say_time_hu(chan, t, ints, lang));
@@ -510,8 +510,8 @@
   		return ast_say_time_ka(chan, t, ints, lang);
   	} else if (!strncasecmp(lang, "nl", 2)) { /* Dutch syntax */
 ***************
-*** 6406,6411 ****
---- 6807,6814 ----
+*** 6405,6410 ****
+--- 6806,6813 ----
   		return ast_say_datetime_he(chan, t, ints, lang);
   	} else if (!strncasecmp(lang, "hu", 2)) { /* Hungarian syntax */
   		return ast_say_datetime_hu(chan, t, ints, lang);
@@ -521,8 +521,8 @@
   		return ast_say_datetime_ka(chan, t, ints, lang);
   	} else if (!strncasecmp(lang, "nl", 2)) { /* Dutch syntax */
 ***************
-*** 6835,6840 ****
---- 7238,7307 ----
+*** 6834,6839 ****
+--- 7237,7306 ----
   	}
   	return res;
   }
@@ -594,8 +594,8 @@
   {
   	if (!strncasecmp(lang, "en", 2)) {        /* English syntax */
 ***************
-*** 7247,7252 ****
---- 7714,7759 ----
+*** 7246,7251 ****
+--- 7713,7758 ----
   	return res;
   }
   

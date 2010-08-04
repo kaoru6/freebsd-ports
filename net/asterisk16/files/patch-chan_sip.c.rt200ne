@@ -1,5 +1,5 @@
-*** channels/chan_sip.c.orig	Sat Nov 14 00:56:48 2009
---- channels/chan_sip.c	Thu Dec  3 17:51:58 2009
+*** channels/chan_sip.c.org	2009-11-14 00:56:48.000000000 +0900
+--- channels/chan_sip.c	2009-12-27 03:06:40.000000000 +0900
 ***************
 *** 244,249 ****
 --- 244,252 ----
@@ -120,8 +120,22 @@
   
    	/* Check if we have separate auth credentials */
 ***************
+*** 21878,21883 ****
+--- 21943,21953 ----
+  				if (peer->maxcallbitrate < 0) {
+  					peer->maxcallbitrate = default_maxcallbitrate;
+  				}
++ 			} else if (!strcasecmp(v->name, "rt200ne")) { /*RT-200NE HACK*/
++ 				if (global_rt200ne_cnt < MAX_RT200NE) {
++ 					ast_copy_string(global_rt200ne[global_rt200ne_cnt], v->value, sizeof(global_rt200ne));
++ 					global_rt200ne_cnt++;
++ 				}
+  			} else if (!strcasecmp(v->name, "session-timers")) {
+  				int i = (int) str2stmode(v->value);
+  				if (i < 0) {
+***************
 *** 22278,22283 ****
---- 22343,22352 ----
+--- 22348,22357 ----
   
   	global_matchexterniplocally = FALSE;
   
@@ -132,20 +146,6 @@
   	/* Copy the default jb config over global_jbconf */
   	memcpy(&global_jbconf, &default_jbconf, sizeof(struct ast_jb_conf));
   
-***************
-*** 22629,22634 ****
---- 22698,22708 ----
-  				default_maxcallbitrate = DEFAULT_MAX_CALL_BITRATE;
-  		} else if (!strcasecmp(v->name, "matchexterniplocally")) {
-  			global_matchexterniplocally = ast_true(v->value);
-+ 		} else if (!strcasecmp(v->name, "rt200ne")) { /*RT-200NE HACK*/
-+ 			if (global_rt200ne_cnt < MAX_RT200NE) {
-+ 				ast_copy_string(global_rt200ne[global_rt200ne_cnt], v->value, sizeof(global_rt200ne));
-+ 				global_rt200ne_cnt++;
-+ 			}
-  		} else if (!strcasecmp(v->name, "constantssrc")) {
-  			ast_set2_flag(&global_flags[1], ast_true(v->value), SIP_PAGE2_CONSTANT_SSRC);
-  		} else if (!strcasecmp(v->name, "session-timers")) {
 ***************
 *** 23385,23390 ****
 --- 23459,23465 ----

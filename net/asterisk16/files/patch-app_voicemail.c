@@ -1,21 +1,8 @@
-*** apps/app_voicemail.c.org	2009-12-05 02:39:32.000000000 +0900
---- apps/app_voicemail.c	2009-12-27 03:47:42.000000000 +0900
+*** apps/app_voicemail.c.orig	2010-05-12 02:25:11.000000000 +0900
+--- apps/app_voicemail.c	2010-06-09 00:18:50.000000000 +0900
 ***************
-*** 5423,5435 ****
-  		return d;
-  	}
-  
-  	static int get_folder2(struct ast_channel *chan, char *fn, int start)
-  	{
-  		int res = 0;
-  		res = ast_play_and_wait(chan, fn);	/* Folder name */
-  		while (((res < '0') || (res > '9')) &&
-  				(res != '#') && (res >= 0)) {
-! 			res = get_folder(chan, 0);
-  		}
-  		return res;
-  	}
---- 5423,5466 ----
+*** 5519,5524 ****
+--- 5519,5551 ----
   		return d;
   	}
   
@@ -25,9 +12,9 @@
 + 		int x;
 + 		int d;
 + 		char fn[256];
-+ 		for (x = start; x< 5; x++) {	/* For all folders */
-+ 			if ((d = ast_say_number(chan, x, AST_DIGIT_ANY, chan->language, (char *) NULL)))
-+ 				return d;
++ 		for (x = start; x< 5; x++) {    /* For all folders */
++ 		if ((d = ast_say_number(chan, x, AST_DIGIT_ANY, chan->language, (char *) NULL)))
++ 			return d;
 + 			snprintf(fn, sizeof(fn), "vm-%s", mbox(x));     /* Folder name */
 + 			d = vm_play_folder_name(chan, fn);
 + 			if (d)
@@ -49,20 +36,30 @@
   	static int get_folder2(struct ast_channel *chan, char *fn, int start)
   	{
   		int res = 0;
-  		res = ast_play_and_wait(chan, fn);	/* Folder name */
-  		while (((res < '0') || (res > '9')) &&
-  				(res != '#') && (res >= 0)) {
-! 			/* res = get_folder(chan, 0); */
-! 			if (!strcasecmp(chan->language,"ja"))	/* Japanese syntax */
-!  				res = get_folder_ja(chan, 0);
-!  			else /* Default syntax */
-!  				res = get_folder(chan, 0);
-  		}
-  		return res;
-  	}
 ***************
-*** 5935,5940 ****
---- 5966,5973 ----
+*** 5527,5533 ****
+  		while (((res < '0') || (res > '9')) &&
+  				(res != '#') && (res >= 0) &&
+  				loops < 4) {
+! 			res = get_folder(chan, 0);
+  			loops++;
+  		}
+  		if (loops == 4) { /* give up */
+--- 5554,5564 ----
+  		while (((res < '0') || (res > '9')) &&
+  				(res != '#') && (res >= 0) &&
+  				loops < 4) {
+! 			/* res = get_folder(chan, 0); */
+! 			if (!strcasecmp(chan->language,"ja"))   /* Japanese syntax */
+! 				res = get_folder_ja(chan, 0);
+! 			else /* Default syntax */
+!                                res = get_folder(chan, 0);
+  			loops++;
+  		}
+  		if (loops == 4) { /* give up */
+***************
+*** 6065,6070 ****
+--- 6096,6103 ----
   		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q  H 'digits/kai' M ", NULL);
   	} else if (!strncasecmp(chan->language, "it", 2)) {     /* ITALIAN syntax */
   		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q 'digits/at' 'digits/hours' k 'digits/e' M 'digits/minutes'", NULL);
@@ -72,8 +69,8 @@
   		res = ast_say_date_with_format(chan, t, AST_DIGIT_ANY, chan->language, "'vm-received' q 'digits/nl-om' HM", NULL);
   	} else if (!strncasecmp(chan->language, "no", 2)) {     /* NORWEGIAN syntax */
 ***************
-*** 6519,6524 ****
---- 6552,6601 ----
+*** 6636,6641 ****
+--- 6669,6718 ----
   	return res;
   }
   
@@ -125,8 +122,8 @@
    *
    * It is hoped that this function can prevent the proliferation of 
 ***************
-*** 7360,7365 ****
---- 7437,7444 ----
+*** 7478,7483 ****
+--- 7555,7562 ----
   		return vm_intro_he(chan, vms);
   	} else if (!strncasecmp(chan->language, "it", 2)) {  /* ITALIAN syntax */
   		return vm_intro_it(chan, vms);
