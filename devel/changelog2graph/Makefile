@@ -22,6 +22,8 @@ RUN_DEPENDS=	${SITE_PERL}/Chart/PNGgraph.pm:${PORTSDIR}/graphics/p5-Chart-PNGgra
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+PLIST_FILES=	bin/changelog2graph
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}
