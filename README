@@ -1,0 +1,4 @@
+Private FreeBSD ports skeleton.
+
+Don't forget to "git config user.email alice@example.org" or
+ "git config --global user.email alice@example.org".
