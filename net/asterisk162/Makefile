@@ -2,17 +2,17 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.138 2010/09/29 12:48:58 tota Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.145 2010/12/29 12:49:10 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.2.13
+PORTVERSION=	1.6.2.15
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 PKGNAMESUFFIX=	16
 
-MAINTAINER=	flo@smeets.im
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
@@ -20,12 +20,12 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --localstatedir=/var
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
@@ -41,10 +41,11 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
-CONFLICTS=	asterisk*-1.2* asterisk*-1.4*
+CONFLICTS=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.8*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
-		ODBC		"Enable ODBC support" on \
+		IODBC           "Enable iODBC support" off \
+		UODBC           "Enable unixODBC support" on \
 		POSTGRES	"Enable PostgreSQL support" on \
 		RADIUS		"Enable RADIUS accounting support" on \
 		SNMP		"Enable SNMP support" on \
@@ -57,14 +58,35 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off
 
+ASTERISK_USER?=		asterisk
+ASTERISK_GROUP?=	asterisk
+
+USERS=	${ASTERISK_USER}
+GROUPS=	${ASTERISK_GROUP} dahdi
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${PREFIX} == ${LOCALBASE}
+VARDIR=/var
+.else
+VARDIR=${PREFIX}/var
+.endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 OPTIONS+=	DAHDI		"Enable DAHDI support" on
+
+.if defined(WITH_IODBC) && defined(WITH_UODBC)
+IGNORE=	please select only one of iodbc or unixODBC
+.endif
 
 # Include this since we have altered OPTIONS.
 .include <bsd.port.options.mk>
 .endif
+
+SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
+PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER}
+PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
+PLIST_SUB+=	VARDIR=${VARDIR}
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
@@ -91,14 +113,25 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 #
 # WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
 # similarly
-.if !defined(WITH_ODBC)
-PLIST_SUB+=	WITH_ODBC="@comment "
+.if !defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--without-unixodbc
-.else
+.endif
+.if !defined(WITH_IODBC)
+CONFIGURE_ARGS+=	--without-iodbc
+.endif
+.if !defined(WITH_UODBC) && !defined(WITH_IODBC)
+PLIST_SUB+=	WITH_ODBC="@comment "
+.endif
+.if defined(WITH_UODBC) || defined(WITH_IODBC)
 PLIST_SUB+=	WITH_ODBC=""
+USE_AUTOTOOLS=	libltdl
+.if defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-USE_AUTOTOOLS=	libltdl
+.elif defined(WITH_IODBC)
+CONFIGURE_ARGS+=	--with-iodbc --with-ltdl
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+.endif
 .endif
 
 .if !defined(WITH_FREETDS)
@@ -218,5 +251,8 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+
+post-install:
+	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 
 .include <bsd.port.post.mk>

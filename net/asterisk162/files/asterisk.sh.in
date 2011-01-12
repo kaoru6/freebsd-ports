@@ -1,7 +1,10 @@
 #!/bin/sh
+#
+# $FreeBSD: ports/net/asterisk16/files/asterisk.sh.in,v 1.12 2011/01/04 14:19:53 flo Exp $
+#
 
 # PROVIDE: asterisk
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable asterisk:
@@ -11,22 +14,29 @@
 
 . /etc/rc.subr
 
-stop_cmd=asterisk_shutdown
-asterisk_shutdown () {
-  echo 'Stopping asterisk'
-  %%PREFIX%%/sbin/asterisk -qrx 'core stop now'
-  sleep 1
-  return 0
-}
-
 name=asterisk
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/asterisk
+extra_commands="reload"
+
+stop_cmd="asterisk_stop"
+reload_cmd="asterisk_reload"
+
+command="%%PREFIX%%/sbin/asterisk"
+command_args="-n -U %%ASTERISK_USER%%"
+pidfile=${asterisk_pidfile:-"/var/run/asterisk.pid"}
+
+asterisk_stop() {
+  echo 'Stopping asterisk'
+  $command -nqrx 'core stop now'
+}
+
+asterisk_reload() {
+  echo 'Reloading asterisk'
+  $command -nqrx 'reload'
+}
 
 load_rc_config $name
-
-pidfile=${asterisk_pidfile:-"/var/run/asterisk.pid"}
 
 asterisk_enable=${asterisk_enable:-"NO"}
 
