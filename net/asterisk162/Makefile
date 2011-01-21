@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.145 2010/12/29 12:49:10 flo Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.147 2011/01/19 09:05:38 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.2.15
+PORTVERSION=	1.6.2.16.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
