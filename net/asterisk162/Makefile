@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk16/Makefile,v 1.147 2011/01/19 09:05:38 flo Exp $
+# $FreeBSD: ports/net/asterisk16/Makefile,v 1.151 2011/03/02 00:53:03 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.2.16.1
+PORTVERSION=	1.6.2.17
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -41,7 +41,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
-CONFLICTS=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.8*
+CONFLICTS_BUILD=	linuxthreads-*
+CONFLICTS_INSTALL=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.8*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		IODBC           "Enable iODBC support" off \
