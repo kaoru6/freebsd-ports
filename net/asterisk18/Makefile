@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk/Makefile,v 1.143 2011/02/20 00:40:13 flo Exp $
+# $FreeBSD: ports/net/asterisk/Makefile,v 1.147 2011/03/02 17:15:13 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.2.3
+PORTVERSION=	1.8.3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -59,7 +59,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		CURL		"Enable CURL support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off \
-		EXCHANGE	"Enable Exchange calendar support" off
+		EXCHANGE	"Enable Exchange calendar support" off \
+		NEWG711		"Enable new G711 Codec" off
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -250,6 +251,10 @@ PLIST_SUB+=	WITH_EXCHANGE="@comment "
 .else
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 PLIST_SUB+=	WITH_EXCHANGE=""
+.endif
+
+.if defined(WITH_NEWG711)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-g711-new-codec.diff
 .endif
 
 .if defined(WITH_MISC_PATCHES)
