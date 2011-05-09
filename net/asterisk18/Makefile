@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk/Makefile,v 1.149 2011/03/18 21:52:10 flo Exp $
+# $FreeBSD: ports/net/asterisk/Makefile,v 1.152 2011/04/26 18:53:16 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.3.2
+PORTVERSION=	1.8.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -111,7 +111,6 @@ CONFIGURE_ARGS+=	--with-dahdi
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 .endif
 
 #
@@ -162,6 +161,7 @@ PLIST_SUB+=	WITH_MYSQL="@comment "
 PLIST_SUB+=	WITH_MYSQL=""
 USE_MYSQL=	yes
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-mysql.diff
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-addons__.moduleinfo.diff
 .endif
 
 .if !defined(WITH_OGGVORBIS)
