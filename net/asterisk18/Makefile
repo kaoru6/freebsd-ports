@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk/Makefile,v 1.165 2011/10/17 21:46:34 flo Exp $
+# $FreeBSD: ports/net/asterisk/Makefile,v 1.168 2011/12/31 15:45:45 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.7.1
+PORTVERSION=	1.8.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	18
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
