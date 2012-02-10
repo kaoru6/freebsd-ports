@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk/Makefile,v 1.170 2012/01/28 00:07:59 flo Exp $
+# $FreeBSD: ports/net/asterisk/Makefile,v 1.172 2012/02/07 21:30:46 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.9.0
+PORTVERSION=	1.8.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -134,7 +134,7 @@ PLIST_SUB+=	WITH_ODBC=""
 USE_AUTOTOOLS=	libltdl
 .if defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 .elif defined(WITH_IODBC)
 CONFIGURE_ARGS+=	--with-iodbc --with-ltdl
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
