@@ -2,11 +2,11 @@
 # Date created:				17 October 2003
 # Whom:					Maxim Sobolev <sobomax@portaone.com>
 #
-# $FreeBSD: ports/net/asterisk/Makefile,v 1.175 2012/03/05 23:06:54 flo Exp $
+# $FreeBSD: ports/net/asterisk/Makefile,v 1.185 2012/07/06 18:09:17 flo Exp $
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.10.0
+PORTVERSION=	1.8.13.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -44,7 +44,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.6*
+CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-10*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		IODBC		"Enable iODBC support" off \
@@ -61,9 +61,12 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		CURL		"Enable CURL support" on \
 		SPANDSP		"Enable Spandsp faxing support" off \
 		EXCHANGE	"Enable Exchange calendar support" off \
-		NEWG711		"Enable new G711 Codec" off	\
-		SRTP		"Enable SecureRTP support" off	\
-		LUA		"Enable LUA extensions support" off
+		NEWG711		"Enable new G711 Codec" off \
+		SRTP		"Enable SecureRTP support" off \
+		LUA		"Enable LUA extensions support" off \
+		LDAP		"Enable Ldap support" off
+
+PORTSCOUT=	limit:^1\.8\.
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -107,13 +110,14 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 
 .if !defined(WITH_DAHDI)
 PLIST_SUB+=	WITH_DAHDI="@comment "
-CONFIGURE_ARGS+=	--without-dahdi
+CONFIGURE_ARGS+=	--without-dahdi --without-openr2
 .else
 PLIST_SUB+=	WITH_DAHDI=""
-CONFIGURE_ARGS+=	--with-dahdi
+CONFIGURE_ARGS+=	--with-dahdi --with-openr2
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri\
+		openr2.4:${PORTSDIR}/misc/openr2
 .endif
 
 #
@@ -267,6 +271,15 @@ PLIST_SUB+=	WITH_LUA=""
 .else
 CONFIGURE_ARGS+=	--without-lua
 PLIST_SUB+=	WITH_LUA="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--with-ldap
+USE_OPENLDAP=	yes
+PLIST_SUB+=	WITH_LDAP=""
+.else
+CONFIGURE_ARGS+=	--without-ldap
+PLIST_SUB+=	WITH_LDAP="@comment "
 .endif
 
 post-extract:
