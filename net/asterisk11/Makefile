@@ -1,7 +1,7 @@
-# $FreeBSD: ports/net/asterisk11/Makefile,v 1.4 2013/01/03 19:47:06 svnexp Exp $
+# $FreeBSD: ports/net/asterisk11/Makefile,v 1.5 2013/01/15 17:41:41 svnexp Exp $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.1.2
+PORTVERSION=	11.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
