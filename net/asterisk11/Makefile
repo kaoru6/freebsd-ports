@@ -1,7 +1,7 @@
-# $FreeBSD: ports/net/asterisk11/Makefile,v 1.6 2013/01/23 08:41:37 svnexp Exp $
+# $FreeBSD: net/asterisk11/Makefile 315534 2013-03-29 10:04:43Z flo $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.2.1
+PORTVERSION=	11.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -25,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	any
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_BISON=	build
+USES=		bison
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
