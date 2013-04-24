@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: net/asterisk11/files/asterisk.in 302141 2012-08-05 23:19:36Z dougb $
+# $FreeBSD: net/asterisk11/files/asterisk.in 316277 2013-04-22 21:11:34Z flo $
 #
 
 # PROVIDE: asterisk
@@ -23,7 +23,7 @@ stop_cmd="asterisk_stop"
 reload_cmd="asterisk_reload"
 
 command="%%PREFIX%%/sbin/asterisk"
-command_args="-n -U %%ASTERISK_USER%%"
+command_args="-n -F -U %%ASTERISK_USER%%"
 pidfile=${asterisk_pidfile:-"/var/run/asterisk/asterisk.pid"}
 
 asterisk_stop() {

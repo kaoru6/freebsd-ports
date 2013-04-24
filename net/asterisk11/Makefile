@@ -1,7 +1,7 @@
-# $FreeBSD: net/asterisk11/Makefile 315534 2013-03-29 10:04:43Z flo $
+# $FreeBSD: net/asterisk11/Makefile 316277 2013-04-22 21:11:34Z flo $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.2.2
+PORTVERSION=	11.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
