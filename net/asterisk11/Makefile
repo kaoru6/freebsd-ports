@@ -1,7 +1,8 @@
-# $FreeBSD: net/asterisk11/Makefile 316277 2013-04-22 21:11:34Z flo $
+# $FreeBSD: net/asterisk11/Makefile 323666 2013-07-25 20:38:41Z flo $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.3.0
+PORTVERSION=	11.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -13,16 +14,18 @@ COMMENT=	An Open Source PBX and telephony toolkit
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --with-uuid=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
-USE_GCC=	any
+CFLAGS+=	-I${LOCALBASE}/include
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USES=		bison
@@ -210,7 +213,7 @@ CONFIGURE_ARGS+=	--without-gsm
 .if ${PORT_OPTIONS:MCURL}
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+=	--with-libcurl
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
 PLIST_SUB+=	WITH_CURL="@comment "
 CONFIGURE_ARGS+=	--with-libcurl=no
@@ -269,8 +272,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-.if !empty(PORT_OPTIONS:MMYSQL) || !empty(PORT_OPTIONS:MNEWG711) || !empty(PORT_OPTIONS:MOOH323)
-	@cd ${WRKSRC} && make menuselect.makeopts
+	@cd ${WRKSRC} && ${GMAKE} menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
@@ -282,9 +285,9 @@ post-configure:
 .if ${PORT_OPTIONS:MNEWG711}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
 .endif
-.endif
 
 post-install:
+	@${MKDIR} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 
 .include <bsd.port.post.mk>
