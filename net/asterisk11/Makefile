@@ -1,8 +1,8 @@
-# $FreeBSD: net/asterisk11/Makefile 323666 2013-07-25 20:38:41Z flo $
+# $FreeBSD: net/asterisk11/Makefile 336791 2013-12-17 23:48:02Z flo $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.5.0
-PORTREVISION=	1
+PORTVERSION=	11.7.0
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -26,9 +26,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USES=		bison
+USES=		bison gmake
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -39,7 +38,9 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		NOISY_BUILD=YES \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
-MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8 astdb2bdb.8 \
+	astdb2sqlite3.8
+
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-1.8*
 
@@ -72,6 +73,7 @@ ASTERISK_GROUP?=	asterisk
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == ${LOCALBASE}
