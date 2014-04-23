@@ -1,8 +1,8 @@
-# $FreeBSD: net/asterisk11/Makefile 336791 2013-12-17 23:48:02Z flo $
+# $FreeBSD: head/net/asterisk11/Makefile 351411 2014-04-16 18:28:47Z zeising $
 
 PORTNAME=	asterisk
-PORTVERSION=	11.7.0
-PORTREVISION=	2
+PORTVERSION=	11.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --with-uuid=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 CFLAGS+=	-I${LOCALBASE}/include
-USE_CSTD=	gnu89
+USE_GCC=	yes
 USE_GNOME=	libxml2
 USES=		bison gmake
 USE_RC_SUBR=	asterisk
