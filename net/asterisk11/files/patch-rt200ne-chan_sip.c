@@ -103,7 +103,7 @@
 + 	}
 + 	/* RT-200NE HACK END */
 + 
-  	snprintf(cnonce, sizeof(cnonce), "%08lx", ast_random());
+  	snprintf(cnonce, sizeof(cnonce), "%08lx", (unsigned long)ast_random());
   
   	/* Check if we have peer credentials */
 ***************
